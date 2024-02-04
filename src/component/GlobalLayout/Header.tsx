@@ -1,20 +1,21 @@
 'use client'
-
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+import { 
+  Avatar,
+  Box,
+  Button,
+  Toolbar,
+  IconButton,
+} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import Button from '@mui/material/Button';
-import Box from '@mui/system/Box';
-import Avatar from '@mui/material/Avatar';
 
 import profile from '../../../profile/profile.jpeg'
 
 function Header() {
   const router = useRouter();
-  
   
   return (
     <React.Fragment>
@@ -30,12 +31,13 @@ function Header() {
           </Toolbar>
         </Box>
         <Box marginTop={'0.5%'}>
-          <Avatar alt="Profile Photo" src={profile.src} sx={{ width: 36, height: 36 }}/>
+          <Avatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
+            <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
+          </Avatar>
+          
         </Box>
       </Box>
-
     </React.Fragment>
-    
   );
 }
 
