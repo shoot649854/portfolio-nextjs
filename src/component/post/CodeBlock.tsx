@@ -1,13 +1,10 @@
-// import type { CodeProps } from 'react-markdown/lib/ast-to-react'
-import { CodeProps } from "react-markdown/lib/ast-to-react";
-// import CodeProps from "react-markdown/lib/ast-to-react";
+'use client';
+
+import ReactMarkdown from "react-markdown";
+import { ReactMarkdownProps, CodeProps } from "react-markdown/lib/ast-to-react";
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
 import style from "@/styles/codeblock.module.scss";
-
-// import type { CodeComponent } from 'react-markdown/ast-to-react'
-
-// type CodeProps = Parameters<CodeComponent>[0]
 
 const CodeBlock = ({ node, className, children, ...props }: CodeProps) => {
   // カスタム値の判定材料を抽出

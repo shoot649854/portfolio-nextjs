@@ -1,5 +1,5 @@
-import { PER_PAGE } from "constants/setting";
-import { getSortedPostsMeta } from "repositories/local/post";
+import { PER_PAGE } from "@/constant/setting";
+import { getSortedPostsMeta } from "@/repositories/post";
 
 /** タグ一覧ページ向けの記事一覧とページ数を取得 */
 export const getPosts = (tag: string, page: number) => {

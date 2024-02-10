@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Box, Avatar, Typography, Alert, useMediaQuery } from "@mui/material";
 import profile from "@/../profile/profile.jpeg"
-import { IProjectHeader } from "@/Type";
+import { PostData } from "@/Type";
 
 const Tags = ({ tags }: { tags: string[] }) => {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -24,21 +24,10 @@ const Tags = ({ tags }: { tags: string[] }) => {
 };
 
 
-const ProjectHeader = ({ projectTitle, editedDate, imageSrcPath, tags, children }: IProjectHeader) => {
+const ProjectHeader = ({ meta }: PostData) => {
+  const { title, date, tags } = meta;
   const [imageLoadError, setImageLoadError] = useState(false);
   const [customProfile, setCustomProfile] = useState(null);
-
-  useEffect(() => {
-    try {
-      const profileImage = imageSrcPath ? require(imageSrcPath) : null;
-      setCustomProfile(profileImage);
-    } catch (error) {
-      setImageLoadError(true);
-      setTimeout(() => {
-        setImageLoadError(false);
-      }, 5000);
-    }
-  }, [imageSrcPath]);
 
   return (
     <>
@@ -58,13 +47,12 @@ const ProjectHeader = ({ projectTitle, editedDate, imageSrcPath, tags, children 
         </Typography>
       </Box>
       <Typography variant="h3" fontSize="42px" fontWeight="Medium" color="black" marginBottom="10px" fontFamily="sans-serif">
-        {projectTitle}
+        {title}
       </Typography>
       <Typography variant="subtitle1">
-        Edited Date: {editedDate}
+        Edited Date: {date}
       </Typography>
       {tags && <Tags tags={tags} />}
-      {children}
     </>
   );
 };

@@ -38,7 +38,7 @@ const ArticleDetail = ({ data }: Props) => {
           },
       }}>
       {/* ヘッダー */}
-      <Header data={data.meta} />
+      <Header {...data} />
 
       {/* 本文 */}
         <Body content={data.content} />
