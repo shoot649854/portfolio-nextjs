@@ -72,25 +72,24 @@ const TagSearch = ({ posts, totalPage }: Props) => {
         {/* Pagination */}
         {posts.length > postsPerPage && (
           <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-            {[...Array(Math.ceil(currentPosts.length / postsPerPage)).keys()].map(number => {
-              const pageNumber = number + 1;
-              const hasPostsForPage = pageNumber * postsPerPage <= posts.length;
-              return hasPostsForPage && (
-                <Typography
-                  key={pageNumber}
-                  variant="button"
-                  style={{
-                    cursor: 'pointer',
-                    marginRight: '5px',
-                    fontWeight: currentPage === pageNumber ? 'bold' : 'normal'
-                  }}
-                  onClick={() => paginate(pageNumber)}
-                >
-                  {pageNumber}
-                </Typography>
-              );
-            })}
-          </Box>
+          {Array.from({ length: Math.ceil(currentPosts.length / postsPerPage) }, (_, index) => index + 1).map(pageNumber => {
+            const hasPostsForPage = pageNumber * postsPerPage <= posts.length;
+            return hasPostsForPage && (
+              <Typography
+                key={pageNumber}
+                variant="button"
+                style={{
+                  cursor: 'pointer',
+                  marginRight: '5px',
+                  fontWeight: currentPage === pageNumber ? 'bold' : 'normal'
+                }}
+                onClick={() => paginate(pageNumber)}
+              >
+                {pageNumber}
+              </Typography>
+            );
+          })}
+        </Box>
         )}
       </Box>
 

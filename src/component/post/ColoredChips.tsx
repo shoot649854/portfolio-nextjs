@@ -1,12 +1,17 @@
-import { Chip } from '@mui/material';
+import { Chip, Color } from '@mui/material';
 
 interface Props {
+  keywords: string[]; // Include the 'keywords' property here
   setSelectedWord: (word: string) => void;
 }
 
-function getRandomColor(): string {
-  const colors = ['primary', 'secondary', 'error', 'warning', 'info', 'success'];
-  return colors[Math.floor(Math.random() * colors.length)];
+type CustomColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+
+
+function getRandomColor(): CustomColor {
+  const colors: CustomColor[] = ['primary', 'secondary', 'error', 'warning', 'info', 'success'];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
 }
 
 function ColoredChips({ keywords, setSelectedWord }: Props): JSX.Element[] {
