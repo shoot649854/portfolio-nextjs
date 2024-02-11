@@ -1,5 +1,6 @@
 import type { PostMeta } from "@/Type";
-import ArticleCard from "../Article/ArticleCard";
+// import ArticleCard from "../Article/ArticleCard";
+import ArticleCard from "@/component/Article/ArticleCard";
 // import Pagination from "components/common/pagination";
 import { Box, Pagination } from '@mui/material';
 
