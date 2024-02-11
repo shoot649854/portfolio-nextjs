@@ -1,5 +1,6 @@
 import { PER_PAGE } from "@/constant/setting";
 import { getSortedPostsMeta } from "@/repositories/post";
+import { getSortedPostsMetaProject } from "@/repositories/project";
 
 /** タグ一覧ページ向けの記事一覧とページ数を取得 */
 export const getPosts = (tag: string, page: number) => {
@@ -20,7 +21,7 @@ export const getPosts = (tag: string, page: number) => {
 
 /** タグ一覧ページのパス一覧を取得 */
 export const getAllPaths = () => {
-  const allMeta = getSortedPostsMeta();
+  const allMeta = [...getSortedPostsMeta(), ...getSortedPostsMetaProject()];
   const tags = Array.from(new Set(allMeta.flatMap((meta) => meta.tags)));
   const paths = tags.flatMap((tag) => {
     // 指定タグのページ数を計算

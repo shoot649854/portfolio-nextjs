@@ -6,7 +6,7 @@ date: 2023-6-14
 author: Shoto
 image: projectQiitaFD1.jpeg
 category: Project
-tags: [tag]
+tags: [FastAPI, Flask, GPT API]
 ---
 
 ## ProjectQiitaFD1

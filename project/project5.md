@@ -6,7 +6,7 @@ date: 2024-3-20
 author: Shoto
 image: running.jpg
 category: Project
-tags: [tag]
+tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
 ---
 
 ## Internship1
