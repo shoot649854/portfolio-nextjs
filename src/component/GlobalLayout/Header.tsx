@@ -9,14 +9,18 @@ import {
   Button,
   Toolbar,
   IconButton,
+  useMediaQuery,
+  Typography
 } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-
-// import profile from '@/../public/profile.jpeg'
+import HomeIcon from '@mui/icons-material/Home';
+import BlogIcon from '@mui/icons-material/Description';
+import ProjectIcon from '@mui/icons-material/Work';
 import profile from '@/../public/profile.jpeg'
 
 function Header() {
   const router = useRouter();
+  const isSmallScreen = useMediaQuery('(max-width:700px)');
   
   return (
     <React.Fragment>
@@ -27,16 +31,51 @@ function Header() {
           </IconButton>
             
           <Toolbar component="nav" variant="dense">
-            <Button variant="text" onClick={() => router.push('/post')}>blog</Button>
-            <Button variant="text" onClick={() => router.push('/portfolio/project')}>Project</Button>
+            <Button
+              variant="text"
+              startIcon={<HomeIcon />}
+              onClick={() => router.push('/')}
+              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+            >
+              {!isSmallScreen && (
+                <Typography>
+                  Home
+                </Typography>
+              )}
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<BlogIcon />}
+              onClick={() => router.push('/post')}
+              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+            >
+              {!isSmallScreen && (
+                <Typography>
+                  Blog
+                </Typography>
+              )}
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<ProjectIcon />}
+              onClick={() => router.push('/projects')}
+              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+            >
+              {!isSmallScreen && (
+                <Typography>
+                    Projects
+                </Typography>
+              )}
+            </Button>
           </Toolbar>
         </Box>
-        <Box marginTop={'0.5%'}>
-          <Avatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
-            <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
-          </Avatar>
-          
-        </Box>
+        {!isSmallScreen && (
+          <Box marginTop={'0.5%'}>
+            <Avatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
+              <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
+            </Avatar>
+          </Box>
+        )}
       </Box>
     </React.Fragment>
   );
