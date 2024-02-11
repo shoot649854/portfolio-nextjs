@@ -11,13 +11,13 @@ type Props = {
 };
 
 const ImageComponent = ({ title, src = "", alt = "" }: Props) => {
-  // const [mounted, setMounted] = useState(false);
-  // useEffect(() => {
-  //     setMounted(true)
-  // }, [])
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+      setMounted(true)
+  }, [])
 
   return (
-    // mounted &&
+    mounted &&
     <Box className="my-8" sx={{ position: 'relative' }}>
       <Typography>{title}</Typography>
       <Zoom zoomMargin={100}>

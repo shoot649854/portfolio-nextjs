@@ -26,7 +26,7 @@ function Header() {
           </IconButton>
             
           <Toolbar component="nav" variant="dense">
-            <Button variant="text" onClick={() => router.push('/portfolio/blog')}>blog</Button>
+            <Button variant="text" onClick={() => router.push('/post')}>blog</Button>
             <Button variant="text" onClick={() => router.push('/portfolio/project')}>Project</Button>
           </Toolbar>
         </Box>
