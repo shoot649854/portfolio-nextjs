@@ -6,7 +6,7 @@ import { useMatchMedia } from "@/component/hooks/useMatchMedia";
 import { Box } from "@mui/material";
 import Header from "@/component/GlobalLayout/Header";
 import Footer from "@/component/GlobalLayout/Footer";
-import Background from "./Background/Background";
+// import Background from "./Background/Background";
 
 function App({ Component, pageProps }: AppProps) {
   const isSmallScreen = useMatchMedia("(max-width: 800px)");

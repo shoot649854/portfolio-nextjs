@@ -12,7 +12,8 @@ import {
 } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
-import profile from '../../../profile/profile.jpeg'
+// import profile from '@/../public/profile.jpeg'
+import profile from '@/../public/sample10.jpg'
 
 function Header() {
   const router = useRouter();
@@ -26,7 +27,7 @@ function Header() {
           </IconButton>
             
           <Toolbar component="nav" variant="dense">
-            <Button variant="text" onClick={() => router.push('/portfolio/blog')}>blog</Button>
+            <Button variant="text" onClick={() => router.push('/post')}>blog</Button>
             <Button variant="text" onClick={() => router.push('/portfolio/project')}>Project</Button>
           </Toolbar>
         </Box>

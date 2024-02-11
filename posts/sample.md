@@ -1,6 +1,6 @@
 ---
-title: Portflolioへようこそ
-description: Next.js向けブログテンプレートの紹介
+title: What is Portflorio?
+description: Template for Next.js
 slug: about
 date: 2021-12-31
 author: Shoto
@@ -9,18 +9,18 @@ category: Other
 tags: []
 ---
 
-# Portflolio とは
+# What is Portflorio?
 
-Portflolio は Next.js 向けに作成されたブログテンプレートです。Next.js の特色である高速化機能をそのままに、TypeScript を使用、Markdown による記事管理を特徴とした無料のテンプレートです。
+Portflorio is a blog template built for Next.js. This is a free template that uses TypeScript and article management using Markdown, while maintaining the speed-up features that are the hallmark of Next.js.
 
-以下に Markdown で記載した表現がどのような外観となるかを列挙します。
+Below is a list of what the expressions written in Markdown look like.
 
-# ヘッダー
+# header
 
 ```md
 # h1
 
-## h2
+##h2
 
 ### h3
 
@@ -29,11 +29,11 @@ Portflolio は Next.js 向けに作成されたブログテンプレートです
 ##### h5
 
 ###### h6
-```
+````
 
 # h1
 
-## h2
+##h2
 
 ### h3
 
@@ -43,150 +43,150 @@ Portflolio は Next.js 向けに作成されたブログテンプレートです
 
 ###### h6
 
-# 文字の装飾
+# Text decoration
 
 ```md
-**強調**された文字列
-*イタリック調*の文字列
-~取り消し~された文字列
-```
+**Emphasis** Highlighted string
+*italic* text string
+~cancelled~ string
+````
 
-**強調**された文字列
-*イタリック調*の文字列
-~取り消し~された文字列
+**Emphasis** Highlighted string
+*italic* text string
+~cancelled~ string
 
-# テーブル
+# table
 
 ```md
-| th          | th          |          th |     th      |
-| ----------- | :---------- | ----------: | :---------: |
+| th | th | th | th |
+| ----------- | :---------| | ----------: | :---------: |
 | sample text | sample text | sample text | sample text |
-| a           | b           |           c |      d      |
-| a           | b           |           c |      d      |
-```
+| a | b | c | d |
+| a | b | c | d |
+````
 
-| th          | th          |          th |     th      |
-| ----------- | :---------- | ----------: | :---------: |
+| th | th | th | th |
+| ----------- | :---------| | ----------: | :---------: |
 | sample text | sample text | sample text | sample text |
-| a           | b           |           c |      d      |
-| a           | b           |           c |      d      |
+| a | b | c | d |
+| a | b | c | d |
 
-# リスト
-
-```md
-- item
-  - item
-  - item
-  1. item
-
-1. item
-   - item
-```
-
-- item
-  - item
-  - item
-  1. item
-
-1. item
-   - item
-
-# リンクした文字列
+# list
 
 ```md
-[リンクテキスト](https://example.com/)
-[この書き方もできます][1]
+-item
+   -item
+   -item
+   1.item
+
+1.item
+    -item
+````
+
+-item
+   -item
+   -item
+   1.item
+
+1.item
+    -item
+
+# linked string
+
+```md
+[Link text](https://example.com/)
+[You can also write this way][1]
 
 [1]: https://example.com/
-```
+````
 
-[リンクテキスト](https://example.com/)
-[この書き方もできます][1]
+[Link text](https://example.com/)
+[You can also write this way][1]
 
 [1]: https://example.com/
 
-# 画像
+# image
 
 ```md
 ![alt](/sample1.jpg)
 ![alt](/sample2.jpg "caption")
-```
+````
 
 ![alt](/sample1.jpg)
 ![alt](/sample2.jpg "caption")
 
-# 引用
+# Quote
 
 ```md
-> 引用テキスト
-> 引用テキスト
-```
-
-> 引用テキスト
-> 引用テキスト
-
-# コード
-
-````md
-文章中の`コード`です。
-
-```js
-let x = "sample text";
-```
+> Quoted text
+> Quoted text
 ````
 
-文章中の`コード`です。
+> Quoted text
+> Quoted text
 
-```js
+# code
+
+````md
+This is the `code` in the text.
+
+````js
 let x = "sample text";
-```
+````
+````
 
-# YouTube 埋め込み
+This is the `code` in the text.
+
+````js
+let x = "sample text";
+````
+
+# YouTube embed
 
 ````md
 ```youtube
 bIHPvQmU7JQ
-```
+````
 ````
 
 ```youtube
 bIHPvQmU7JQ
-```
+````
 
-# Twitter 埋め込み
+# Twitter embed
 
 ````md
 ```twitter
 1441739144300929030
-```
+````
 ````
 
 ```twitter
 1441739144300929030
-```
+````
 
-# 直接埋め込まれた HTML
+# directly embedded HTML
 
 ```md
 <ul>
-  <li>item</li>
-  <li>item</li>
+   <li>item</li>
+   <li>item</li>
 </ul>
-```
+````
 
 <ul>
-  <li>item</li>
-  <li>item</li>
+   <li>item</li>
+   <li>item</li>
 </ul>
 
-自身の記述した Markdown のみを読み込むことを前提としているため、Markdown を HTML に変換する際のサニタイズ処理を行っていません。Markdown の作者を信用していない場合はサニタイズ処理を追加してください。
+Since it is assumed that only his Markdown written by himself will be loaded, no sanitization processing is performed when converting Markdown to HTML. If you don't trust the Markdown author, add some sanitization.
 
-# 区切り線
+# separator line
 
 ```md
 ---
-```
+````
 
 ---
 
-以上です。
+that's all.

@@ -26,13 +26,19 @@ export const getAllMatterResults = () => {
 
 /** meta情報から必要なデータのみ抽出 */
 export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   return {
     slug: (matter.slug ?? "").toLowerCase(),
     title: matter.title ?? "Error",
     description: matter.description ?? "error occurred",
-    date: matter.date
-      ? new Date(matter.date).toISOString()
-      : new Date().toISOString(),
+    date: matter.date ? formatDate(matter.date) : new Date().toISOString(),
     author: matter.author ?? "",
     coverImage: matter.image ?? "",
     category: matter.category ?? "",

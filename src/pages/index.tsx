@@ -13,8 +13,8 @@ const Page = ({ posts, totalPage }: Props) => {
   return (
     <Box>
 
-        {/* <SEO /> */}
-        <Template posts={posts} total={totalPage} current={1} /*mode={"page"} */ />
+      {/* <SEO /> */}
+      <Template posts={posts} total={totalPage} current={1} /*mode={"page"} */ />
     </Box>
   );
 };

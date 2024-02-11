@@ -25,7 +25,7 @@ export const getPostDataBySlug = async (slug: string): Promise<PostData> => {
     .map((matterResult: any) => {
       const meta = extractPostMeta(matterResult.data);
 
-      if (meta.slug != slug.toLowerCase()) return;
+      if (!slug || meta.slug != slug.toLowerCase()) return;
       const content = matterResult.content + "";
 
       return { meta: meta, content: content };
