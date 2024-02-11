@@ -6,7 +6,6 @@ import { useMatchMedia } from "@/component/hooks/useMatchMedia";
 import { Box } from "@mui/material";
 import Header from "@/component/GlobalLayout/Header";
 import Footer from "@/component/GlobalLayout/Footer";
-// import Background from "./Background/Background";
 
 function App({ Component, pageProps }: AppProps) {
   const isSmallScreen = useMatchMedia("(max-width: 800px)");
@@ -16,21 +15,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <Box>
       <Header />
-      {/* <Box
-          padding={{ top: 3, right: 20, bottom: 10, left: 20 }}
-          paddingTop={3}
-          paddingRight={isSmallScreen? 2: 25}
-          paddingBottom={10}
-          paddingLeft={isSmallScreen? 2: 25}
-          sx={{
-            borderRadius: "1%",
-            flexGrow: 1,
-            backgroundColor: "#fff",
-          }}
-        >
-          
-        <Background />
-      </Box> */}
       <Component {...pageProps} />
       <Footer />
     </Box>
