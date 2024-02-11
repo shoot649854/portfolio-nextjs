@@ -27,8 +27,8 @@
         "./src/*"
       ],
       // baseUrlに対する相対パスとして記載
-      "@public/*": [
-        "../public/*"
+      "@public/*/": [
+        "../public/*/"
       ]
     },
     "forceConsistentCasingInFileNames": true
