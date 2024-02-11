@@ -20,7 +20,7 @@ Below is a list of what the expressions written in Markdown look like.
 ```md
 # h1
 
-##h2
+## h2
 
 ### h3
 
@@ -33,7 +33,7 @@ Below is a list of what the expressions written in Markdown look like.
 
 # h1
 
-##h2
+## h2
 
 ### h3
 
