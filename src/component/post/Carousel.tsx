@@ -74,7 +74,7 @@ function CarouselComponent({ posts, total, current }: Props) {
         {posts && posts.map((post, index) => (
             <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}}>
 
-                <Box sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
+                <Box key={index} sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
                 <Grid
                     container
                     direction="row"
