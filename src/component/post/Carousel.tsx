@@ -1,5 +1,5 @@
 import type { PostMeta } from "@/Type";
-import { Typography, Box, Link, Grid, useTheme } from "@mui/material";
+import { Typography, Box, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
@@ -21,19 +21,20 @@ type Props = {
 
 function CarouselComponent({ posts, total, current }: Props) {
     const theme = useTheme();
+    const isSmallScreen = useMediaQuery('(max-width:700px)');
   return (
-    <Box sx={{ height: "100%", width: "75%" }}>
+    <Box marginBottom={3} sx={{ height: "100%", width: isSmallScreen ? "95%" : "75%" }}>
       <Carousel
         NextIcon={<ArrowForwardIosSharpIcon />} //矢印アイコンを別のアイコンに変更
         PrevIcon={<ArrowBackIosSharpIcon />} //矢印アイコンを別のアイコンに変更
-        autoPlay={false} //自動でCarouselを動かすかどうか(true or false)
+        autoPlay={isSmallScreen} //自動でCarouselを動かすかどうか(true or false)
         //stopAutoPlayOnHover = {true} Carouselの上にマウスを置いている間、自動スクロールを継続するかどうか
         //interval = {4000} 自動でCarouselを動かす時間の間隔(ミリ秒単位)
         //animation = {fade} (fade or slide) Carouselのアニメーションの種類を変更
         //duration = {500} アニメーションの長さを定義
-        //swipe = {true} スワイプで動かせるかどうか
+        swipe = {isSmallScreen} // スワイプで動かせるかどうか
         //indicators = {true} インジケーター(下の丸いアイコン)が必要かどうか
-        navButtonsAlwaysVisible={true} //常に矢印アイコンを表示するかどうか
+        navButtonsAlwaysVisible={!isSmallScreen} //常に矢印アイコンを表示するかどうか
         //navButtonsAlwaysInvisible = {true} //常に矢印アイコンを非表示にするかどうか
         //cycleNavigation = {true} //最後のスライドから「次へ」の矢印アイコンを押した時に最初にスライドに動かせるようにするかどうか
         //fullHeightHover = {true} //次/前のボタンがItem要素の高さ全体をカバーし、ホバー時にボタンを表示するかどうか
@@ -72,9 +73,8 @@ function CarouselComponent({ posts, total, current }: Props) {
         }}
       >
         {posts && posts.map((post, index) => (
-            <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}}>
-
-                <Box key={index} sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
+            <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}} key={post.slug}>
+                <Box sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
                 <Grid
                     container
                     direction="row"
@@ -94,13 +94,14 @@ function CarouselComponent({ posts, total, current }: Props) {
                     <Box width={'65%'} margin={3} sx={{ position: `absolute` }}>
                     <Typography
                         sx={{
-                            mt: 3,
+                            mt: isSmallScreen? 3 : 10,
                             backgroundColor: fontBackgroundColor,
+                            fontWeight: 'medium',
                             "@media (max-width: 700px)": {
                             fontSize: "18px", 
                             }
                         }}
-                        variant="h4"
+                        variant="h2"
                         >
                         {post.title}
                     </Typography>
@@ -113,7 +114,7 @@ function CarouselComponent({ posts, total, current }: Props) {
                             fontSize: "10px", 
                             }
                         }}
-                        variant="subtitle1"
+                        variant="h5"
                         >
                         {post.description}
                         </Typography>

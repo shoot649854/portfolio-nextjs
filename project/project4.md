@@ -6,7 +6,7 @@ date: 2024-1-16
 author: Shoto
 image: demo_cruzhack.gif
 category: Project
-tags: [tag]
+tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
 ---
 
 ## ProjectCruzHack

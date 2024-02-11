@@ -1,8 +1,8 @@
 import type { PostData } from "@/Type";
-import { getAllMatterResults, extractPostMeta } from "./projectmatter";
+import { getAllMatterResults, extractPostMeta } from "./allmatter";
 
 /** 日付でソートした全記事データを取得 */
-export const getSortedPostsMetaProject = () => {
+export const getSortedPostsMetaAll = () => {
   const matterResults = getAllMatterResults();
   const postMetaList = matterResults.map((matter: any) =>
     extractPostMeta(matter.data)
@@ -19,7 +19,7 @@ export const getSortedPostsMetaProject = () => {
 };
 
 /** 単一の記事を取得 */
-export const getPostDataBySlugProject = async (slug: string): Promise<PostData> => {
+export const getPostDataBySlugAll = async (slug: string): Promise<PostData> => {
   const matterResults = getAllMatterResults();
   const target = matterResults
     .map((matterResult: any) => {

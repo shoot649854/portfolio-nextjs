@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
 import type { GetStaticProps, GetStaticPaths } from "next";
-import { getAllPaths, getPosts } from '@/service/accessToPage';
+import { getAllPaths, getPosts } from '@/service/Blog/accessToPage';
 
 const Page = () => {
   const router = useRouter();

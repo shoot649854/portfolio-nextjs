@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Typography } from "@mui/material"
 import type { PostMeta } from "@/Type";
-import type {  GetStaticProps } from "next";
-import getPost from "@/service/accessToTop";
 import { Box } from "@mui/system";
-import AppCard from '../App/AppCard'
 
 type Props = {
     posts: PostMeta[];
@@ -21,9 +17,6 @@ const App = ({ posts, totalPage }: Props) => {
     return (
         mounted && 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Typography>
-                Hi
-            </Typography>
         </Box>
     );
 };
