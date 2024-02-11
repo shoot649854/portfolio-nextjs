@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Box, Avatar, Typography, Alert, useMediaQuery } from "@mui/material";
 // import profile from "@/../profile/profile.jpeg"
-import profile from '@/../public/sample10.jpg'
+import profile from '@/../public/profile.jpeg'
 import { PostData } from "@/Type";
 
 const Tags = ({ tags }: { tags: string[] }) => {
