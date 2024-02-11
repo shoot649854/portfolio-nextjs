@@ -13,7 +13,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 
 // import profile from '@/../public/profile.jpeg'
-import profile from '@/../public/sample10.jpg'
+import profile from '@/../public/profile.jpeg'
 
 function Header() {
   const router = useRouter();
