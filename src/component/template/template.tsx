@@ -2,6 +2,7 @@ import type { PostMeta } from "@/Type";
 import ArticleCard from "@/component/Article/ArticleCard";
 // import Pagination from "components/common/pagination";
 import { Box, Pagination } from '@mui/material';
+import CarouselComponent from '../post/Carousel'
 
 type Props = {
   posts: PostMeta[];
@@ -14,13 +15,8 @@ type Props = {
 const Template = ({ posts, total, current }: Props) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {posts?.map((post, i) => (
-        <ArticleCard key={i} data={post} />
-        ))}
-
-        <Pagination count={total} page={current} variant="outlined" shape="rounded" />
+      <CarouselComponent posts={posts} total={total} current={current} />
     </Box>
-        
   );
 };
 
