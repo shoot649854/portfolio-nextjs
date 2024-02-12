@@ -1,7 +1,7 @@
 ---
 title: Electric Sheep Hackathon (Mobility and Big Data)
 description:  Collaborated with Japense university students to create AR App with Flutter that Toyota sponsors. Utilize Luma API and Google Map API for 3D models and map feature
-slug: project/2
+slug: project2
 date: 2023-8-14
 author: Shoto
 image: project/2/projectNagoya2.png
