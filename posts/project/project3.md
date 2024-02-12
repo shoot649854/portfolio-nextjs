@@ -1,10 +1,10 @@
 ---
 title: Qiita × Fast DOCTOR Health Tech Hackathon
 description: Collaborated with Japense university students to create AR App with Flutter that Toyota sponsors. Utilize Luma API and Google Map API for 3D models and map feature
-slug: project/3
+slug: project3
 date: 2023-6-14
 author: Shoto
-image: projectQiitaFD1.jpeg
+image: post/project/3/projectQiitaFD1.jpeg
 category: Project
 tags: [FastAPI, Flask, GPT API]
 ---

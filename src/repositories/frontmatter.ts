@@ -11,7 +11,8 @@ const postsDirectory = path.join(process.cwd(), "posts");
 export const getAllMatterResults = () => {
   // 記事データを取得
   const files = retrieveFiles(postsDirectory);
-  const matterResults = files.map((fullPath: any) => {
+  const filteredFiles = files.filter((filePath) => !filePath.includes("/project/"));
+  const matterResults = filteredFiles.map((fullPath: any) => {
     // Markdownファイルを文字列として取得
     const fileContents = fs.readFileSync(fullPath, "utf8");
 

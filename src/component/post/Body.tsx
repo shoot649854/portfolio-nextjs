@@ -23,7 +23,7 @@ type Props = {
 const Body = ({ content }: Props) => {
   const convertResult = content ? (
     <ReactMarkdown
-      className="max-w-2xl mx-auto text-lg leading-loose"
+      className="max-w-2xl mx-auto text-lg leading-loose roboto-font"
       remarkPlugins={[remarkGfm, remarkBreaks]}
       rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeRaw]}
       components={{

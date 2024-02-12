@@ -1,10 +1,10 @@
 ---
 title: CruzHack 2024 - Sitegeist
 description:  Sitegeist, our technical solution for giving you more problems! We wanted a way to easily analyze trending topics and issues faced by those around us.
-slug: project/4
+slug: project4
 date: 2024-1-16
 author: Shoto
-image: project4-demo.gif
+image: post/project/4/project4-demo.gif
 category: Project
 tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
 ---
