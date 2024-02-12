@@ -12,7 +12,7 @@ const Tags = ({ tags }: { tags: string[] }) => {
     <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: 1 }}>
       {tags.map((tag: any, index: number) => (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: isSmallScreen ? 0 : 0.25 }}>
-          <Box component="text" sx={{ padding: isSmallScreen ? '2px 0' : '2px 5px', borderRadius: '5px', margin: isSmallScreen ? '2px 0' : '0' }}>
+          <Box component="text" sx={{ borderRadius: '5px', margin: isSmallScreen ? '2px 0' : '0' }}>
             <Typography variant="subtitle2" color="primary">
               {tag}
             </Typography>
@@ -28,7 +28,6 @@ const Tags = ({ tags }: { tags: string[] }) => {
 const ProjectHeader = ({ meta }: PostData) => {
   const { title, date, tags } = meta;
   const [imageLoadError, setImageLoadError] = useState(false);
-  const [customProfile, setCustomProfile] = useState(null);
 
   const isSmallScreen = useMediaQuery('(max-width:600px)');
   const H1FontSize = isSmallScreen ? '22px' : '42px';
@@ -65,5 +64,4 @@ const ProjectHeader = ({ meta }: PostData) => {
     </>
   );
 };
-
 export default ProjectHeader;

@@ -19,8 +19,8 @@ const ArticleDetail = ({ data }: Props) => {
     <article itemProp="mainEntityOfPage">
       <Box 
         margin={{ top: 0, right: 25, bottom: 0, left: 25 }}
-        marginLeft={isExtraSmallScreen ? 1 : 25}
-        marginRight={isExtraSmallScreen ? 1 : 25}
+        marginLeft={isExtraSmallScreen ? 1 : 50}
+        marginRight={isExtraSmallScreen ? 1 : 50 }
         paddingX={isNarrowScreen ? 1 : 0}
         sx={{
           minHeight: "100vh",
