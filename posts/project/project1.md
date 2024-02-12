@@ -4,7 +4,7 @@ description:  Recently, I worked on a school project about the cyberwarfare betw
 slug: project1
 date: 2023-4-21
 author: Shoto
-image: post/project/1/projectSymposium1.jpeg
+image: project/1/projectSymposium1.jpeg
 category: Project
 tags: [ Research, Cybersecurity ]
 ---
