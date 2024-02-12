@@ -6,14 +6,15 @@ import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
 const postsDirectory = path.join(process.cwd(), "posts");
-const projectsDirectory = path.join(process.cwd(), "project");
+// const projectsDirectory = path.join(process.cwd(), "project");
 
 /** 全記事のFrontMatterを取得 */
 export const getAllMatterResults = () => {
   // 記事データを取得
   const postFiles = retrieveFiles(postsDirectory);
-  const projectFiles = retrieveFiles(projectsDirectory);
-  const allFiles = [...postFiles, ...projectFiles];
+  // const projectFiles = retrieveFiles(projectsDirectory);
+  // const allFiles = [...postFiles, ...projectFiles];
+  const allFiles = postFiles;
   // const files = retrieveFiles(postsDirectory);
   const matterResults = allFiles.map((fullPath: any) => {
     // Markdownファイルを文字列として取得
