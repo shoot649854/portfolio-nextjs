@@ -4,7 +4,7 @@ description:  Sitegeist, our technical solution for giving you more problems! We
 slug: project4
 date: 2024-1-16
 author: Shoto
-image: project/4/project4-demo.gif
+image: post/project/4/project4-demo.gif
 category: Project
 tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
 ---
