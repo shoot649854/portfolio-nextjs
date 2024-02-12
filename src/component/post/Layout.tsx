@@ -23,7 +23,6 @@ const ArticleDetail = ({ data }: Props) => {
         marginRight={isExtraSmallScreen ? 1 : 50 }
         paddingX={isNarrowScreen ? 1 : 0}
         sx={{
-          // backgroundColor: "#f5f6f6",
           minHeight: "100vh",
           "@media (max-width: 800px)": {
             maxWidth: isSmallScreen ? "450px" : "auto",
@@ -32,7 +31,7 @@ const ArticleDetail = ({ data }: Props) => {
             maxWidth: isExtraSmallScreen ? "200px" : "auto",
           },
           "@media (max-width: 430px)": {
-            maxWidth: isNarrowScreen ? "100%" : "auto",
+            maxWidth: "400%",
             padding: isNarrowScreen ? "0 10px" : "0",
           },
       }}>
@@ -42,19 +41,7 @@ const ArticleDetail = ({ data }: Props) => {
       {/* 本文 */}
         <Body content={data.content} />
       
-
       {/* タグ一覧 */}
-      <div className="max-w-2xl mx-auto py-6 border-t border-gray-500">
-        {/* {tags.map((tag, i) => (
-          <CustomLink
-            key={i}
-            href={`/tag/${tag.toLowerCase()}/1`}
-            className="mr-4"
-          >
-            #{tag}
-          </CustomLink>
-        ))} */}
-      </div>
       </Box>
     </article>
   );
