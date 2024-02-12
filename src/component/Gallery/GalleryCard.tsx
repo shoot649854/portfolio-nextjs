@@ -3,7 +3,8 @@ import {
     Box,
     Paper,
     Typography, 
-    Link
+    Link, 
+    useMediaQuery
 } from '@mui/material'
 import { PostMeta } from '@/Type';
 
@@ -13,7 +14,7 @@ type Props = {
 
   
 const GalleryCard = ({ data }: Props) => {
-  const { title, date, tags, coverImage } = data;
+  const isSmallScreen = useMediaQuery('(max-width:700px)');
 
   return (
     <Paper sx={{
@@ -37,32 +38,38 @@ const GalleryCard = ({ data }: Props) => {
         },
       },
     }}>
-      <Box sx={{
-        flexGrow: 0,
-        width: '80%',
-        pt: 2,
-        pb: 2,
-        px: 2,
-        '@media (min-width: 768px)': {
-          width: '45%',
-        },
-      }}>
-        <Typography variant="body1">{data.category}</Typography>
-        <Typography variant="h3" component="h3" sx={{ my: 4 }}>
-          <Link href={`/post/${data.slug}`} color="inherit" style={{textDecoration: "none"}}>{data.title}</Link>
-        </Typography>
-        <Typography variant="body2" >{data.date}</Typography>
-        <Typography variant="body2" sx={{ mb: 2, height: '24px' /**, overflow: 'hidden'  */}}>{data.description}</Typography>
-      </Box>
+
+        <Box sx={{
+          flexGrow: 0,
+          width: '80%',
+          pt: 2,
+          pb: 2,
+          px: 2,
+          '@media (min-width: 768px)': {
+            width: '45%',
+          },
+        }}>
+          
+          <Link href={`/post/${data.slug}`} color="inherit" style={{textDecoration: "none"}}>
+          <Typography variant="body1">{data.category}</Typography>
+          <Typography 
+            variant="h3" 
+            component="h3" 
+            sx={{ 
+              my: isSmallScreen ? 1 : 4, 
+              fontSize: isSmallScreen ? '21px' : 'inherit',
+              }}>
+              {data.title}
+          </Typography>
+          <Typography variant="body2" >{data.date}</Typography>
+          <Typography variant="body2" sx={{ mb: isSmallScreen ? 0.5 : 2, height: 'auto',  overflow: 'hidden'}}>{data.description}</Typography>
+          </Link>
+        </Box>
       <Box sx={{
         flexGrow: 0,
         overflow: "hidden",
-        width: '100%',
-        height: '4px',
-        '@media (min-width: 768px)': {
-          height: '100%',
-          width: '55%',
-        },
+        height: isSmallScreen ? 'auto' : '100%',
+        width: isSmallScreen ? '100%' : '55%',
       }}>
         <img src={data.coverImage} alt={data.title} />
       </Box>

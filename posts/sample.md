@@ -2,11 +2,11 @@
 title: What is Portflorio?
 description: Template for Next.js
 slug: about
-date: 2021-12-31
+date: 2023-12-31
 author: Shoto
 image: sample1.jpg
 category: Other
-tags: []
+tags: [Sample Markdown]
 ---
 
 # What is Portflorio?
@@ -20,7 +20,7 @@ Below is a list of what the expressions written in Markdown look like.
 ```md
 # h1
 
-##h2
+## h2
 
 ### h3
 
@@ -33,7 +33,7 @@ Below is a list of what the expressions written in Markdown look like.
 
 # h1
 
-##h2
+## h2
 
 ### h3
 

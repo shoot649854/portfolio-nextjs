@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material"
 import type { PostMeta } from "@/Type";
 import type {  GetStaticProps } from "next";
-import getPost from "@/service/accessToTop";
+import getPost from "@/service/Blog/accessToTop";
 import { Box } from "@mui/system";
 import Template from "@/component/template/gallery";
 

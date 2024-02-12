@@ -6,7 +6,7 @@ date: 2023-4-21
 author: Shoto
 image: projectSymposium1.jpeg
 category: Project
-tags: [tag]
+tags: [ Research, Cybersecurity ]
 ---
 
 ## ProjectSymposium

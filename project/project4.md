@@ -4,9 +4,9 @@ description:  Sitegeist, our technical solution for giving you more problems! We
 slug: project/4
 date: 2024-1-16
 author: Shoto
-image: demo_cruzhack.gif
+image: project4-demo.gif
 category: Project
-tags: [tag]
+tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
 ---
 
 ## ProjectCruzHack

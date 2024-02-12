@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Typography } from "@mui/material"
 import type { PostMeta } from "@/Type";
 import type {  GetStaticProps } from "next";
-import getPost from "@/service/accessToTop";
 import { Box } from "@mui/system";
 import GalleryCard from '../Gallery/GalleryCard';
 type Props = {

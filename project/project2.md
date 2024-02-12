@@ -6,7 +6,7 @@ date: 2023-8-14
 author: Shoto
 image: projectNagoya2.png
 category: Project
-tags: [tag]
+tags: [ Flutter, 3DModel, GoogleMapAPI, LumaAPI]
 ---
 
 ## ProjectNagoya
