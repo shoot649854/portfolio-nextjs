@@ -4,7 +4,7 @@ description:  Collaborated with Japense university students to create AR App wit
 slug: project/2
 date: 2023-8-14
 author: Shoto
-image: projectNagoya2.png
+image: project/2/projectNagoya2.png
 category: Project
 tags: [ Flutter, 3DModel, GoogleMapAPI, LumaAPI]
 ---

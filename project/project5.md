@@ -4,7 +4,7 @@ description:  Internship experience is a significant contributor to my developme
 slug: project/5
 date: 2024-3-20
 author: Shoto
-image: running.jpg
+image: project/5/running.jpg
 category: Project
 tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
 ---

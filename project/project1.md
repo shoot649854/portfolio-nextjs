@@ -4,7 +4,7 @@ description:  Recently, I worked on a school project about the cyberwarfare betw
 slug: project/2
 date: 2023-4-21
 author: Shoto
-image: projectSymposium1.jpeg
+image: project/1/projectSymposium1.jpeg
 category: Project
 tags: [ Research, Cybersecurity ]
 ---
@@ -20,6 +20,5 @@ Since February 2022, Russia has been engaging in both military and cyber attacks
 I would like to thank Kenneth Geers for who assisted me with my research and conducted an interview with me. Without his support, I would not have been able to complete my project. Thank you so much for your assistance, and for supporting Ukraine.
 
 [Link text](https://orangecoastcollege.edu/academics/symposium/archive/index.html?id=shoto-morisaki)
-
 
 ---

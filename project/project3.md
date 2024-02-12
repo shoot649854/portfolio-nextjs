@@ -4,7 +4,7 @@ description: Collaborated with Japense university students to create AR App with
 slug: project/3
 date: 2023-6-14
 author: Shoto
-image: projectQiitaFD1.jpeg
+image: project/3/projectQiitaFD1.jpeg
 category: Project
 tags: [FastAPI, Flask, GPT API]
 ---
