@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
-const postsDirectory = path.join(process.cwd(), "project");
+const postsDirectory = path.join(process.cwd(), "/posts","/project");
 
 /** 全記事のFrontMatterを取得 */
 export const getAllMatterResults = () => {

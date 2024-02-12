@@ -1,10 +1,10 @@
 ---
 title: Software Engineering at Tsubasa
 description:  Internship experience is a significant contributor to my development of engineering skills. Most of the work required me to use the serverless framework, and each time, there was a self-education aspect that I can leverage later in my career. 
-slug: project/5
+slug: project5
 date: 2024-3-20
 author: Shoto
-image: running.jpg
+image: project/5/running.jpg
 category: Project
 tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
 ---

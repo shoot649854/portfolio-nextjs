@@ -10,7 +10,6 @@ type Props = {
     totalPage: number;
 };
 
-
 const post = ({ posts, totalPage }: Props) => {
     return (
         <Template totalPage={totalPage} posts={posts}/>

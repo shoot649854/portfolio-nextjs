@@ -1,10 +1,10 @@
 ---
 title: Symposium Cyberwarfare in Russia and Ukraine
 description:  Recently, I worked on a school project about the cyberwarfare between Russia and Ukraine. I conducted research on what is happening and how much damage has occurred, as well as what types of cyber attacks have been used. For my research, I primarily referenced a cyber report from Microsoft, as well as cybersecurity conferences like DEF CON and BlackHat.
-slug: project/2
+slug: project1
 date: 2023-4-21
 author: Shoto
-image: projectSymposium1.jpeg
+image: post/project/1/projectSymposium1.jpeg
 category: Project
 tags: [ Research, Cybersecurity ]
 ---
@@ -20,6 +20,5 @@ Since February 2022, Russia has been engaging in both military and cyber attacks
 I would like to thank Kenneth Geers for who assisted me with my research and conducted an interview with me. Without his support, I would not have been able to complete my project. Thank you so much for your assistance, and for supporting Ukraine.
 
 [Link text](https://orangecoastcollege.edu/academics/symposium/archive/index.html?id=shoto-morisaki)
-
 
 ---
