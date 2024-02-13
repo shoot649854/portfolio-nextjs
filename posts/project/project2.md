@@ -14,7 +14,7 @@ tags: [ Flutter, 3DModel, GoogleMapAPI, LumaAPI]
 
 ### Description
 
-**Emphasis** Demonstration Video at the end
+**Demonstration Video at the end**
 
 This article summarizes the project conducted in Nagoya, Japan, in the summer of 2023 jointly with Metele. In this article, along with my subjective views, I summarize how our team narrowed down ideas and worked on creating a mobile application over three days.
 
@@ -82,4 +82,4 @@ fbxnJkiEdk0
 
 However, I believe there were many areas where our ideas could have been further refined. Nonetheless, I feel that we made the most of the opportunity to collaborate with a prestigious company like Toyota.
 
-![alt](/project/2/projectNagoyaDemo.gif)
+![alt](/project/2/demo.gif)
