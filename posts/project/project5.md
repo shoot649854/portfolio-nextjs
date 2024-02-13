@@ -8,35 +8,42 @@ image: project/5/running.jpg
 category: Project
 tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
 ---
+---
 
-## Internship1
-
+## Internship
 
 ### Software Engineering at Tsubasa
 
-Started in the summer of 2023 at a Japanese startup. Initial tasks involved creating a Running web application for user health. Explored the library for efficient demo development. Later, focused on front-end development, delving into AWS Cognito for user authentication. Acquired valuable experience in project initiation, client communication, and project completion.
+I began my internship in the summer of 2023 at a Japanese startup called Tsubasa. Initially, my tasks involved creating a Running web application focused on user health. I explored libraries for efficient demo development and later shifted my focus to front-end development. In this role, I delved into AWS Cognito for user authentication. Throughout this experience, I gained valuable insights into project initiation, client communication, and project completion.
+
+![alt](/project/5/running.jpg)
 
 ---
 
 ### Introduction
 
-My internship in Japan began in the summer of 2023. I had an internship at a start-up company, and what I was able to absorb was very significant. I don't think I can go into detail in this article due to the nature of my duties, but I will try to write as much as I can.
+My internship in Japan commenced in the summer of 2023, where I worked at a start-up company called Tsubasa. The experience was highly enriching, although I cannot delve into specific details due to the nature of my responsibilities.
 
 ---
 
 ### First Task
 
-The first task I was assigned was to create a simple demonstration in Python. I was given this task because it is very easy to create an application, and because there is an ibrary that makes it possible to create a demonstration without having to start in earnest using react and the like. The project our team was assigned was an app that would draw user health information, so a major point of contention was how much potential we could show in a demonstration state.
+My initial assignment was to create a simple demonstration using Python. This task was assigned because of its simplicity in application development, aided by available libraries. Our team's project focused on developing an app to track user health data, and we aimed to showcase its potential in the demonstration.
+
+![alt](/project/5/streamlit.png)
 
 ---
 
 ### Frontend Task
 
-Next to the demonstration, we were assigned the task of creating the front end. I had never done any front-end development before, so I was at a bit of a loss as to how to start and what the rules were, but I studied every day and learned a lot. One of the things I learned a lot about was the authentication using AWS cognitives. I learned a lot from the page where each user is given a password and username to sign in while protecting their personal information. It was also good to have practical experience of how a project starts, how to talk to clients, and how to finish the project.
+Following the demonstration, we were tasked with developing the front end. As someone with no prior experience in front-end development, I faced challenges in understanding where to begin and what guidelines to follow. However, through daily study and practice, I acquired valuable knowledge. One area I delved into was authentication using AWS Cognito, learning how to manage user login credentials securely. Additionally, I gained practical experience in project initiation, client interaction, and project delivery.
 
 ---
 
 ### Developing Responsive Mapbox Feature
 
-We were able to receive real-time Chilean information on where the athletes were, so we were able to display that geographic information on a map. The difficult part was that we had envisioned a UI like Google Maps, but due to funding, we had to use other maps, so we had to think thoroughly about how to display the information in a way that would be easy for users to understand. Also, since a map is like a collection of dots, zooming in and out causes optimizations, so we had to think about how to speed up the process.
+![alt](/project/5/mapbox.jpeg)
+
+One of our significant achievements was integrating real-time Chilean athlete data into our application and displaying it on a map. We initially envisioned a UI similar to Google Maps but had to adapt due to budget constraints. This required careful consideration to ensure the information was presented in a user-friendly manner. Additionally, optimizing the map for zooming in and out posed challenges, requiring us to devise strategies to enhance performance.
+
 
