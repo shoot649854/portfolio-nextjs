@@ -4,7 +4,7 @@ description: When working with multiple GitHub accounts, it's crucial to configu
 slug: blog3
 date: 2024-02-11
 author: Shoto Morisaki
-image: opened-laptop.jpg
+image: sample/opened-laptop.jpg
 category: Coding
 tags: [Git]
 ---

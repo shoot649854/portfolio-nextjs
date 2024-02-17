@@ -4,7 +4,7 @@ description: Exploring the RAG Paradigm in LLMs. Technically, RAG uses a variety
 slug: blog1
 date: 2024-02-3
 author: Shoto
-image: sample3.jpg
+image: sample/sample3.jpg
 category: Research
 tags: [RAG, LLM, Knowledge Injection, Fine-tuning, External Data]
 ---

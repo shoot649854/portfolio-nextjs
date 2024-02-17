@@ -1,10 +1,10 @@
 ---
 title: What is Portflorio?
-description: Template for Next.js
+description: Portflorio is a blog template built for Next.js. This is a free template that uses TypeScript and article management using Markdown, while maintaining the speed-up features that are the hallmark of Next.js.
 slug: about
 date: 2023-12-31
 author: Shoto
-image: sample1.jpg
+image: sample/sample1.jpg
 category: Other
 tags: [Sample Markdown]
 ---
@@ -108,12 +108,12 @@ Below is a list of what the expressions written in Markdown look like.
 # image
 
 ```md
-![alt](/sample1.jpg)
-![alt](/sample2.jpg "caption")
+![alt](/sample/sample1.jpg)
+![alt](/sample/sample2.jpg "caption")
 ````
 
-![alt](/sample1.jpg)
-![alt](/sample2.jpg "caption")
+![alt](/sample/sample1.jpg)
+![alt](/sample/sample2.jpg "caption")
 
 # Quote
 
