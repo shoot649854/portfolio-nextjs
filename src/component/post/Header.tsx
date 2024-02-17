@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Box, Avatar, Typography, Alert, useMediaQuery, useTheme } from "@mui/material";
-// import profile from "@/../profile/profile.jpeg"
 import profile from '@/../public/profile.jpeg'
 import { PostData } from "@/Type";
 
@@ -12,8 +11,8 @@ const Tags = ({ tags }: { tags: string[] }) => {
     <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: 1 }}>
       {tags.map((tag: any, index: number) => (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: isSmallScreen ? 0 : 0.25 }}>
-          <Box component="text" sx={{ borderRadius: '5px', margin: isSmallScreen ? '2px 0' : '0' }}>
-            <Typography variant="subtitle2" color="primary">
+          <Box component="text" sx={{ borderRadius: '5px', margin: isSmallScreen ? '2px' : '0' }}>
+            <Typography variant="subtitle2" color="primary" style={{textDecoration: "none"}}>
               {tag}
             </Typography>
           </Box>
@@ -28,9 +27,8 @@ const Tags = ({ tags }: { tags: string[] }) => {
 const ProjectHeader = ({ meta }: PostData) => {
   const { title, date, tags } = meta;
   const [imageLoadError, setImageLoadError] = useState(false);
-
   const isSmallScreen = useMediaQuery('(max-width:600px)');
-  const H1FontSize = isSmallScreen ? '22px' : '42px';
+  const H1FontSize = isSmallScreen ? '22px' : '28px';
 
 
   return (
@@ -43,7 +41,7 @@ const ProjectHeader = ({ meta }: PostData) => {
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Avatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
+          <Avatar alt="Profile Photo" sx={{ width: 24, height: 24 }}> 
             <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
           </Avatar>
           
@@ -55,11 +53,12 @@ const ProjectHeader = ({ meta }: PostData) => {
           {title}
         </Typography>
         
+        {tags && <Tags tags={tags} />}
+        
         <Typography variant="subtitle1">
           Edited Date: {date}
         </Typography>
-        
-        {tags && <Tags tags={tags} />}
+        <Box sx={{ borderBottom: "1px solid black", marginBottom: "10px" }} />
       </Box>
     </>
   );

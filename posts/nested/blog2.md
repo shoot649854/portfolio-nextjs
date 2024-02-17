@@ -4,7 +4,7 @@ description: A comprehensive survey of techniques developed to reduce hallucinat
 slug: blog2
 date: 2024-02-11
 author: Shoto Morisaki
-image: sample4.jpg
+image: sample/sample4.jpg
 category: Research
 tags: [Large Language Models, Hallucination Mitigation, Techniques, Survey]
 ---
