@@ -8,7 +8,6 @@ image: project/7/writing.jpg
 category: Internship
 tags: [ Internship, LLM, Natural Language, RAG ]
 ---
----
 
 ## LinkX Japan 
 ### What is [LinkX Japan](https://corp.linx.jp/en) 
