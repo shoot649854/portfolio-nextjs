@@ -8,7 +8,6 @@ image: project/6/ACM_logo.png
 category: Research
 tags: [ LLM, Natural Language, LangChain, RAG ]
 ---
----
 
 ## ACM Research Lab
 ### What is [ACM Research Lab](https://ucscacm.vercel.app/) 
