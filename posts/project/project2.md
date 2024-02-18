@@ -8,7 +8,6 @@ image: project/2/projectNagoya2.png
 category: Project
 tags: [ Flutter, 3DModel, GoogleMapAPI, LumaAPI]
 ---
----
 
 ## ProjectNagoya
 

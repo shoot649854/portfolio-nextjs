@@ -10,7 +10,6 @@ tags: [FastAPI, Flask, GPT API]
 ---
 
 ## ProjectQiitaFD1
-
 ---
 
 ### What is ANTI SOCIETY? / Our Team Goals 
