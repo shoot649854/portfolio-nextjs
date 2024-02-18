@@ -8,7 +8,6 @@ image: project/5/running.jpg
 category: Project
 tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
 ---
-
 ## Internship
 
 ### Software Engineering Internship at Tsubasa
