@@ -8,7 +8,6 @@ image: project/4/project4-demo.gif
 category: Project
 tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
 ---
----
 
 ## ProjectCruzHack
 
