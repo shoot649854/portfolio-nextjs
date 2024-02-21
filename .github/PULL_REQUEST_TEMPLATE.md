@@ -1,14 +1,14 @@
-# タイトル
+# Title
 
-## 概要
+## Description
 
-<!-- issueがあれば以下に記載する -->
+<!-- If you have an issue, please describe it below -->
 <!-- close #xxx -->
 
-## 変更内容
+## Detail
 
-<!-- - このプルリクで何をしたのか？ -->
+<!-- - What did you do with this pull request？ -->
 
-### スクリーンショット
+### Screenshots 
 
-<!-- 画面で見せれるものであれば必ずスクリーンショットを添付する -->
+<!-- Always attach a screenshot if you can show it on the screen. -->
