@@ -4,7 +4,7 @@ description: Machine Learning Internship at LinkX Japan, working as Backend / Fu
 slug: project7
 date: 2024-4-1
 author: Shoto
-image: /project/7/linkx.png
+image: /project/7/writing.jpg
 category: Internship
 tags: [ Internship, LLM, Natural Language, RAG ]
 ---
