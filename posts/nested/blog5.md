@@ -4,7 +4,7 @@ description: Desc
 slug: blog5
 date: 2024-02-24
 author: Shoto Morisaki
-image: sample/5/sample.jpg
+image: /post/5/sample5.jpg
 category: Blog
 tags: [ Coding, README ]
 ---
