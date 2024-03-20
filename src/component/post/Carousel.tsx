@@ -1,5 +1,14 @@
+import React, { useState, useEffect } from "react";
 import type { PostMeta } from "@/Type";
-import { Typography, Box, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Link,
+  Grid,
+  useTheme,
+  useMediaQuery,
+  LinearProgress,
+} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
@@ -20,22 +29,37 @@ type Props = {
 };
 
 function CarouselComponent({ posts, total, current }: Props) {
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery('(max-width:700px)');
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery("(max-width:700px)");
+  const imageHeight = 500; // Define the height of the images
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prevProgress) =>
+        prevProgress >= 100 ? 0 : prevProgress + 1
+      );
+    }, 60);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Box marginBottom={3} sx={{ height: "100%", width: isSmallScreen ? "95%" : "75%" }}>
+    <Box
+      marginBottom={3}
+      sx={{ height: "100%", width: isSmallScreen ? "95%" : "75%" }}
+    >
       <Carousel
         NextIcon={<ArrowForwardIosSharpIcon />} //矢印アイコンを別のアイコンに変更
         PrevIcon={<ArrowBackIosSharpIcon />} //矢印アイコンを別のアイコンに変更
-        autoPlay={isSmallScreen} //自動でCarouselを動かすかどうか(true or false)
+        autoPlay={true} //自動でCarouselを動かすかどうか(true or false)
         //stopAutoPlayOnHover = {true} Carouselの上にマウスを置いている間、自動スクロールを継続するかどうか
-        //interval = {4000} 自動でCarouselを動かす時間の間隔(ミリ秒単位)
-        //animation = {fade} (fade or slide) Carouselのアニメーションの種類を変更
-        //duration = {500} アニメーションの長さを定義
-        swipe = {isSmallScreen} // スワイプで動かせるかどうか
+        interval={6000} // 自動でCarouselを動かす時間の間隔(ミリ秒単位)
+        animation={"slide"} // (fade or slide) Carouselのアニメーションの種類を変更
+        duration={600} // アニメーションの長さを定義
+        swipe={isSmallScreen} // スワイプで動かせるかどうか
         //indicators = {true} インジケーター(下の丸いアイコン)が必要かどうか
         navButtonsAlwaysVisible={!isSmallScreen} //常に矢印アイコンを表示するかどうか
-        //navButtonsAlwaysInvisible = {true} //常に矢印アイコンを非表示にするかどうか
+        navButtonsAlwaysInvisible={false} //常に矢印アイコンを非表示にするかどうか
         //cycleNavigation = {true} //最後のスライドから「次へ」の矢印アイコンを押した時に最初にスライドに動かせるようにするかどうか
         //fullHeightHover = {true} //次/前のボタンがItem要素の高さ全体をカバーし、ホバー時にボタンを表示するかどうか
 
@@ -72,55 +96,80 @@ function CarouselComponent({ posts, total, current }: Props) {
           },
         }}
       >
-        {posts && posts.map((post, index) => (
-            <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}} key={post.slug}>
-                <Box sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
+        {posts &&
+          posts.map((post, index) => (
+            <Link
+              href={`/post/${post.slug}`}
+              color="inherit"
+              style={{ textDecoration: "none" }}
+              key={post.slug}
+            >
+              <Box
+                sx={{
+                  height: imageHeight,
+                  width: "100%",
+                  backgroundColor: bgColor,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <Grid
-                    container
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="flex-start"
+                  container
+                  direction="row"
+                  justifyContent="flex-start"
+                  alignItems="flex-start"
                 >
-                    <Box sx={{ height: "100%", width: "100%" }}>
+                  <Box sx={{ height: imageHeight, width: "100%" }}>
                     <Box
-                        sx={{
+                      sx={{
                         height: "auto",
-                        }}
-                        component="img"
-                        src={post.coverImage}
-                        alt="Here is some message"
+                      }}
+                      component="img"
+                      src={post.coverImage}
+                      alt="Here is some message"
                     ></Box>
-                    </Box>
-                    <Box width={'65%'} margin={3} sx={{ position: `absolute` }}>
+                  </Box>
+                  <Box width={"65%"} margin={3} sx={{ position: `absolute` }}>
                     <Typography
-                        sx={{
-                            mt: isSmallScreen? 3 : 10,
-                            backgroundColor: fontBackgroundColor,
-                            fontWeight: 'medium',
-                            "@media (max-width: 700px)": {
-                            fontSize: "18px", 
-                            }
-                        }}
-                        variant="h2"
-                        >
-                        {post.title}
+                      sx={{
+                        mt: isSmallScreen ? 3 : 10,
+                        backgroundColor: fontBackgroundColor,
+                        fontWeight: "medium",
+                        "@media (max-width: 700px)": {
+                          fontSize: "18px",
+                        },
+                      }}
+                      variant="h2"
+                    >
+                      {/* {post.title} */}
                     </Typography>
 
                     <Typography
-                         sx={{
-                            mt: 3,
-                            backgroundColor: fontBackgroundColor,
-                            "@media (max-width: 700px)": {
-                            fontSize: "10px", 
-                            }
-                        }}
-                        variant="h5"
-                        >
-                        {post.description}
-                        </Typography>
-                    </Box>
+                      sx={{
+                        mt: 3,
+                        backgroundColor: fontBackgroundColor,
+                        "@media (max-width: 700px)": {
+                          fontSize: "10px",
+                        },
+                      }}
+                      variant="h5"
+                    >
+                      {/* {post.description} */}
+                    </Typography>
+                  </Box>
                 </Grid>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: -0,
+                    left: 0,
+                    width: "100%",
+                  }}
+                >
+                  <LinearProgress variant="determinate" value={progress} />
                 </Box>
+              </Box>
             </Link>
           ))}
       </Carousel>

@@ -4,6 +4,7 @@ import ArticleCard from "@/component/Article/ArticleCard";
 import { Box, Pagination, Typography } from '@mui/material';
 import CarouselComponent from '../post/Carousel'
 import TagSearch from "../post/TagSearch";
+// import AWSIconCarousel from "../post/Skill";
 
 type Props = {
   posts: PostMeta[];
@@ -18,6 +19,7 @@ const Template = ({ posts, total, current }: Props) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <CarouselComponent posts={top5Posts} total={total} current={current} />
+      {/* <AWSIconCarousel /> */}
       <TagSearch posts={posts} totalPage={total} />
     </Box>
   );

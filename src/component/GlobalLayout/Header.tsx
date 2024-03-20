@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
@@ -10,74 +10,94 @@ import {
   Toolbar,
   IconButton,
   useMediaQuery,
-  Typography
+  Typography,
+  styled
 } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import BlogIcon from '@mui/icons-material/Description';
 import ProjectIcon from '@mui/icons-material/Work';
-import profile from '@/../public/profile.jpeg'
+import profile from '@/../public/profile.jpeg';
+
+interface CustomButtonProps {
+  icon: React.ReactNode;
+  text: string;
+  onClick: () => void;
+}
+
+const StyledIconButton = styled(IconButton)({
+  color: '#333',
+  '&:hover': {
+    backgroundColor: '#eee',
+    color: '#555',
+  },
+});
+
+const StyledButton = styled(Button)({
+  color: '#333',
+  '&:hover': {
+    color: '#555',
+  },
+});
+
+const StyledAvatar = styled(Avatar)({
+  '&:hover': {
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+  },
+});
+
+function CustomButton({ icon, text, onClick }: CustomButtonProps) {
+  const isSmallScreen = useMediaQuery('(max-width:700px)');
+
+  return (
+    <StyledButton
+      variant="text"
+      startIcon={icon}
+      onClick={onClick}
+      sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+    >
+      <Typography>{text}</Typography>
+    </StyledButton>
+  );
+}
+
 
 function Header() {
   const router = useRouter();
   const isSmallScreen = useMediaQuery('(max-width:700px)');
   
   return (
-    <React.Fragment>
-      <Box marginBottom='20px' sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fff'}}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
-            
-          <Toolbar component="nav" variant="dense">
-            <Button
-              variant="text"
-              startIcon={<HomeIcon />}
-              onClick={() => router.push('/')}
-              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
-            >
-              {!isSmallScreen && (
-                <Typography>
-                  Home
-                </Typography>
-              )}
-            </Button>
-            <Button
-              variant="text"
-              startIcon={<BlogIcon />}
-              onClick={() => router.push('/post')}
-              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
-            >
-              {!isSmallScreen && (
-                <Typography>
-                  Blog
-                </Typography>
-              )}
-            </Button>
-            <Button
-              variant="text"
-              startIcon={<ProjectIcon />}
-              onClick={() => router.push('/projects')}
-              sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
-            >
-              {!isSmallScreen && (
-                <Typography>
-                    Projects
-                </Typography>
-              )}
-            </Button>
-          </Toolbar>
-        </Box>
-        {!isSmallScreen && (
-          <Box marginTop={'0.5%'}>
-            <Avatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
-              <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
-            </Avatar>
-          </Box>
-        )}
+    <Box marginBottom='20px' sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fff'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <StyledIconButton>
+          <SearchIcon />
+        </StyledIconButton>
+          
+        <CustomButton
+          icon={<HomeIcon />}
+          text="Home"
+          onClick={() => router.push('/')}
+        />
+        <CustomButton
+          icon={<BlogIcon />}
+          text="Blog"
+          onClick={() => router.push('/post')}
+        />
+        <CustomButton
+          icon={<ProjectIcon />}
+          text="Projects"
+          onClick={() => router.push('/projects')}
+        />
+
       </Box>
-    </React.Fragment>
+      {!isSmallScreen && (
+        <Box marginTop={'0.5%'}>
+          <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
+            <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
+          </StyledAvatar>
+        </Box>
+      )}
+    </Box>
   );
 }
 
