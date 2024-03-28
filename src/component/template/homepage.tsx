@@ -5,6 +5,7 @@ import { Box, Pagination, Typography } from '@mui/material';
 import CarouselComponent from '../post/Carousel'
 import TagSearch from "../post/TagSearch";
 // import AWSIconCarousel from "../post/Skill";
+import AboutMe from "@/pages/AboutMe";
 
 type Props = {
   posts: PostMeta[];
@@ -20,6 +21,7 @@ const Template = ({ posts, total, current }: Props) => {
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <CarouselComponent posts={top5Posts} total={total} current={current} />
       {/* <AWSIconCarousel /> */}
+      <AboutMe />
       <TagSearch posts={posts} totalPage={total} />
     </Box>
   );
