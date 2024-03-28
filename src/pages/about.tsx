@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import resumeData from "@/../../resume.json";
-import Image from "next/image";
-import profile from '@/../public/profile.jpeg';
+import AboutMe from "./AboutMe";
 
 const createBoxes = (): JSX.Element[] => {
   const boxes: JSX.Element[] = [];
@@ -184,45 +183,7 @@ const Frame: NextPage = () => {
 
   return (
     <Box className="w-full relative bg-white flex flex-col items-center justify-start py-10 px-5 box-border gap-[157px] tracking-[normal] z-[unset] text-left text-53xl text-gray font-raleway lg:gap-[78px_157px] mq450:gap-[20px_157px] mq750:gap-[39px_157px]">
-      <Box className="mt-28 w-full max-w-[1474px] max-md:mt-10 max-md:max-w-full">
-        <Box className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <Box className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-            <Box className="flex flex-col grow pb-2 mt-12 max-md:mt-10 max-md:max-w-full">
-              <Box className="text-7xl font-extrabold text-zinc-950 max-md:max-w-full max-md:text-4xl">
-                Always be moving.
-              </Box>
-              <Box className="mt-16 text-2xl font-thin text-black max-md:mt-10 max-md:mr-2.5 max-md:max-w-full">
-                I would call myself a Machine Learning engineer where I am
-                capable of visualizing data with matplotlib, using a machine
-                learning model to estimate its value with Tensorflow, the same
-                estimation with different libraries, Keras, and performing our
-                project on a web application with Flask and streamlit. I am
-                interested in following fields; Machine Learning, Data Science,
-                Web Application, Cybersecurity & information security,
-                Automation.
-              </Box>
-            </Box>
-          </Box>
-          <Box className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              flexGrow: 1,
-              justifyContent: 'center',
-              alignItems: 'start',
-              width: '100%',
-              borderRadius: '2xl',
-              backgroundColor: 'stone-300',
-              '@media (max-width: 767px)': {
-                marginTop: '10px',
-                maxWidth: '100%'
-              }
-            }}>
-              <Image src={profile} alt="Profile Photo"/>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+      <AboutMe />
       
       <Box sx={{
         width: '1474px',
@@ -254,8 +215,9 @@ const Frame: NextPage = () => {
           gap: '255px',
           minWidth: '444px',
           maxWidth: '100%',
-          '@media (min-width: 450px)': {
-            gap: '64px 255px'
+          '@media (max-width: 450px)': {
+            // gap: '64px 255px'
+            display: 'none'
           },
           '@media (min-width: 750px)': {
             gap: '127px 255px',
