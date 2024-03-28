@@ -54,7 +54,7 @@ function CustomButton({ icon, text, onClick }: CustomButtonProps) {
       variant="text"
       startIcon={icon}
       onClick={onClick}
-      sx={{ textTransform: 'none', marginRight: '10%', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+      sx={{ textTransform: 'none', width: 'auto', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
     >
       <Typography>{text}</Typography>
     </StyledButton>
@@ -87,6 +87,12 @@ function Header() {
           icon={<ProjectIcon />}
           text="Projects"
           onClick={() => router.push('/projects')}
+        />
+
+        <CustomButton
+          icon={<ProjectIcon />}
+          text="About Me"
+          onClick={() => router.push('/about')}
         />
 
       </Box>
