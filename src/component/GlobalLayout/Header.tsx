@@ -26,7 +26,7 @@ interface CustomButtonProps {
 }
 
 const StyledIconButton = styled(IconButton)({
-  color: '#333',
+  color: '#FFF',
   '&:hover': {
     backgroundColor: '#eee',
     color: '#555',
@@ -34,7 +34,7 @@ const StyledIconButton = styled(IconButton)({
 });
 
 const StyledButton = styled(Button)({
-  color: '#333',
+  color: '#FFF',
   '&:hover': {
     color: '#555',
   },
@@ -67,8 +67,13 @@ function Header() {
   const isSmallScreen = useMediaQuery('(max-width:700px)');
   
   return (
-    <Box marginBottom='20px' sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fff'}}>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box 
+      height='36px' 
+      paddingY={3}
+      marginBottom='20px' 
+      alignItems={'center'}
+      sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000'}}>
+      <Box gap={isSmallScreen ? '0%' : '8%'} sx={{ display: 'flex', justifyContent: 'center' }}>
         <StyledIconButton>
           <SearchIcon />
         </StyledIconButton>
@@ -91,18 +96,18 @@ function Header() {
 
         <CustomButton
           icon={<ProjectIcon />}
-          text="About Me"
+          text="AboutMe"
           onClick={() => router.push('/about')}
         />
 
-      </Box>
       {!isSmallScreen && (
-        <Box marginTop={'0.5%'}>
+        <Box marginTop={'1%'}>
           <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
             <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
           </StyledAvatar>
         </Box>
       )}
+      </Box>
     </Box>
   );
 }

@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head />
         <Box 
           sx={{
-            backgroundColor: 'rgb(245,245,245)', // Background Color 
+            backgroundColor: 'rgb(255,255,255)', // Background Color 
             color: 'rgba(17, 24, 39, var(--tw-text-opacity))', // text-gray-900
             minHeight: '100vh', // min-h-screen
             overflowX: 'hidden' // overflow-x-hidden
