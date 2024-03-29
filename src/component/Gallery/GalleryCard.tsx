@@ -7,14 +7,14 @@ import {
     useMediaQuery
 } from '@mui/material'
 import { PostMeta } from '@/Type';
-
+import { useIsSmallScreen } from '../GlobalLayout/GlobalMedia';
 type Props = {
     data: PostMeta;
   };
 
   
 const GalleryCard = ({ data }: Props) => {
-  const isSmallScreen = useMediaQuery('(max-width:700px)');
+  const isSmallScreen = useIsSmallScreen();
 
   return (
     <Paper sx={{

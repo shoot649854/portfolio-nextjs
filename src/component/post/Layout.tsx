@@ -2,7 +2,7 @@ import type { PostData } from "@/Type";
 import Header from "@/component/post/Header";
 import Body from "@/component/post/Body";
 import { Box } from "@mui/material";
-import { useMatchMedia } from "../hooks/useMatchMedia";
+import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../GlobalLayout/GlobalMedia";
 
 type Props = {
   data: PostData;
@@ -11,9 +11,9 @@ type Props = {
 /** 記事全文 */
 const ArticleDetail = ({ data }: Props) => {
   const tags = data.meta.tags;
-  const isSmallScreen = useMatchMedia("(max-width: 800px)");
-  const isExtraSmallScreen = useMatchMedia("(max-width: 576px)");
-  const isNarrowScreen = useMatchMedia("(max-width: 430px)");
+  const isSmallScreen = useIsSmallScreen();
+  const isExtraSmallScreen = useIsExtraSmallScreen();
+  const isNarrowScreen = useIsNarrowScreen();
 
   return (
     <Box>

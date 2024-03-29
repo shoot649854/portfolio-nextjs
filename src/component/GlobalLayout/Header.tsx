@@ -2,14 +2,11 @@
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
-
 import { 
   Avatar,
   Box,
   Button,
-  Toolbar,
   IconButton,
-  useMediaQuery,
   Typography,
   styled
 } from "@mui/material";
@@ -17,6 +14,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import BlogIcon from '@mui/icons-material/Description';
 import ProjectIcon from '@mui/icons-material/Work';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import { useIsSmallScreen } from './GlobalMedia';
 import profile from '@/../public/profile.jpeg';
 
 interface CustomButtonProps {
@@ -47,7 +46,7 @@ const StyledAvatar = styled(Avatar)({
 });
 
 function CustomButton({ icon, text, onClick }: CustomButtonProps) {
-  const isSmallScreen = useMediaQuery('(max-width:700px)');
+  const isSmallScreen = useIsSmallScreen();
 
   return (
     <StyledButton
@@ -64,7 +63,7 @@ function CustomButton({ icon, text, onClick }: CustomButtonProps) {
 
 function Header() {
   const router = useRouter();
-  const isSmallScreen = useMediaQuery('(max-width:700px)');
+  const isSmallScreen = useIsSmallScreen();
   
   return (
     <Box 
@@ -73,7 +72,7 @@ function Header() {
       marginBottom='20px' 
       alignItems={'center'}
       sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000'}}>
-      <Box gap={isSmallScreen ? '0%' : '8%'} sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Box gap={isSmallScreen ? '0%' : '10%'} sx={{ display: 'flex', justifyContent: 'center' }}>
         <StyledIconButton>
           <SearchIcon />
         </StyledIconButton>
@@ -95,7 +94,7 @@ function Header() {
         />
 
         <CustomButton
-          icon={<ProjectIcon />}
+          icon={<PersonSearchIcon/>}
           text="AboutMe"
           onClick={() => router.push('/about')}
         />

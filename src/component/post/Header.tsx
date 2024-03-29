@@ -1,13 +1,14 @@
 import React from 'react';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Avatar, Typography, Alert, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Avatar, Typography, Alert } from "@mui/material";
+import { useIsSmallScreen } from '../GlobalLayout/GlobalMedia';
 import profile from '@/../public/profile.jpeg'
 import { PostData } from "@/Type";
 
 const Tags = ({ tags }: { tags: string[] }) => {
-  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const isSmallScreen = useIsSmallScreen();
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
@@ -34,7 +35,7 @@ const Tags = ({ tags }: { tags: string[] }) => {
 const ProjectHeader = ({ meta }: PostData) => {
   const { title, date, tags } = meta;
   const [imageLoadError, setImageLoadError] = useState(false);
-  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const isSmallScreen = useIsSmallScreen();
   const H1FontSize = isSmallScreen ? '22px' : '28px';
 
 
