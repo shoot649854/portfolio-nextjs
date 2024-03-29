@@ -15,9 +15,9 @@ const Post = ({ post }: Props) => {
 
   return (
     <Box margin={
-      isNarrowScreen ? 3 : 
+      isNarrowScreen ? 3 :
       isExtraSmallScreen ? 5 :
-      isSmallScreen ? 8 : 10}>
+      isSmallScreen ? 5 : 5}>
         <ArticleDetail data={post} />
     </Box>
   );

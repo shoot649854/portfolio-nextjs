@@ -16,7 +16,7 @@ const ArticleDetail = ({ data }: Props) => {
   const isNarrowScreen = useMatchMedia("(max-width: 430px)");
 
   return (
-    <article itemProp="mainEntityOfPage">
+    <Box>
       <Box 
         margin={{ top: 0, right: 25, bottom: 0, left: 25 }}
         marginLeft={isExtraSmallScreen ? 1 : 50}
@@ -43,7 +43,7 @@ const ArticleDetail = ({ data }: Props) => {
       
       {/* タグ一覧 */}
       </Box>
-    </article>
+    </Box>
   );
 };
 
