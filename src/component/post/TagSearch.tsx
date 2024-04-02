@@ -1,6 +1,7 @@
 import React,  { useState, useEffect } from 'react';
 import type { PostMeta } from "@/Type";
 import { Typography, Box, useMediaQuery, Link, Paper } from '@mui/material';
+import { useIsSmallScreen } from '../../constant/MediaQuery';
 import ColoredChips from './ColoredChips';
 import ResultPost from './ResultPost';
 
@@ -13,7 +14,7 @@ const TagSearch = ({ posts, totalPage }: Props) => {
   const postsPerPage = 3;
   const [keyword, setKeyword] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const isSmallScreen = useMediaQuery('(max-width:700px)');
+  const isSmallScreen = useIsSmallScreen();
 
   useEffect(() => {
     console.log(keyword);

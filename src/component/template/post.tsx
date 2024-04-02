@@ -1,17 +1,17 @@
 import type { PostData } from "@/Type";
-import ArticleDetail from "@/component/post/Layout";
+import ArticleDetail from "@/component/GlobalLayout/Layout";
 import { Box } from "@mui/material" ;
-import { useMatchMedia } from "../hooks/useMatchMedia";
-
+import { useMediaQuery } from "@mui/material";
+import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../../constant/MediaQuery";
 type Props = {
   post: PostData;
 };
 
 /** 記事詳細ページ用テンプレート */
 const Post = ({ post }: Props) => {
-  const isSmallScreen = useMatchMedia("(max-width: 800px)");
-  const isExtraSmallScreen = useMatchMedia("(max-width: 576px)");
-  const isNarrowScreen = useMatchMedia("(max-width: 430px)");
+  const isSmallScreen = useIsSmallScreen();
+  const isExtraSmallScreen = useIsExtraSmallScreen();
+  const isNarrowScreen = useIsNarrowScreen();
 
   return (
     <Box margin={
