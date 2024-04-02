@@ -3,7 +3,7 @@ import { Typography, Box, Link, Grid, useTheme, useMediaQuery } from "@mui/mater
 import Carousel from "react-material-ui-carousel";
 import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import { useIsSmallScreen } from "../GlobalLayout/GlobalMedia";
+import { useIsSmallScreen } from "../../constant/MediaQuery";
 
 const lColor = "black";
 const bgColor = "white";

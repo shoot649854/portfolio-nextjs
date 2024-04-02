@@ -1,5 +1,5 @@
 import type { PostMeta } from "@/Type";
-import Template from "@/component/template/homepage";
+import Template from "@/component/Template/homepage";
 // import SEO from "components/common/seo";
 import {Box } from '@mui/material'
 import type {  GetStaticProps } from "next";

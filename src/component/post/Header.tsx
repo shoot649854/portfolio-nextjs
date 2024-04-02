@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Avatar, Typography, Alert } from "@mui/material";
-import { useIsSmallScreen } from '../GlobalLayout/GlobalMedia';
+import { useIsSmallScreen } from '../../constant/MediaQuery';
 import profile from '@/../public/profile.jpeg'
 import { PostData } from "@/Type";
 
