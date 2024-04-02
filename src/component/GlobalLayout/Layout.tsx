@@ -1,6 +1,6 @@
 import type { PostData } from "@/Type";
-import Header from "@/component/Post/Header";
-import Body from "@/component/Post/Body";
+import Header from "@/component/post/Header";
+import Body from "@/component/post/Body";
 import { Box } from "@mui/material";
 import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../../constant/MediaQuery";
 

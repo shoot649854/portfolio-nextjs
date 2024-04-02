@@ -10,7 +10,7 @@ import rehypeRaw from "rehype-raw";
 import { Box } from "@mui/material";
 
 import CustomLink from "@/component/Common/CustomLink";
-import Image from "@/component/Post/Image";
+import Image from "@/component/post/Image";
 import CodeBlock from "./CodeBlock";
 
 
