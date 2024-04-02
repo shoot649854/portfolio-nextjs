@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import { 
@@ -15,98 +15,120 @@ import HomeIcon from '@mui/icons-material/Home';
 import BlogIcon from '@mui/icons-material/Description';
 import ProjectIcon from '@mui/icons-material/Work';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { useIsSmallScreen } from './GlobalMedia';
+import { useIsSmallScreen } from '../../constant/MediaQuery';
 import profile from '@/../public/profile.jpeg';
+import { CustomButtonProps } from '@/constant/Interface';
+import { StyledIconButton, StyledButton, StyledAvatar } from '@/constant/Styled';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import CustomButton from '../Common/CustomButton';
 
-interface CustomButtonProps {
-  icon: React.ReactNode;
+const navigationButtons = [
+  { icon: <HomeIcon />, text: 'Home', route: '/' },
+  { icon: <BlogIcon />, text: 'Blog', route: '/post' },
+  { icon: <ProjectIcon />, text: 'Projects', route: '/projects' },
+  { icon: <PersonSearchIcon />, text: 'AboutMe', route: '/about' },
+];
+
+interface NavigationButton {
+  icon: JSX.Element;
   text: string;
-  onClick: () => void;
+  route: string;
 }
 
-const StyledIconButton = styled(IconButton)({
-  color: '#FFF',
-  '&:hover': {
-    backgroundColor: '#eee',
-    color: '#555',
-  },
-});
+interface HamburgerMenuProps {
+  navigationButtons: NavigationButton[];
+}
 
-const StyledButton = styled(Button)({
-  color: '#FFF',
-  '&:hover': {
-    color: '#555',
-  },
-});
+function HamburgerMenu({ navigationButtons }: HamburgerMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
-const StyledAvatar = styled(Avatar)({
-  '&:hover': {
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-  },
-});
-
-function CustomButton({ icon, text, onClick }: CustomButtonProps) {
-  const isSmallScreen = useIsSmallScreen();
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <StyledButton
-      variant="text"
-      startIcon={icon}
-      onClick={onClick}
-      sx={{ textTransform: 'none', width: 'auto', fontSize: isSmallScreen ? '0.5rem' : 'inherit' }}
+    <Box
+      sx={{
+        position: 'absolute',
+        top: 0,
+        right: 8,
+      }}
     >
-      <Typography>{text}</Typography>
-    </StyledButton>
+      <StyledIconButton onClick={handleMenuToggle}>
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
+      </StyledIconButton>
+      {isOpen && (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '100%',
+            right: -5,
+            backgroundColor: '#000',
+            padding: '10px',
+            boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+            zIndex: 999,
+          }}
+        >
+          {navigationButtons.map((button, index) => (
+            <CustomButton
+              key={index}
+              icon={button.icon}
+              text={button.text}
+              onClick={() => window.location.href = button.route}
+            />
+          ))}
+        </Box>
+      )}
+    </Box>
   );
 }
-
 
 function Header() {
   const router = useRouter();
   const isSmallScreen = useIsSmallScreen();
-  
+
   return (
+
     <Box 
       height='36px' 
       paddingY={3}
       marginBottom='20px' 
       alignItems={'center'}
       sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000'}}>
-      <Box gap={isSmallScreen ? '0%' : '10%'} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <StyledIconButton>
-          <SearchIcon />
-        </StyledIconButton>
+        {!isSmallScreen ? (
           
-        <CustomButton
-          icon={<HomeIcon />}
-          text="Home"
-          onClick={() => router.push('/')}
-        />
-        <CustomButton
-          icon={<BlogIcon />}
-          text="Blog"
-          onClick={() => router.push('/post')}
-        />
-        <CustomButton
-          icon={<ProjectIcon />}
-          text="Projects"
-          onClick={() => router.push('/projects')}
-        />
-
-        <CustomButton
-          icon={<PersonSearchIcon/>}
-          text="AboutMe"
-          onClick={() => router.push('/about')}
-        />
-
-      {!isSmallScreen && (
-        <Box marginTop={'1%'}>
-          <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
-            <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
-          </StyledAvatar>
-        </Box>
-      )}
+          <Box gap={isSmallScreen ? '0%' : '15%'} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <StyledIconButton>
+              <SearchIcon />
+            </StyledIconButton>
+            
+            <Box gap={isSmallScreen ? '0%' : '15%'}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}>
+              {navigationButtons.map((button, index) => (
+                <CustomButton
+                  key={index}
+                  icon={button.icon}
+                  text={button.text}
+                  onClick={() => router.push(button.route)}
+                />
+              ))}
+            </Box>
+    
+          {!isSmallScreen && (
+            <Box marginTop={'1%'}>
+              <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
+                <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
+              </StyledAvatar>
+            </Box>
+          )}
       </Box>
+          ) : (
+          <HamburgerMenu navigationButtons={navigationButtons} />
+          )}
     </Box>
   );
 }

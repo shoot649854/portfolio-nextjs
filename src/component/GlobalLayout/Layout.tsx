@@ -1,8 +1,8 @@
 import type { PostData } from "@/Type";
-import Header from "@/component/post/Header";
-import Body from "@/component/post/Body";
+import Header from "@/component/Post/Header";
+import Body from "@/component/Post/Body";
 import { Box } from "@mui/material";
-import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../GlobalLayout/GlobalMedia";
+import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../../constant/MediaQuery";
 
 type Props = {
   data: PostData;
@@ -10,14 +10,13 @@ type Props = {
 
 /** 記事全文 */
 const ArticleDetail = ({ data }: Props) => {
-  const tags = data.meta.tags;
   const isSmallScreen = useIsSmallScreen();
   const isExtraSmallScreen = useIsExtraSmallScreen();
   const isNarrowScreen = useIsNarrowScreen();
 
   return (
     <Box>
-      <Box 
+      <Box
         margin={{ top: 0, right: 25, bottom: 0, left: 25 }}
         marginLeft={isExtraSmallScreen ? 1 : 50}
         marginRight={isExtraSmallScreen ? 1 : 50 }
@@ -34,9 +33,12 @@ const ArticleDetail = ({ data }: Props) => {
             maxWidth: "400%",
             padding: isNarrowScreen ? "0 10px" : "0",
           },
-      }}>
+      }}
+      >
+
       {/* ヘッダー */}
       <Header {...data} />
+
 
       {/* 本文 */}
         <Body content={data.content} />

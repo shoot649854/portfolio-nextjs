@@ -1,8 +1,8 @@
 import type { PostData } from "@/Type";
-import ArticleDetail from "@/component/post/Layout";
+import ArticleDetail from "@/component/GlobalLayout/Layout";
 import { Box } from "@mui/material" ;
 import { useMediaQuery } from "@mui/material";
-import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../GlobalLayout/GlobalMedia";
+import { useIsNarrowScreen, useIsExtraSmallScreen, useIsSmallScreen } from "../../constant/MediaQuery";
 type Props = {
   post: PostData;
 };

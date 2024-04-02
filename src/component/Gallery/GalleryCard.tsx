@@ -7,7 +7,7 @@ import {
     useMediaQuery
 } from '@mui/material'
 import { PostMeta } from '@/Type';
-import { useIsSmallScreen } from '../GlobalLayout/GlobalMedia';
+import { useIsSmallScreen } from '../../constant/MediaQuery';
 type Props = {
     data: PostMeta;
   };

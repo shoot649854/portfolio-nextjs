@@ -2,8 +2,8 @@ import type { PostMeta } from "@/Type";
 import ArticleCard from "@/component/Article/ArticleCard";
 // import Pagination from "components/common/pagination";
 import { Box, Pagination, Typography } from '@mui/material';
-import CarouselComponent from '../post/Carousel'
-import TagSearch from "../post/TagSearch";
+import CarouselComponent from '../Post/Carousel'
+import TagSearch from "../Post/TagSearch";
 // import AWSIconCarousel from "../post/Skill";
 import AboutMe from "@/pages/AboutMe";
 

@@ -1,7 +1,7 @@
 import React,  { useState, useEffect } from 'react';
 import type { PostMeta } from "@/Type";
 import { Typography, Box, useMediaQuery, Link, Paper } from '@mui/material';
-import { useIsSmallScreen } from '../GlobalLayout/GlobalMedia';
+import { useIsSmallScreen } from '../../constant/MediaQuery';
 import ColoredChips from './ColoredChips';
 import ResultPost from './ResultPost';
 
