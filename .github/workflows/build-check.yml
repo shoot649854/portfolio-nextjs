@@ -22,3 +22,31 @@ jobs:
 
      - name: app-build
        run: npm run build
+    
+    - name: Send Email Notification on Success
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.example.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Success to Build Test :rocket:
+          to: your_email@example.com
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            :closed_book: ${{ github.repository }}
+
+    - name: Send Email Notification on Failure
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.example.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: Failure to Build Test :boom:
+        to: your_email@example.com
+        from: ${{ secrets.MAIL_FROM }}
+        body: |
+          :closed_book: ${{ github.repository }}
