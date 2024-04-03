@@ -4,8 +4,6 @@ on:
    branches-ignore:
      - main
      - development
-#  env:
-#   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 jobs:
  build:
    runs-on: ubuntu-latest
@@ -24,19 +22,3 @@ jobs:
 
      - name: app-build
        run: npm run build
-
-    #  - name: slack-notification-success
-    #    if: ${{ success() }}
-	# uses: rtCamp/action-slack-notify@v2
-	# env:
-	#   SLACK_COLOR: good
-	#   SLACK_TITLE: 'Success to Build Test :rocket:'
-	#   SLACK_MESSAGE: ':closed_book: ${{ github.repository }}'
-
-  #    - name: slack-notification-failure
-  #      if: ${{ failure() }}
-  #      uses: rtCamp/action-slack-notify@v2
-  #      env:
-  #        SLACK_COLOR: danger
-  #        SLACK_TITLE: 'Failure to Build Test :boom:'
-  #        SLACK_MESSAGE: ':closed_book: ${{ github.repository }}'
