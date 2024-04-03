@@ -1,0 +1,29 @@
+name: Medium Post on Public Directory Change
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - development
+    paths:
+      - 'post/**/*'
+
+jobs:
+  medium-post:
+    name: Post to Medium
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create Medium Post
+        uses: philips-software/post-to-medium-action@v0.6.0
+        with:
+          integration_token: "${{ secrets.INTEGRATION_TOKEN }}"
+          file: "public/story.md"
+          content_format: "markdown"
+          notify_followers: "false"
+          tags: "test,tag"
+          title: "Title of your Medium post"
+          license: "all-rights-reserved"
+          publish_status: "draft"
