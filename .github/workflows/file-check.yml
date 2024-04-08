@@ -10,7 +10,7 @@ on:
 
 jobs:
   publish_blog_to_medium:
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
     name: Post to Medium (higgins.medium.com)
     steps:
