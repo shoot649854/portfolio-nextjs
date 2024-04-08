@@ -1,6 +1,7 @@
 # Personal Use
 # /profile
 !project/
+.secrets  
 
 # Logs
 logs

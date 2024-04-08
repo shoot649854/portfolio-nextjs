@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import type { NextPage } from "next";
-import resumeData from "@/../../resume.json";
+import resumeData from "@/../../public/resume.json";
 import AboutMe from "./AboutMe";
 
 const createBoxes = (): JSX.Element[] => {

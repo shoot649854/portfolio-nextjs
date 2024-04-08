@@ -10,7 +10,15 @@
         text-decoration: underline;
       }
     }
-  
+
+    img {
+      position: relative;
+      height: auto;
+      max-width: 75%;
+      display: block;
+      margin: 0 auto;
+    }
+
     p,
     img,
     table,
