@@ -2,9 +2,9 @@
 
 ## Description
 
-<!-- Describe the intention of the changes being proposed. 
-    What did you do with this pull request？
-    What problem does it solve or functionality does it add? -->
+<!-- Describe the intention of the changes being proposed.  -->
+<!-- What did you do with this pull request？ -->
+<!-- What problem does it solve or functionality does it add? -->
 
 
 <!-- close -->
