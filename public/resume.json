@@ -1,0 +1,111 @@
+{
+    "Projects": [
+      {
+        "title": "Qiita × Fast DOCTOR Health Tech Hackathon - Summer 23",
+        "year": "Summer 23",
+        "description": "Developed a platform to assist paperwork in medical industry with GPT API to create medical SOAP forms, initial medical record documents for all patients. Used python Flask (Frontend), gpt api, and github page (hosting)."
+      },
+      {
+        "title": "Electric Sheep Hackathon (Mobility and Big Data) - Summer 23",
+        "year": "Summer 23",
+        "description": "Collaborated with Japense university students to create AR App with Flutter that Toyota sponsors. Utilize Luma API and Google Map API for 3D models and map feature. Our proposal would be reviewed outside the project and presented at Toyota HQ in Japan."
+      },
+      {
+        "title": "Symposium Cyberwarfare in Russia and Ukraine - Spring 23",
+        "year": "Spring 23",
+        "description": "Researched on cyber-warfare I presented at research project. Worked with technology expert Kenneth Geers and my mentor, professor Alani Mayada."
+      },
+      {
+        "title": "ACM Research Lab - Santa Cruz, CA - Fall 23",
+        "year": "Fall 23",
+        "description": "Seeking a solution for image modification using ResNet and UNet. Focus is biological and medical approach in order to find relation of genes using machine learning. Publish research paper in the upcoming winter or spring of 2024."
+      },
+      {
+        "title": "Summer Internship at Tsubasa co., Ltd. - Gaien Mae, Tokyo - Summer 23",
+        "year": "Summer 23",
+        "description": "Worked as a student intern to visualize athletes health data from Garmin watch. Released Running App for Shonan Marathon in 2023, using React + Typescript, Docker on AWS EC2. Being in charge of the front end, which used React + Typescript to output data passed from the backend to the screen through the API. The technologies used include authentication screen setup using AWS cognito, graph design using ApexChart, and advanced dashboard design using MUI."
+      },
+      {
+        "title": "Language Exchange Club Officer - Costa Mesa, CA - Spring 23",
+        "year": "Spring 23",
+        "description": "Handled an international community of 20 individuals with 8 languages and assisted in organizing school event, such as Coast Day and bi-weekly meetings."
+      },
+
+      {
+        "title": "Google Maps Platform Hackathon - Fall 22",
+        "year": "Fall 22",
+        "description": "Implemented a customized map platform as Zelda Breath of the Wild with Google Map API. Performed front-end skills such as HTML, CSS, and JavaScript."
+      },
+      {
+        "title": "Cake Capture the Flag top 300 - Summer 22",
+        "year": "Summer 22",
+        "description": "Achieved proficiency in identifying and exploiting cybersecurity vulnerabilities in hidden programs through my focus on reverse engineering and cryptography."
+      },
+      {
+        "title": "Amazon Sustainability Data Initiative (ASDI) Global Hackathon - Summer 22",
+        "year": "Summer 22",
+        "description": "Developed a platform to detect types of garbage from trash-containing photos with the use of Python and Flask as web applications. Relates to the UN’s SDGs with AWS to enable strong machine learning."
+      },
+      
+      {
+        "title": "Data Science Club President - Costa Mesa, CA - Spring 22",
+        "year": "Spring 22",
+        "description": "Grew the club from 5 to 30 members. The club aims to compete in online machine learning Kaggle challenges, deliver science topics, and encourage the IT community."
+      },
+
+      {
+        "title": "Amazon Sustainability Data Initiative (ASDI) Global Hackathon - Summer 22",
+        "year": "Summer 22",
+        "description": "Hosted meetings to brainstorm project ideas, relates to the UN Sustainable Development Goal with AWS cloud service to enable strong machine learning. Developed a platform to enhance environmental problems to detect types of garbage."
+      },
+      {
+        "title": "Google Maps Platform Hackathon - Fall 22",
+        "year": "Fall 22",
+        "description": "Implemented a platform where users are capable to have travel schedules with the power of google map API. This project, it allows me to become much more familiar with this API and understand one of the most well-known systems behind it."
+      },
+      {
+        "title": "Cake Capture the Flag top 300 - Summer 22",
+        "year": "Summer 22",
+        "description": "This event is aimed to find hidden items that are purposefully-vulnerable programs. As a competitor was focused on reverse engineering and cryptography."
+      },
+      {
+        "title": "Data Science Club President",
+        "year": "Spring 22",
+        "description": "Our club aims to compete in online machine learning challenges, Kaggle, in order to improve our skills. The club started with only five members, but as the semester progressed, we eventually had 30 members to join competitions and develop the scientific community."
+      },
+      {
+        "title": "BSidesSF Volunteer",
+        "year": "Summer 22",
+        "description": "Offering technical support at information security conferences, communicating behind the security engineering, and helping companies like Google and Uptycs."
+      },
+      {
+        "title": "Prison Education Volunteer - CL, CA",
+        "year": "Spring 22",
+        "description": "Delivering an educational opportunity for youth in prison who did not have a chance to study. Experienced to teach STEM subjects with presentations."
+      },
+
+      {
+        "title": "CTI - Coding Program",
+        "year": "Spring 21",
+        "description": "Establishing excellent teamwork skills over sessions and problem-solving skills by figuring out modules for critical coding skills. Communicated with mentors and team members."
+      },
+      {
+        "title": "Automatic Stock Trading - Spring 21",
+        "year": "Spring 21",
+        "description": "With 5 years of stock value datasets, developed a machine learning model to estimate future values and created an automated trading system that gave a 7% increase gain."
+      },
+      {
+        "title": "Titanic - Machine Learning from Disaster - Summer 21",
+        "year": "Summer 21",
+        "description": "Fundamental skill for a machine learning engineering project where could learn how to use machine learning libraries and modify the datasets, and create data visualization."
+      },
+
+      {
+        "title": "Quest Cup 3rd place",
+        "year": "Spring 19",
+        "description": "“Quest Education\" tackles unanswered issues based on real companies. We discussed it with our team, thought through it, and disseminated the answer to our quest to society. \"Corporate presentation\" department that answers missions issued by Daiwa House corporation."
+      }
+      
+    ]
+    
+  }
