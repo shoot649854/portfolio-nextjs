@@ -1,49 +1,49 @@
-name: Publish Markdown Changes
+name: Publish site
 
 on:
   pull_request:
     branches:
-      - '*'
+      - main
+      - dev/main
   push:
     paths:
       - '**.md'
 
 jobs:
-  publish_to_medium:
+  publish_blog_to_medium:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
-    name: Publish to Medium
+    name: Post to Medium (higgins.medium.com)
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Identify changed Markdown files
-        id: changed_markdown
-        uses: tj-actions/changed-files@v44
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
         with:
-          files: |
-            **.md
-
-      - name: Publish changed posts to Medium
-        if: steps.changed_markdown.outputs.any_changed == 'true'
-        env:
-          MEDIUM_ACCESS_TOKEN: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+          node-version: '12'
+      - name: Install workflow dependencies
+        run: npm install
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+      - id: posts
+        name: Detecting posts from newly added files
         run: |
           i=0
-          for file in ${{ steps.changed_markdown.outputs.all_changed_files }}; do
-            echo "Processing ${file}..."
-            if [[ "${file}" == ""* ]]; then
-              echo "Found a post: ${file}"
-              echo "::set-output name=post${i}::${file}"
-              i=$((i+1))
+          for added_file in ${{ steps.files.outputs.added }}; do
+            echo "Do something with ${added_file}."
+            if [[ "${added_file}" == "markdownTest.md"* ]];
+            then
+              echo "File ${added_file} matched post."
+              echo "::set-output name=post${i}::${added_file}"
+              echo "::set-output name=url${i}::https://portfolio-shoto.vercel.app/${added_file}"
+              ((i=i+1))
             fi
           done
-          if [[ $i -gt 0 ]]; then
-            for ((j=0; j<$i; j++)); do
-              post_var="post${j}"
-              post_file="${!post_var}"
-              echo "Publishing ${post_file} to Medium..."
-              # Use your Medium publishing action here
-            done
-          else
-            echo "No posts found to publish."
-          fi
+
+      - if: steps.posts.outputs.post0
+        name: Medium Post
+        uses: InfraWay/post-medium-action@v1.5.0
+        with:
+          access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+          markdown_file: ${{ steps.posts.outputs.post0 }}
+          base_url: https://portfolio-shoto.vercel.app/
