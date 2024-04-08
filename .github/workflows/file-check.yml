@@ -1,49 +1,32 @@
-name: Publish Markdown Changes
+name: 📦 Publish site
 
 on:
-  pull_request:
-    branches:
-      - '*'
-  push:
-    paths:
-      - '**.md'
+    push:
+        branches: ['main']
 
 jobs:
-  publish_to_medium:
-    runs-on: ubuntu-latest
-    name: Publish to Medium
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Identify changed Markdown files
-        id: changed_markdown
-        uses: tj-actions/changed-files@v44
-        with:
-          files: |
-            **.md
-
-      - name: Publish changed posts to Medium
-        if: steps.changed_markdown.outputs.any_changed == 'true'
-        env:
-          MEDIUM_ACCESS_TOKEN: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-        run: |
-          i=0
-          for file in ${{ steps.changed_markdown.outputs.all_changed_files }}; do
-            echo "Processing ${file}..."
-            if [[ "${file}" == ""* ]]; then
-              echo "Found a post: ${file}"
-              echo "::set-output name=post${i}::${file}"
-              i=$((i+1))
-            fi
-          done
-          if [[ $i -gt 0 ]]; then
-            for ((j=0; j<$i; j++)); do
-              post_var="post${j}"
-              post_file="${!post_var}"
-              echo "Publishing ${post_file} to Medium..."
-              # Use your Medium publishing action here
-            done
-          else
-            echo "No posts found to publish."
-          fi
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - id: files
+              uses: jitterbit/get-changed-files@v1
+            - id: posts
+              name: Detecting posts from the changes
+              run: |
+                  i=0
+                  for changed_file in ${{ steps.files.outputs.added_modified }}; do
+                    if [[ "${changed_file}" == "posts"* ]];
+                    then
+                      echo "::set-output name=post${i}::${changed_file}"
+                      ((i=i+1))
+                    fi
+                  done
+            - if: steps.posts.outputs.post0
+              name: Publish to medium
+              uses: infraway/post-medium-action@v1.6.0
+              with:
+                  access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+                  markdown_file: ${{ steps.posts.outputs.post0 }}
+                  base_url: https://medium.com/@shoto-morisaki
