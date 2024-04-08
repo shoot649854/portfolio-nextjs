@@ -4,7 +4,7 @@ on:
   push: # pull_request | push
     branches-ignore: # branches | branches-ignore
       - main
-      - dev/main
+      - development
     paths:
       - '**.md'
 

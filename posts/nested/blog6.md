@@ -22,3 +22,4 @@ It is very important to have someone who is knowledgeable in the area, especiall
 Not networking: What are you doing here?
 This is true for projects and when meeting various people, but if you don't take it into consideration, it is hard to understand what you are doing here. If you are shy or don't communicate yourself here, you can't be a big person.
 
+
