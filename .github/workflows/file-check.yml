@@ -1,11 +1,6 @@
-name: Publish site
+name: 📦 Publish site
 
 on:
-  # push: # pull_request | push
-  #   branches: # branches | branches-ignore
-  #     - main
-  #     - dev/main
-  #     - development
   push:
     paths:
       - '**.md'
