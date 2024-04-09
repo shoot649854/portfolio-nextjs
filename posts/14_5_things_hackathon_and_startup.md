@@ -1,4 +1,7 @@
 ---
+Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+docType: 'Article' # 'Project', 'Article'
+id: '999'
 title: 5 things you shouldn't do at hackathon and startup
 description: When a new member joins a project, writing a README with an overview of the project and links to necessary documents will make it easier to understand the project and reduce unnecessary communication costs.
 slug: blog5
@@ -7,12 +10,32 @@ author: Shoto Morisaki
 image: /post/5/sample5.jpg
 category: Blog
 tags: [ Coding, README ]
+relatedDoc1: ""
+relatedDoc2: ""
+relatedDoc3: ""
+relatedDoc4: ""
+relatedDoc5: ""
+
+editor_img: ''
+editor_bio: ''
+
+editor_social:
+    -
+        icon: fab fa-facebook-f
+        url: 
+    -
+        icon: fa-brands fa-x-twitter
+        url: 
+    - 
+        icon: fas fa-link
+        url: 
 ---
 
 # 5 things you shouldn't do at hackathon and startup
 
 Good UI: Don't focus on the look, focus on the idea.
 Whether you want to start a project or start a business, the underlying idea is very important. If you don't have a clear idea of what you want to do, it often doesn't come across even when it's designed, so the idea should be discussed properly no matter what, to create something everyone can agree on.
+
 No ACTUAL conversation: Talk properly!
 Don't be afraid to talk. Don't be afraid to talk, and don't compromise. If you want to start something, you should discuss it properly, and if there are people around you whom you would respect if you were to go to them, you should take their opinions and make it better. So in any case you have to speak up and you have to incorporate your own ideas to make something good.
 Trying out something new, using niche tech: Stop it, other team members are in trouble. Shouldn't add to the experience.

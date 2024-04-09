@@ -1,8 +1,10 @@
 name: 📦 Publish site
 
 on:
-    push:
-        branches: ['main']
+ push:
+   branches-ignore:
+     - main
+     - development
 
 jobs:
     publish:
@@ -10,6 +12,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
+
+            - name: setup-node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 20
+                cache: npm
+                
             - id: files
               uses: jitterbit/get-changed-files@v1
             - id: posts
@@ -27,6 +36,6 @@ jobs:
               name: Publish to medium
               uses: infraway/post-medium-action@v1.6.0
               with:
-                  access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-                  markdown_file: ${{ steps.posts.outputs.post0 }}
-                  base_url: https://medium.com/@shoto-morisaki
+                access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+                markdown_file: ${{ steps.posts.outputs.post0 }}
+                base_url: https://medium.com/@shoto-morisaki

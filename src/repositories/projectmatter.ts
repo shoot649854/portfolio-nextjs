@@ -5,24 +5,31 @@ import matter from "gray-matter";
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
-const postsDirectory = path.join(process.cwd(), "/posts","/project");
+const postsDirectory = path.join(process.cwd(), "/posts");
 
 /** 全記事のFrontMatterを取得 */
 export const getAllMatterResults = () => {
   // 記事データを取得
   const files = retrieveFiles(postsDirectory);
-  const matterResults = files.map((fullPath: any) => {
-    // Markdownファイルを文字列として取得
-    const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // metaデータをパース
-    const matterResult = matter(fileContents);
+  const matterResults = files
+      .map((fullPath: string) => {
+          const fileContents = fs.readFileSync(fullPath, "utf8");
+          const matterResult = matter(fileContents);
 
-    return matterResult;
-  });
+          if(matterResult.data.Status === 'Pending') {
+            return null;
+          } else if (matterResult.data.docType === 'Project') {
+              return matterResult;
+          } else {
+              return null;
+          }
+      })
+      .filter((result) => result !== null); 
 
   return matterResults;
 };
+
 
 /** meta情報から必要なデータのみ抽出 */
 export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
@@ -35,6 +42,9 @@ export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
   };
 
   return {
+    Status: matter.Status ?? "Draft",
+    docType: matter.docType ?? "Article",
+    id: matter.id ?? "",
     slug: (matter.slug ?? "").toLowerCase(),
     title: matter.title ?? "Error",
     description: matter.description ?? "error occurred",
@@ -43,5 +53,14 @@ export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
     coverImage: matter.image ?? "",
     category: matter.category ?? "",
     tags: matter.tags ?? [],
+    relatedDoc1: matter.relatedDoc1 ?? "",
+    relatedDoc2: matter.relatedDoc2 ?? "",
+    relatedDoc3: matter.relatedDoc3 ?? "",
+    relatedDoc4: matter.relatedDoc4 ?? "",
+    relatedDoc5: matter.relatedDoc5 ?? "",
+    editor_name: matter.editor_name ?? "",
+    editor_img: matter.editor_img ?? "",
+    editor_bio: matter.editor_bio ?? "",
+    editor_social: matter.editor_social ?? []
   };
 };

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { PostMeta } from "@/Type";
 import { Typography, Box, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
@@ -11,7 +12,7 @@ const ArrowColor = "blue";
 const ArrowColor_bg = "white";
 const Icon = "lightskyblue";
 const ActiveIcon = "midnightblue";
-const fontBackgroundColor = "rgb(241, 241, 241)";
+const fontBackgroundColor = "rgb(252, 252, 252)";
 
 type Props = {
   posts: PostMeta[];
@@ -23,6 +24,21 @@ type Props = {
 function CarouselComponent({ posts, total, current }: Props) {
     const theme = useTheme();
     const isSmallScreen = useIsSmallScreen();
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    if (currentIndex < 0) setCurrentIndex(0);
+    if (currentIndex >= total) setCurrentIndex(total - 1);
+
+    const handleIndexChange = (now?: number, previous?: number) => {
+      if (now !== undefined) {
+          let newIndex = (currentIndex + 1) % total;
+          if (newIndex === 5) {
+              newIndex = 0;
+          }
+          setCurrentIndex(newIndex);
+          console.log('Index changed:', newIndex);
+      }
+    };
 
   return (
     <Box marginBottom={3} sx={{ height: "100%", width: isSmallScreen ? "95%" : "75%" }}>
@@ -73,60 +89,51 @@ function CarouselComponent({ posts, total, current }: Props) {
             borderRadius: 0, //0にすると四角になる．
           },
         }}
+        onChange={handleIndexChange}
       >
-        {posts && posts.map((post, index) => (
-            <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}} key={post.slug}>
-                <Box sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
-                <Grid
-                    container
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="flex-start"
-                >
-                    <Box sx={{ height: "100%", width: "100%" }}>
-                    <Box
-                        sx={{
-                        height: "auto",
-                        }}
-                        component="img"
-                        src={post.coverImage}
-                        alt="Here is some message"
-                    ></Box>
-                    </Box>
-                    <Box width={'65%'} margin={3} sx={{ position: `absolute` }}>
-                    <Typography
-                        sx={{
-                            mt: isSmallScreen? 3 : 10,
-                            backgroundColor: fontBackgroundColor,
-                            fontWeight: 'medium',
-                            "@media (max-width: 700px)": {
-                            fontSize: "18px", 
-                            }
-                        }}
-                        variant="h2"
-                        >
-                        {post.title}
-                    </Typography>
-
-                    <Typography
-                         sx={{
-                            mt: 3,
-                            backgroundColor: fontBackgroundColor,
-                            "@media (max-width: 700px)": {
-                            fontSize: "10px", 
-                            }
-                        }}
-                        variant="h5"
-                        >
-                        {post.description}
-                        </Typography>
-                    </Box>
-                </Grid>
-                </Box>
-            </Link>
-          ))}
-      </Carousel>
-    </Box>
+                  {posts && posts.map((post, index) => (
+                    <Link href={`/post/${post.slug}`} color="inherit" style={{ textDecoration: "none" }} key={post.slug}>
+                        <Box sx={{ height: "500px", width: "100%", backgroundColor: bgColor }}>
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="flex-start"
+                                alignItems="flex-start"
+                            >
+                                <Box sx={{ height: "100%", width: "100%" }}>
+                                    <Box
+                                        sx={{
+                                            height: "auto",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                        component="img"
+                                        src={post.coverImage}
+                                        alt="Carousel Image"
+                                    />
+                                </Box>
+                                <Box width={'65%'} margin={3} sx={{ position: `absolute` }}>
+                                </Box>
+                            </Grid>
+                        </Box>
+                    </Link>
+                  ))}
+              </Carousel>
+                              <Typography
+                                  sx={{
+                                      // mt: isSmallScreen ? 3 : 10,
+                                      backgroundColor: `rgba(${fontBackgroundColor}, 0.8)`,
+                                      fontWeight: 'medium',
+                                      "@media (max-width: 700px)": {
+                                          // fontSize: "24px",
+                                      }
+                                  }}
+                                  variant="h4"
+                              >
+                                  {posts[currentIndex].title}
+                              </Typography>
+        </Box>
   );
 }
 
