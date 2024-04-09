@@ -3,6 +3,9 @@
 !project/
 .secrets  
 
+# Ignore files with status set to 'Pending'
+/posts/*_pending.md
+
 # Logs
 logs
 *.log

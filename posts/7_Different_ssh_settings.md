@@ -1,4 +1,7 @@
 ---
+Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+docType: 'Article' # 'Project', 'Article'
+id: '999'
 title: 【Note】Procedures for using different ssh connection settings (config) with multiple Github accounts
 description: When working with multiple GitHub accounts, it's crucial to configure SSH connection settings properly to ensure seamless authentication. Here are the steps to set up and manage multiple SSH configurations
 slug: blog3
@@ -7,6 +10,25 @@ author: Shoto Morisaki
 image: sample/opened-laptop.jpg
 category: Coding
 tags: [Git]
+relatedDoc1: ""
+relatedDoc2: ""
+relatedDoc3: ""
+relatedDoc4: ""
+relatedDoc5: ""
+
+editor_img: ''
+editor_bio: ''
+
+editor_social:
+    -
+        icon: fab fa-facebook-f
+        url: 
+    -
+        icon: fa-brands fa-x-twitter
+        url: 
+    - 
+        icon: fas fa-link
+        url: 
 ---
 
 # Procedures for using different ssh connection settings (config) with multiple Github accounts

@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Typography } from "@mui/material"
 import type { PostMeta } from "@/Type";
-import type {  GetStaticProps } from "next";
 import { Box } from "@mui/system";
 import GalleryCard from '../Gallery/GalleryCard';
+
 type Props = {
     posts: PostMeta[];
     totalPage: number;
 };
-
 
 const gallery = ({ posts, totalPage }: Props) => {
     const [mounted, setMounted] = useState(false);

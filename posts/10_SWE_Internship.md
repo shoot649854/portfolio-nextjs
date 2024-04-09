@@ -1,4 +1,7 @@
 ---
+Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+docType: 'Project' # 'Project', 'Article'
+id: '10'
 title: Software Engineering Internship at Tsubasa
 description:  Internship experience is a significant contributor to my development of engineering skills. Most of the work required me to use the serverless framework, and each time, there was a self-education aspect that I can leverage later in my career. 
 slug: project5
@@ -7,7 +10,27 @@ author: Shoto
 image: project/5/running.jpg
 category: Project
 tags: [ AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
+relatedDoc1: ""
+relatedDoc2: ""
+relatedDoc3: ""
+relatedDoc4: ""
+relatedDoc5: ""
+
+editor_img: ''
+editor_bio: ''
+
+editor_social:
+    -
+        icon: fab fa-facebook-f
+        url: 
+    -
+        icon: fa-brands fa-x-twitter
+        url: 
+    - 
+        icon: fas fa-link
+        url: 
 ---
+
 ## Internship
 
 ### Software Engineering Internship at Tsubasa
