@@ -1,4 +1,7 @@
 ---
+Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+docType: 'Article' # 'Project', 'Article'
+id: '999'
 title: Definition of RAG
 description: Exploring the RAG Paradigm in LLMs. Technically, RAG uses a variety of innovative approaches that address important questions such as “what to search for,” “when to search for,” and “how to use the information obtained.” It has been strengthened.
 slug: blog1
@@ -7,6 +10,25 @@ author: Shoto
 image: sample/sample3.jpg
 category: Research
 tags: [RAG, LLM, Knowledge Injection, Fine-tuning, External Data]
+relatedDoc1: ""
+relatedDoc2: ""
+relatedDoc3: ""
+relatedDoc4: ""
+relatedDoc5: ""
+
+editor_img: ''
+editor_bio: ''
+
+editor_social:
+    -
+        icon: fab fa-facebook-f
+        url: 
+    -
+        icon: fa-brands fa-x-twitter
+        url: 
+    - 
+        icon: fas fa-link
+        url: 
 ---
 
 # Definition of RAG

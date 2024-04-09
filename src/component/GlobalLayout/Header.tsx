@@ -25,7 +25,7 @@ import CustomButton from '../Common/CustomButton';
 
 const navigationButtons = [
   { icon: <HomeIcon />, text: 'Home', route: '/' },
-  { icon: <BlogIcon />, text: 'Blog', route: '/post' },
+  { icon: <BlogIcon />, text: 'Article', route: '/post' },
   { icon: <ProjectIcon />, text: 'Projects', route: '/projects' },
   { icon: <PersonSearchIcon />, text: 'AboutMe', route: '/about' },
 ];
