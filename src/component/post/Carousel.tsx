@@ -11,7 +11,7 @@ const ArrowColor = "blue";
 const ArrowColor_bg = "white";
 const Icon = "lightskyblue";
 const ActiveIcon = "midnightblue";
-const fontBackgroundColor = "rgb(241, 241, 241)";
+const fontBackgroundColor = "rgb(252, 252, 252)";
 
 type Props = {
   posts: PostMeta[];
@@ -76,7 +76,7 @@ function CarouselComponent({ posts, total, current }: Props) {
       >
         {posts && posts.map((post, index) => (
             <Link href={`/post/${post.slug}`} color="inherit" style={{textDecoration: "none"}} key={post.slug}>
-                <Box sx={{ height: "auto", width: "100%", backgroundColor: bgColor, }}>
+                <Box sx={{ height: "500px", width: "100%", backgroundColor: bgColor, }}>
                 <Grid
                     container
                     direction="row"
@@ -86,21 +86,24 @@ function CarouselComponent({ posts, total, current }: Props) {
                     <Box sx={{ height: "100%", width: "100%" }}>
                     <Box
                         sx={{
-                        height: "auto",
+                          height: "auto",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
                         }}
                         component="img"
                         src={post.coverImage}
-                        alt="Here is some message"
-                    ></Box>
+                        alt="Carousel Image"
+                    />
                     </Box>
                     <Box width={'65%'} margin={3} sx={{ position: `absolute` }}>
                     <Typography
                         sx={{
                             mt: isSmallScreen? 3 : 10,
-                            backgroundColor: fontBackgroundColor,
+                            backgroundColor: `rgba(${fontBackgroundColor}, 0.8)`,
                             fontWeight: 'medium',
                             "@media (max-width: 700px)": {
-                            fontSize: "18px", 
+                              fontSize: "18px", 
                             }
                         }}
                         variant="h2"
