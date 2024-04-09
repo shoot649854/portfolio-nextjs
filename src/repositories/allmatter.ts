@@ -6,22 +6,19 @@ import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
 const postsDirectory = path.join(process.cwd(), "posts");
-// const projectsDirectory = path.join(process.cwd(), "project");
 
 /** 全記事のFrontMatterを取得 */
 export const getAllMatterResults = () => {
   // 記事データを取得
   const postFiles = retrieveFiles(postsDirectory);
-  // const projectFiles = retrieveFiles(projectsDirectory);
-  // const allFiles = [...postFiles, ...projectFiles];
   const allFiles = postFiles;
-  // const files = retrieveFiles(postsDirectory);
   const matterResults = allFiles.map((fullPath: any) => {
-    // Markdownファイルを文字列として取得
     const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    // metaデータをパース
     const matterResult = matter(fileContents);
+
+    if(matterResult.data.Status === 'Pending') {
+      return null;
+    } 
 
     return matterResult;
   });
@@ -40,6 +37,9 @@ export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
   };
 
   return {
+    Status: matter.Status ?? "Draft",
+    docType: matter.docType ?? "Article",
+    id: matter.id ?? "",
     slug: (matter.slug ?? "").toLowerCase(),
     title: matter.title ?? "Error",
     description: matter.description ?? "error occurred",
@@ -48,5 +48,14 @@ export const extractPostMeta = (matter: { [key: string]: any }): PostMeta => {
     coverImage: matter.image ?? "",
     category: matter.category ?? "",
     tags: matter.tags ?? [],
+    relatedDoc1: matter.relatedDoc1 ?? "",
+    relatedDoc2: matter.relatedDoc2 ?? "",
+    relatedDoc3: matter.relatedDoc3 ?? "",
+    relatedDoc4: matter.relatedDoc4 ?? "",
+    relatedDoc5: matter.relatedDoc5 ?? "",
+    editor_name: matter.editor_name ?? "",
+    editor_img: matter.editor_img ?? "",
+    editor_bio: matter.editor_bio ?? "",
+    editor_social: matter.editor_social ?? []
   };
 };

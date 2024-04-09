@@ -16,11 +16,10 @@ export const getAllMatterResults = () => {
       .map((fullPath: string) => {
           const fileContents = fs.readFileSync(fullPath, "utf8");
           const matterResult = matter(fileContents);
-          const docType = matterResult.data.docType;
 
           if(matterResult.data.Status === 'Pending') {
             return null;
-          } else if (docType === 'Project') {
+          } else if (matterResult.data.docType === 'Project') {
               return matterResult;
           } else {
               return null;
