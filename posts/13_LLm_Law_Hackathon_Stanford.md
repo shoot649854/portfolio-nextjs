@@ -7,7 +7,7 @@ description: Recently, I had the opportunity to participate in the LLM Law Hacka
 slug: project8
 date: 2024-4-8
 author: Shoto
-image: /project/7/linkx.png
+image: /project/8/opening.png
 category: Hackathon
 tags: [ Hackathon, LLM, Law, RAG ]
 relatedDoc1: ""

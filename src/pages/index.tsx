@@ -3,7 +3,7 @@ import Template from "@/component/template/homepage";
 // import SEO from "components/common/seo";
 import {Box } from '@mui/material'
 import type {  GetStaticProps } from "next";
-import getPost from "@/service/All/accessToTopAll";
+import getPost from "@/service/Project/accessToTopPro";
 
 type Props = {
   posts: PostMeta[];
