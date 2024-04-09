@@ -1,81 +1,103 @@
-import React from 'react';
-import {
-    Box,
-    Paper,
-    Typography, 
-    Link, 
-    useMediaQuery
-} from '@mui/material'
-import { PostMeta } from '@/Type';
-import { useIsSmallScreen } from '../../constant/MediaQuery';
+import React from "react";
+import { Box, Paper, Typography, Link, useMediaQuery } from "@mui/material";
+import { PostMeta } from "@/Type";
+import { useIsSmallScreen } from "../../constant/MediaQuery";
 type Props = {
-    data: PostMeta;
-  };
+  data: PostMeta;
+};
 
-  
 const GalleryCard = ({ data }: Props) => {
   const isSmallScreen = useIsSmallScreen();
 
   return (
-    <Paper sx={{
-      mx: '10%', // auto
-      mb: 3,
-      bgcolor: 'white',
-      position: 'relative',
-      boxShadow: 'xl',
-      transition: 'box-shadow 0.5s',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      alignItems: 'stretch',
-      '&:hover': {
-        boxShadow: '2xl',
-      },
-      '@media (min-width: 768px)': {
-        flexDirection: 'row',
-        '&:nth-of-type(even)': {
-          flexDirection: 'row-reverse',
+    <Paper
+      sx={{
+        mx: "10%", // auto
+        mb: 3,
+        bgcolor: "white",
+        position: "relative",
+        boxShadow: "xl",
+        transition: "box-shadow 0.5s",
+        display: "flex",
+        // maxHeight: '300px',
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "stretch",
+        "&:hover": {
+          boxShadow: "2xl",
         },
-      },
-    }}>
-
-        <Box sx={{
+        "@media (min-width: 768px)": {
+          flexDirection: "row",
+          "&:nth-of-type(even)": {
+            flexDirection: "row-reverse",
+          },
+        },
+      }}
+    >
+      <Box
+        sx={{
           flexGrow: 0,
-          width: '80%',
+          width: "80%",
           pt: 2,
           pb: 2,
           px: 2,
-          '@media (min-width: 768px)': {
-            width: '45%',
+          "@media (min-width: 768px)": {
+            width: "45%",
           },
-        }}>
-          
-          <Link href={`/post/${data.slug}`} color="inherit" style={{textDecoration: "none"}}>
+        }}
+      >
+        <Link
+          href={`/post/${data.slug}`}
+          color="inherit"
+          style={{ textDecoration: "none" }}
+        >
           <Typography variant="body1">{data.category}</Typography>
-          <Typography 
-            variant="h3" 
-            component="h3" 
-            sx={{ 
-              my: isSmallScreen ? 1 : 4, 
-              fontSize: isSmallScreen ? '21px' : 'inherit',
-              }}>
-              {data.title}
+          <Typography
+            variant="h3"
+            component="h3"
+            sx={{
+              my: isSmallScreen ? 1 : 4,
+              fontSize: isSmallScreen ? "21px" : "inherit",
+            }}
+          >
+            {data.title}
           </Typography>
-          <Typography variant="body2" >{data.date}</Typography>
-          <Typography variant="body2" sx={{ mb: isSmallScreen ? 0.5 : 2, height: 'auto',  overflow: 'hidden'}}>{data.description}</Typography>
-          </Link>
-        </Box>
-      <Box sx={{
-        flexGrow: 0,
-        overflow: "hidden",
-        height: isSmallScreen ? 'auto' : '100%',
-        width: isSmallScreen ? '100%' : '55%',
-      }}>
-        <img src={data.coverImage} alt={data.title} />
+          <Typography variant="body2">{data.date}</Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              mb: isSmallScreen ? 0.5 : 2,
+              height: "auto",
+              overflow: "hidden",
+            }}
+          >
+            {data.description}
+          </Typography>
+        </Link>
+      </Box>
+      <Box
+        sx={{
+          flexGrow: 0,
+          overflow: "hidden",
+          height: isSmallScreen ? "75%" : "75%",
+          width: isSmallScreen ? "100%" : "55%",
+        }}
+      >
+        <img 
+          src={data.coverImage} 
+          alt={data.title} 
+          style={{ 
+            width: '75%', 
+            maxHeight: '400px',
+            height: 'auto', 
+            objectFit: 'contain', // Ensure the image maintains its aspect ratio
+            display: 'block', // This makes the image a block element to remove bottom space
+            margin: '0 auto' // This centers the image within its container
+          }} 
+        />
       </Box>
     </Paper>
   );
 };
 
-  
 export default GalleryCard;
