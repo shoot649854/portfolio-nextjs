@@ -1,85 +1,90 @@
-import os
 import requests
+import argparse
+import subprocess
 
-def get_user_id(integration_token):
-    # URL to get the authenticated user's information
-    url = 'https://api.medium.com/v1/me'
+### ADD MEDIUM INTEGRATION TOKEN HERE ###
+TOKEN = "" 
 
-    # Headers including the authentication token
-    headers = {
-        'Authorization': f'Bearer {integration_token}',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Accept-Charset': 'utf-8'
+headers = {
+    "Accept":	"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Encoding"	:"gzip, deflate, br",
+    "Accept-Language"	:"en-US,en;q=0.5",
+    "Connection"	:"keep-alive",
+    "Host"	:"api.medium.com",
+    "Authorization": "Bearer {}".format(TOKEN),
+    "Upgrade-Insecure-Requests":	"1",
+    "User-Agent":	"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0"
+}
+
+def read_file(filepath):
+    '''reads file from input filepath and returns a dict with the file content and contentFormat for the publish payload'''
+    f = open(filepath, 'r')
+    content = f.read()
+    if not f.closed: f.close()
+
+    if filepath.find('.') < 0:
+        file_ext = ""
+    else:
+        file_ext = filepath[filepath.find(".")+1:]
+    if file_ext == "md": file_ext = "markdown"
+    return {"content": content, "contentFormat": file_ext}
+
+def prep_data(args):
+    '''prepares payload to publish post'''
+    data = {
+        "title": args['title'],
     }
+    data = {**data, **read_file(args['filepath'])}
+    if args['tags']:
+        data['tags'] = [t.strip() for t in args['tags'].split(',')]
+    data['publishStatus'] = 'draft'
+    if args['pub']:
+        data['publishStatus'] = args['pub']
+    return data
 
-    # Sending GET request to Medium
-    response = requests.get(url, headers=headers)
-
-    # Handling the response
-    if response.ok:
+def get_author_id():
+    '''uses the /me medium api endpoint to get the user's author id'''
+    response = requests.get("https://api.medium.com/v1/me", headers=headers, params={"Authorization": "Bearer {}".format(TOKEN)})
+    if response.status_code == 200:
+        print('ID: ' + str(response.json()['data']['id']))
         return response.json()['data']['id']
-    else:
-        raise Exception("Failed to retrieve user ID: " + response.text)
+    return None
 
-def publish_to_medium(author_id, title, content, tags, integration_token):
-    # Medium API URL for creating posts
-    api_url = f'https://api.medium.com/v1/users/{author_id}/posts'
+def post_article(data):
+    '''posts an article to medium with the input payload'''
+    author_id = get_author_id()
+    url = "https://api.medium.com/v1/users/{}/posts".format(author_id)
+    response = requests.post(url, headers=headers, data=data)
+    print(response.status_code)
+    if response.status_code in [200, 201]:
+        response_json = response.json()
+        pub_url = response_json["data"]["url"]
+        return pub_url
+    print("post_article is none")
+    return None
 
-    # Formatting the tags into a list
-    tags_list = tags.split(",") if tags else []
+def copy_to_clipboard(to_copy):
+    '''utility function to copy string to clipboard'''
+    if not to_copy: return
+    process = subprocess.Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
+    process.communicate(to_copy.encode('utf-8'))
 
-    # Post data
-    post_data = {
-        'title': title,
-        'contentFormat': 'markdown',  # Assuming content is in markdown format
-        'content': content,
-        'tags': tags_list,
-        'publishStatus': 'public',  # Change to 'public' to publish immediately
-    }
+if __name__ == "__main__":
+    # initialise parser
+    parser = argparse.ArgumentParser()
 
-    # Headers including the authentication token
-    headers = {
-        'Authorization': f'Bearer {integration_token}',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Accept-Charset': 'utf-8'
-    }
+    # add compulsory arguments
+    parser.add_argument('filepath') # positional argument
+    parser.add_argument('-t', '--title', required=True, help="title of post", type=str) # named argument
 
-    # Sending post request to Medium
-    response = requests.post(api_url, json=post_data, headers=headers)
+    # add compulsory arguments
+    parser.add_argument('-a', '--tags', required=False, help="tags, separated by ,", type=str)
+    parser.add_argument('-p', '--pub', required=False, help="publish status, one of draft/unlisted/public, defaults to draft", type=str, choices=["public", "unlisted", "draft"])
 
-    # Handling the response
-    if response.ok:
-        print("Post created successfully!")
-        print(response.json())  # The response includes the URL of the new post
-    else:
-        print("Failed to create post")
-        print(response.text)
+    # read arguments
+    args = parser.parse_args()
 
-        print("Failed to create post")
-        print(response.text)
-
-# Validate Environment Variables
-# required_env_vars = ['MEDIUM_INTEGRATION_TOKEN', 'PUBLICATION_TITLE', 'PUBLICATION_TEXT', 'PUBLICATION_TAGS']
-# missing_vars = [var for var in required_env_vars if not os.environ.get(var)]
-
-# if missing_vars:
-#     raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
-
-# Getting environment variables
-# integration_token = os.getenv['MEDIUM_INTEGRATION_TOKEN']
-# publication_title = os.environ['PUBLICATION_TITLE']
-# publication_text = os.environ['PUBLICATION_TEXT']
-# publication_tags = os.environ['PUBLICATION_TAGS']
-
-integration_token = "22d0de623fbb1833a7bf59c549c52ac7af3b7ec88d8c66df4607ecd707d3a17f4"
-publication_title = 'Title'
-publication_text = 'kjadfviu'
-publication_tags = 'efv'
-
-# Getting the user's authorId
-author_id = get_user_id(integration_token)
-
-# Publishing to Medium
-publish_to_medium(author_id, publication_title, publication_text, publication_tags, integration_token)
+    data = prep_data(vars(args))
+    post_url = post_article(data)
+    copy_to_clipboard(post_url) # copy url to clipboard if any
+    print(post_url)

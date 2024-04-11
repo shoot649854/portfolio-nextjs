@@ -76,11 +76,3 @@ res = requests.post(post_url, headers=headers, json=json)
 article_url = res.json()['data']['url']
 
 print(f'{file} was posted to Medium! Article URL: "{article_url}"')
-
-# integration_token = os.getenv('MediumPostToken')
-# medium_poster = MediumPoster(integration_token)
-
-# path = "/Users/shotomorisaki/Engineering/portfolio-nextjs/posts/13_LLm_Law_Hackathon_Stanford.md"
-# medium_poster.post_to_medium(path, publish_status='public')
-
-# /Users/shotomorisaki/Engineering/portfolio-nextjs/posts/13_LLm_Law_Hackathon_Stanford.md"

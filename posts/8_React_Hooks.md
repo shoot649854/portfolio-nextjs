@@ -1,5 +1,5 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+Status: 'Pending' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Article' # 'Project', 'Article'
 id: 8
 title: Commonly Used React HooksGithub accounts
