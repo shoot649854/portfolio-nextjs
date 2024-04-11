@@ -1,7 +1,7 @@
 ---
 Status: 'Pending' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Project' # 'Project', 'Article'
-id: 999
+id: 0
 title: What is Portflorio?
 description: Portflorio is a blog template built for Next.js. This is a free template that uses TypeScript and article management using Markdown, while maintaining the speed-up features that are the hallmark of Next.js.
 slug: sample.md
