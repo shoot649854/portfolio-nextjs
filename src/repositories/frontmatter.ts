@@ -19,12 +19,14 @@ export const getAllMatterResults = () => {
     // metaデータをパース
     const matterResult = matter(fileContents);
     
-    if(matterResult.data.Status === 'Pending') {
-      return null;
-    } 
-    
-    return matterResult;
-  });
+    if(matterResult.data.Status !== 'Published' && 
+            matterResult.data.docType === 'Article') {
+              return matterResult;
+          } else {
+              return null;
+          }
+      })
+      .filter((result) => result !== null); 
 
   return matterResults;
 };

@@ -1,10 +1,10 @@
 ---
 Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Article' # 'Project', 'Article'
-id: '999'
+id: 6
 title: Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models
 description: A comprehensive survey of techniques developed to reduce hallucinations in LLMs
-slug: blog2
+slug: Hallucination_Mitigation_Technique_RAG.md
 date: 2024-02-11
 author: Shoto Morisaki
 image: sample/sample4.jpg
@@ -15,10 +15,9 @@ relatedDoc2: ""
 relatedDoc3: ""
 relatedDoc4: ""
 relatedDoc5: ""
-
 editor_img: ''
 editor_bio: ''
-
+editor_name: ''
 editor_social:
     -
         icon: fab fa-facebook-f
@@ -29,6 +28,7 @@ editor_social:
     - 
         icon: fas fa-link
         url: 
+
 ---
 
 # Comprehensive Survey of More Than 32 Techniques to Reduce LLM Hallucinations
