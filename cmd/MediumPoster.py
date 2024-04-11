@@ -82,3 +82,5 @@ print(f'{file} was posted to Medium! Article URL: "{article_url}"')
 
 # path = "/Users/shotomorisaki/Engineering/portfolio-nextjs/posts/13_LLm_Law_Hackathon_Stanford.md"
 # medium_poster.post_to_medium(path, publish_status='public')
+
+# /Users/shotomorisaki/Engineering/portfolio-nextjs/posts/13_LLm_Law_Hackathon_Stanford.md"
