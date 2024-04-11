@@ -17,9 +17,8 @@ export const getAllMatterResults = () => {
           const fileContents = fs.readFileSync(fullPath, "utf8");
           const matterResult = matter(fileContents);
 
-          if(matterResult.data.Status === 'Pending') {
-            return null;
-          } else if (matterResult.data.docType === 'Project') {
+          if(matterResult.data.Status !== 'Published' && 
+            matterResult.data.docType === 'Project') {
               return matterResult;
           } else {
               return null;

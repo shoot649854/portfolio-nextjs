@@ -1,5 +1,5 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+Status: 'Pending' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Project' # 'Project', 'Article'
 id: 999
 title: What is Portflorio?

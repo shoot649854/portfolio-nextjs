@@ -16,12 +16,14 @@ export const getAllMatterResults = () => {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
-    if(matterResult.data.Status === 'Pending') {
+    if (matterResult.data.Status === 'Draft' || 
+        matterResult.data.Status === 'Pending' || 
+        matterResult.data.Status === 'Rewriting') {
       return null;
-    } 
+    }
 
     return matterResult;
-  });
+  }).filter(result => result !== null); 
 
   return matterResults;
 };
