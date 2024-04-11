@@ -1,7 +1,9 @@
 import requests
+import os 
 
-MediumID = ''
-MEDIUM_INTEGRATION_TOKEN=""
+MediumID = os.getenv("MEDIUM_ID")
+MEDIUM_INTEGRATION_TOKEN = os.getenv("MEDIUM_INTEGRATION_TOKEN")
+path = "../posts/5_Definition_of_RAG.md"
 
 def push_to_medium(
     file_to_upload,
@@ -54,4 +56,4 @@ def push_to_medium(
         print("Response:", response.text)
 
 
-push_to_medium(path, MediumID, MEDIUM_INTEGRATION_TOKEN, 'AAA', 'tag', 'draft', 'html')
+push_to_medium(path, MediumID, MEDIUM_INTEGRATION_TOKEN, 'AAA', 'tag', 'public', 'html')
