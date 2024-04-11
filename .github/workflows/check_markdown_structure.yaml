@@ -3,7 +3,7 @@ name: ✔︎ Markdown File Structure Check
 on:
   push:
     branch:
-      - dev/main
+      - master
 
 jobs:
   check_markdown_structure:

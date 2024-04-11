@@ -2,9 +2,8 @@ name: 📦 Publish site
 
 on:
  push:
-   branches-ignore:
-     - main
-     - development
+   branches:
+     - post
 
 jobs:
     publish:
