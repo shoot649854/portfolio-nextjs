@@ -5,68 +5,80 @@ import re
 from functools import reduce
 from operator import add
 
-class MediumPoster:
-    def __init__(self, integration_token):
-        self.integration_token = integration_token
+import secrets
+import os
+import requests
+import re
+from functools import reduce
+from operator import add
 
-    def post_to_medium(self, file_path, publish_status='draft'):
-        try:
-            if not os.path.exists(file_path):
-                print(f'{file_path} does not exist.')
-                return
+# integration_token = secrets.INTEGRATION_TOKEN
+integration_token = os.getenv('MediumPostToken')
 
-            title, tags, content = self._parse_file(file_path)
-            json_data = self._generate_json(title, content, tags, publish_status)
-            article_url = self._send_post_request(json_data)
+try:
+  file = input('file: ')
+  if not os.path.exists(file):
+    print(f'{file} does not exists.')
+    quit()
 
-            print(f'{file_path} was posted to Medium! Article URL: "{article_url}"')
+  publish_status = input('publishStatus: ') or 'draft'
+  if not (publish_status == 'draft' or publish_status == 'public'):
+    print('Input allowed draft or public.')
+    quit()
 
-        except KeyboardInterrupt:
-            print('\n')
-            print('Cancelled.')
-        except Exception as e:
-            print(f'An error occurred: {e}')
+except KeyboardInterrupt:
+  print('\n')
+  print('Cancelled.')
+  quit()
 
-    def _parse_file(self, file_path):
-        with open(file_path, 'r') as f:
-            origin = f.read()
+except Exception:
+  print('Has error occured.')
+  quit()
 
-            title = origin.splitlines()[0]
-            tags = re.findall(r'#([^\s]+)', origin.splitlines()[2])
+user_id_res = requests.get('https://api.medium.com/v1/me', headers={ 'Authorization': f'Bearer {integration_token}' })
 
-            if len(tags) != 0:
-                content_start = 3
-            else:
-                content_start = 2
+try:
+  user_id = user_id_res.json()['data']['id']
+except KeyError:
+  print('\n')
+  print('You may have wrong token.')
+  quit()
 
-            content = reduce(add, map(lambda m: m + "\n", origin.split('\n')[content_start:]))
+post_url = f'https://api.medium.com/v1/users/{user_id}/posts'
 
-        return title, tags, content
+headers = {
+  'Authorization': f'Bearer {integration_token}',
+  'Content-Type': 'application/json'
+}
 
-    def _generate_json(self, title, content, tags, publish_status):
-        return {
-            "title": title,
-            "contentFormat": 'markdown',
-            "content": content,
-            "tags": tags,
-            "publishStatus": publish_status
-        }
+with open(file, 'r') as f:
+  origin = f.read()
 
-    def _send_post_request(self, json_data):
-        user_id_res = requests.get('https://api.medium.com/v1/me', headers={ 'Authorization': f'Bearer {self.integration_token}' })
-        user_id = user_id_res.json()['data']['id']
+  title = origin.splitlines()[0]
+  tags = re.findall(r'#([^\s]+)', origin.splitlines()[2])
 
-        post_url = f'https://api.medium.com/v1/users/{user_id}/posts'
+  if len(tags) != 0:
+    content_start = 3
+  else:
+    content_start = 2
 
-        headers = {
-            'Authorization': f'Bearer {self.integration_token}',
-            'Content-Type': 'application/json'
-        }
+  content = reduce(add, map(lambda m: m + "\n", origin.split('\n')[content_start:]))
 
-        res = requests.post(post_url, headers=headers, json=json_data)
-        return res.json()['data']['url']
+  json = {
+    "title": title,
+    "contentFormat": 'markdown',
+    "content": content,
+    "tags": tags,
+    "publishStatus": publish_status
+  }
 
-# Example usage:
-integration_token = os.getenv()
-medium_poster = MediumPoster(integration_token)
-medium_poster.post_to_medium('your_file.md', publish_status='public')
+res = requests.post(post_url, headers=headers, json=json)
+article_url = res.json()['data']['url']
+
+print(f'{file} was posted to Medium! Article URL: "{article_url}"')
+
+# integration_token = os.getenv('MediumPostToken')
+# medium_poster = MediumPoster(integration_token)
+
+# path = "/Users/shotomorisaki/Engineering/portfolio-nextjs/posts/13_LLm_Law_Hackathon_Stanford.md"
+# medium_poster.post_to_medium(path, publish_status='public')
