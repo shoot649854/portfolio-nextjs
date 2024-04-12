@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "@/styles/article.module.scss";
 import "highlight.js/styles/github-dark.css";
 
@@ -12,7 +13,7 @@ import { Box } from "@mui/material";
 import CustomLink from "@/component/Common/CustomLink";
 import Image from "@/component/post/Image";
 import CodeBlock from "./CodeBlock";
-
+import CustomLinkCard from "./CustomLinkCard";
 
 type Props = {
   content: string;
@@ -21,6 +22,7 @@ type Props = {
 
 /** 記事本文 */
 const Body = ({ content }: Props) => {
+
   const convertResult = content ? (
     <ReactMarkdown
       className="max-w-2xl mx-auto text-lg leading-loose roboto-font"

@@ -34,6 +34,11 @@ editor_social:
 # LLM Law Hackathon Impressions Exploring New Frontiers in Legal Tech
 Recently, I had the opportunity to participate in the LLM Law Hackathon, an event that brought together legal minds, tech enthusiasts, and innovators to collaborate on creating solutions at the intersection of law and technology. As a participant, I was not only exposed to cutting-edge tools and technologies but also immersed in a vibrant community of like-minded individuals. Here are some of my key impressions from the event. 
 
+Here is a regular link: [OpenAI](https://openai.com).
+
+Here is a link card: @[card](https://example.com).
+
+
 ![opening](/project/8/opening.png)
 
 ## Embracing New Technologies

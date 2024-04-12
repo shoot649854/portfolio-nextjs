@@ -1,7 +1,6 @@
 'use client';
 
-import ReactMarkdown from "react-markdown";
-import { ReactMarkdownProps, CodeProps } from "react-markdown/lib/ast-to-react";
+import { CodeProps } from "react-markdown/lib/ast-to-react";
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
 import style from "@/styles/codeblock.module.scss";

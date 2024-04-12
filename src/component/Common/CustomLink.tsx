@@ -1,4 +1,7 @@
+import { Card, CardActionArea } from "@mui/material";
+import { Box } from "@mui/system";
 import Link from "next/link";
+import { useRouter } from "next/router"; 
 
 type Props = {
   href?: string;
@@ -10,9 +13,10 @@ type Props = {
 const CustomLink = ({ href = "/", children = "", className = "" }: Props) => {
   const isInternal = href && href.startsWith("/");
   const isAnchor = href && href.startsWith("#");
-
+  const linkCardRegex = children && (children == 'card');
   const classes = `hover:text-red-700 ${className}`;
-
+  const router = useRouter();
+  
   if (isInternal) {
     return (
       <Link href={href} className={classes} itemProp="url">
@@ -26,6 +30,23 @@ const CustomLink = ({ href = "/", children = "", className = "" }: Props) => {
       <a className={classes} href={href} itemProp="url">
         {children}
       </a>
+    );
+  }
+  
+  if (linkCardRegex) {
+    const handleClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+      router.push(href); // Programmatic navigation
+    };
+
+    return (
+      <Card className={classes ?? ''} itemProp="url" onClick={handleClick}>
+        <CardActionArea>
+          <Box p={2}>
+            {children}
+          </Box>
+        </CardActionArea>
+      </Card>
     );
   }
 
