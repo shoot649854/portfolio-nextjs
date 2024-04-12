@@ -67,7 +67,6 @@ def main():
 
     all_data = []
     md_path = os.path.join(os.getcwd(), 'posts/*.md')
-    # markdown_path = "/Users/shotomorisaki/Engineering/portfolio-nextjs/posts/8_React_Hooks.md"
     for markdown_path in glob.glob(md_path):
         items = extract_yaml_front_matter(markdown_path)
         data = scrape_md_file(markdown_path)
