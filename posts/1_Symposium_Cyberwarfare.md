@@ -1,5 +1,5 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+Status: 'Published' # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
 docType: 'Project' # 'Project', 'Article'
 id: 1
 title: Symposium Cyberwarfare in Russia and Ukraine

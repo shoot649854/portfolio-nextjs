@@ -61,7 +61,6 @@ One of the most exciting aspects of the hackathon was the opportunity to experim
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 1090px;
 		padding-bottom: 10px;
 		background-color: bisque;
 	}
