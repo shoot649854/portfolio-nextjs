@@ -1,5 +1,5 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
+Status: 'Published' # 'Draft', 'Pending', 'Portfolio', 'MediumPost', 'Rewriting'
 docType: 'Article' # 'Project', 'Article'
 id: 15
 title: Takeaway of 8 months Internship as Software Engineer
