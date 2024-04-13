@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+
 import { Typography } from "@mui/material";
+
 import { useIsSmallScreen } from "../../constant/MediaQuery";
+
 import { CustomButtonProps } from "@/constant/Interface";
-import {
-  StyledIconButton,
-  StyledButton,
-  StyledAvatar,
-} from "@/constant/Styled";
+import { StyledButton } from "@/constant/Styled";
 
 function CustomButton({ icon, text, onClick }: CustomButtonProps) {
   const isSmallScreen = useIsSmallScreen();
@@ -19,7 +18,7 @@ function CustomButton({ icon, text, onClick }: CustomButtonProps) {
       sx={{
         textTransform: "none",
         width: "auto",
-        fontSize: isSmallScreen ? "0.5rem" : "inherit",
+        fontSize: isSmallScreen ? "0.5rem" : "inherit"
       }}
     >
       <Typography>{text}</Typography>

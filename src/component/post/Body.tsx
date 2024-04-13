@@ -1,23 +1,23 @@
-import styles from "@/styles/article.module.scss";
 import "highlight.js/styles/github-dark.css";
 
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
-import rehypeHighlight from "rehype-highlight";
-import rehypeRaw from "rehype-raw";
 
 import { Box } from "@mui/material";
+import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
+
+import CodeBlock from "./CodeBlock";
 
 import CustomLink from "@/component/Common/CustomLink";
 import Image from "@/component/post/Image";
-import CodeBlock from "./CodeBlock";
-
+import styles from "@/styles/article.module.scss";
 
 type Props = {
   content: string;
-  img?: string; 
-}
+  img?: string;
+};
 
 /** 記事本文 */
 const Body = ({ content }: Props) => {
@@ -34,7 +34,7 @@ const Body = ({ content }: Props) => {
         h5: "h6",
         a: CustomLink,
         img: (props) => <Image {...props} />,
-        code: CodeBlock,
+        code: CodeBlock
       }}
     >
       {content}

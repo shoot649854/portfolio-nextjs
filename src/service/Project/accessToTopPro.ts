@@ -8,7 +8,7 @@ const getPosts = () => {
 
   return {
     posts: posts,
-    totalPage: allPosts.length,
+    totalPage: allPosts.length
   };
 };
 

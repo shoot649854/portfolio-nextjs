@@ -1,19 +1,21 @@
-'use client';
+"use client";
 
-import ReactMarkdown from "react-markdown";
-import { ReactMarkdownProps, CodeProps } from "react-markdown/lib/ast-to-react";
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
+
+import { CodeProps } from "react-markdown/lib/ast-to-react";
+
 import style from "@/styles/codeblock.module.scss";
 
-const CodeBlock = ({ node, className, children, ...props }: CodeProps) => {
+const CodeBlock = ({ node, className, children }: CodeProps) => {
   // カスタム値の判定材料を抽出
   const prefix = "language-";
   const classes = className
     ?.split(" ")
-    .find((c:any) => c.startsWith(prefix))
+    .find((c: any) => c.startsWith(prefix))
     ?.replace(prefix, "");
   const params = classes ? classes.split(":") : [];
+  console.log(node);
 
   if (params.length > 0 && params[0] === "twitter") {
     // Twitter埋め込み
@@ -24,13 +26,7 @@ const CodeBlock = ({ node, className, children, ...props }: CodeProps) => {
   if (params.length > 0 && params[0] === "youtube") {
     // YouTube埋め込み
     const id = children.toString().replace(/\r?\n/g, "");
-    return (
-      <YouTubeEmbed
-        videoId={id}
-        iframeClassName={style.iframe}
-        className={style.youtube}
-      />
-    );
+    return <YouTubeEmbed videoId={id} iframeClassName={style.iframe} className={style.youtube} />;
   }
 
   // 通常のコンポーネントを返却
