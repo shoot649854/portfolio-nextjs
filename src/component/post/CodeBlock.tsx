@@ -1,9 +1,13 @@
 'use client';
 
+import { useRouter } from "next/router"; 
+import { Card, CardActionArea } from "@mui/material";
+import { Box } from "@mui/system";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
 import style from "@/styles/codeblock.module.scss";
+import CustomCard from "./CustomCard";
 
 const CodeBlock = ({ node, className, children, ...props }: CodeProps) => {
   // カスタム値の判定材料を抽出
@@ -13,6 +17,11 @@ const CodeBlock = ({ node, className, children, ...props }: CodeProps) => {
     .find((c:any) => c.startsWith(prefix))
     ?.replace(prefix, "");
   const params = classes ? classes.split(":") : [];
+
+  if (params.length > 0 && params[0] === "card") {
+    const link = children.toString().replace(/\r?\n/g, "");
+    return (<CustomCard link={link}/>);
+  }
 
   if (params.length > 0 && params[0] === "twitter") {
     // Twitter埋め込み

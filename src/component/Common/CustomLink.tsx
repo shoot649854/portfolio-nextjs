@@ -33,22 +33,22 @@ const CustomLink = ({ href = "/", children = "", className = "" }: Props) => {
     );
   }
   
-  if (linkCardRegex) {
-    const handleClick = (e: React.MouseEvent) => {
-      e.preventDefault();
-      router.push(href); // Programmatic navigation
-    };
+  // if (linkCardRegex) {
+  //   const handleClick = (e: React.MouseEvent) => {
+  //     e.preventDefault();
+  //     router.push(href); // Programmatic navigation
+  //   };
 
-    return (
-      <Card className={classes ?? ''} itemProp="url" onClick={handleClick}>
-        <CardActionArea>
-          <Box p={2}>
-            {children}
-          </Box>
-        </CardActionArea>
-      </Card>
-    );
-  }
+  //   return (
+  //     <Card className={classes ?? ''} itemProp="url" onClick={handleClick}>
+  //       <CardActionArea>
+  //         <Box p={2}>
+  //           {children}
+  //         </Box>
+  //       </CardActionArea>
+  //     </Card>
+  //   );
+  // }
 
   return (
     <a

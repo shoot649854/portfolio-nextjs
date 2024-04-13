@@ -39,7 +39,12 @@ Here is a regular link: [OpenAI](https://openai.com).
 Here is a link card: @[card](https://example.com).
 
 
+```card
+https://openai.com
+```
+
 ![opening](/project/8/opening.png)
+
 
 ## Embracing New Technologies
 One of the most exciting aspects of the hackathon was the opportunity to experiment with new technologies. While I had prior experience with popular front-end tools like React and Barcell, I made a deliberate choice to explore unfamiliar territory this time. I delved into platforms such as Firebase, Svelte, and Gemini, which are poised to play a significant role in the future of software development. Leveraging these tools not only expanded my technical repertoire but also provided valuable insights into emerging trends in the industry. It was particularly fascinating to integrate Google's AI capabilities, made possible through their sponsorship of the event, into our projects, opening up new possibilities for innovation.

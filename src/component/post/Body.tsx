@@ -13,7 +13,6 @@ import { Box } from "@mui/material";
 import CustomLink from "@/component/Common/CustomLink";
 import Image from "@/component/post/Image";
 import CodeBlock from "./CodeBlock";
-import CustomLinkCard from "./CustomLinkCard";
 
 type Props = {
   content: string;
