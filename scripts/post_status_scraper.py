@@ -81,8 +81,8 @@ def main():
 
     # 
     combined_df = pd.DataFrame(all_data)
-    csv_path = './cmd/sample.csv'
-    excel_path = './cmd/sample.xlsx'
+    csv_path = './scripts/sample.csv'
+    excel_path = './scripts/sample.xlsx'
 
     combined_df.to_csv(csv_path, index=False)
     print(f"CSV file saved successfully at '{os.path.abspath(csv_path)}'.")

@@ -15,6 +15,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "removeComments": true,
+    "noUnusedLocals": true, //Personal Use
+    "noUnusedParameters": true, //Personal Use
     "incremental": true,
     // "baseUrl": "./src",
     "plugins": [
@@ -38,7 +41,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "scripts/cleanupUnusedCode.js"  ],
   "exclude": [
     "node_modules"
   ]

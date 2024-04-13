@@ -13,8 +13,6 @@ type Props = {
 
   
 const AppCard = ({ data }: Props) => {
-  const { title, date, tags, coverImage } = data;
-
   return (
     <Paper sx={{
       mx: '10%', // auto

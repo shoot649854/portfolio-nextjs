@@ -24,4 +24,4 @@ jobs:
         poetry install
 
     - name: Run script
-      run: poetry run python cmd/post_status_scraper.py
+      run: poetry run python scripts/post_status_scraper.py

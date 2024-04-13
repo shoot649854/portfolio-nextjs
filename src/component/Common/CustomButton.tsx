@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Typography } from "@mui/material";
 import { useIsSmallScreen } from "../../constant/MediaQuery";
 import { CustomButtonProps } from "@/constant/Interface";
 import {
-  StyledIconButton,
   StyledButton,
-  StyledAvatar,
 } from "@/constant/Styled";
 
 function CustomButton({ icon, text, onClick }: CustomButtonProps) {

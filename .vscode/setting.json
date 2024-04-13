@@ -1,0 +1,20 @@
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+  
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    },
+  
+    "prettier.documentSelectors": ["**/*.svg"],
+  
+    "eslint.validate": ["javascript", "typescript", "vue"],
+  
+    "stylelint.validate": ["css", "svg", "vue"]
+  }
+  
