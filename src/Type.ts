@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 /** 本文含まない記事データ */
 export type PostMeta = {
   Status: "Draft" | "Pending" | "Published" | "Rewriting"; // Added Status field
@@ -87,3 +86,42 @@ export interface Article {
   tags: string[];
   article: ArticleSection[];
 }
+
+export type CardData =
+  | {
+      url: string;
+      title: string;
+      description: string;
+      image: string;
+      icon: string;
+    }[]
+  | undefined;
+
+export const TAGS = {
+  RHINO: "Rhinoceros",
+  GH: "Grasshopper",
+  THREE_JS: "Three.js",
+  BLENDER: "Blender",
+  R3F: "R3F",
+  GH_MODELING: "GH Modeling",
+  PYTHON: "Python",
+  CSHARP: "C#",
+  PLUGIN: "Plugin",
+  BASIC: "Basic",
+  KANGAROO: "Kangaroo",
+  REACT: "React",
+  TIPS: "Tips",
+} as const;
+
+export const TAGS_LIST = Object.values(TAGS);
+export type TagsType = (typeof TAGS)[keyof typeof TAGS];
+
+export interface Meta {
+  title: string;
+  date: string;
+  description: string;
+  coverImage: string;
+  tags: TagsType[] | null;
+  slug: string;
+}
+  
