@@ -8,19 +8,6 @@ import AboutMe from "./AboutMe";
 
 import type { NextPage } from "next";
 
-const createBoxes = (): JSX.Element[] => {
-  const boxes: JSX.Element[] = [];
-  for (let i = 0; i < 30; i++) {
-    boxes.push(
-      <Box
-        key={i}
-        className="w-[3px] h-24 relative bg-white"
-        style={{ transform: "rotate(90deg)" }}
-      />
-    );
-  }
-  return boxes;
-};
 
 interface TimelineItemProps {
   title: string;

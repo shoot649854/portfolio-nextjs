@@ -26,7 +26,7 @@ const Template = ({ posts, total, current }: Props) => {
       <CarouselComponent posts={top5Posts} total={total} current={current} />
       {/* <AWSIconCarousel /> */}
       <AboutMe />
-      <TagSearch posts={posts} totalPage={total} />
+      <TagSearch posts={posts}/>
     </Box>
   );
 };

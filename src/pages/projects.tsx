@@ -9,8 +9,8 @@ type Props = {
   totalPage: number;
 };
 
-const post = ({ posts, totalPage }: Props) => {
-  return <Template totalPage={totalPage} posts={posts} />;
+const post = ({ posts }: Props) => {
+  return <Template posts={posts} />;
 };
 
 /** ビルド時のみの静的ページ生成 */
