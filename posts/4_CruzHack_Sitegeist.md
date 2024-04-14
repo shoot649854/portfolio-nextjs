@@ -1,35 +1,39 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Project' # 'Project', 'Article'
+Status: Published # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Project # 'Project', 'Article'
 id: 4
 title: CruzHack 2024 - Sitegeist
 description: Sitegeist, our technical solution for giving you more problems! We wanted a way to easily analyze trending topics and issues faced by those around us.
-slug: CruzHack_Sitegeist.md
+slug: CruzHack_Sitegeist
 date: 2024-1-16
 author: Shoto Morisaki
 image: project/4/project4-demo.gif
 category: Project
-tags: [ RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel, ]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+tags: [RESTfulAPI, React, Typescript, GPTAPI, HuggingFaceModel]
+relatedDoc1: None
+relatedDoc2: None
+relatedDoc3: None
+relatedDoc4: None
+relatedDoc5: None
+editor_img: None
+editor_bio: None
+editor_name: Shoto Morisaki
 editor_social:
     -
         icon: fab fa-facebook-f
-        url: 
+        url: None
     -
         icon: fa-brands fa-x-twitter
-        url: 
-    - 
+        url: None
+    -
         icon: fas fa-link
-        url: 
-
+        url: None
 ---
+
+
+
+
+
 
 ## ProjectCruzHack
 

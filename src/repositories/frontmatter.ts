@@ -23,7 +23,7 @@ export const getAllMatterResults = () => {
       // metaデータをパース
       const matterResult = matter(fileContents);
 
-      if (matterResult.data.Status !== "Published" && matterResult.data.docType === "Article") {
+      if (matterResult.data.Status === "Published" && matterResult.data.docType === "Article") {
         return matterResult;
       } else {
         return null;
