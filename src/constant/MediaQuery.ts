@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@mui/material";
 
 export const useIsSmallScreen = () => {
-  return useMediaQuery('(max-width:700px)');
+  return useMediaQuery("(max-width:700px)");
 };
 
 export const useIsExtraSmallScreen = () => {

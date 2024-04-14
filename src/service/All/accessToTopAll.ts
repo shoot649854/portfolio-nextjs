@@ -6,7 +6,7 @@ const getPostsAll = () => {
 
   return {
     posts: allPosts,
-    totalPage: Math.ceil(allPosts.length / PER_PAGE),
+    totalPage: Math.ceil(allPosts.length / PER_PAGE)
   };
 };
 

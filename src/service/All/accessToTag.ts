@@ -8,14 +8,11 @@ export const getPosts = (tag: string, page: number) => {
   const allPosts = getSortedPostsMeta().filter((meta) =>
     meta.tags.map((tag) => tag.toLowerCase()).includes(tag)
   );
-  const currentPagePosts = allPosts.slice(
-    (page - 1) * PER_PAGE,
-    page * PER_PAGE
-  );
+  const currentPagePosts = allPosts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return {
     posts: currentPagePosts,
-    totalPage: allPosts.length,
+    totalPage: allPosts.length
   };
 };
 

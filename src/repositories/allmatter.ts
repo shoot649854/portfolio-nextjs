@@ -1,7 +1,10 @@
-import type { PostMeta } from "@/Type";
 import fs from "fs";
 import path from "path";
+
 import matter from "gray-matter";
+
+import type { PostMeta } from "@/Type";
+
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
@@ -12,18 +15,22 @@ export const getAllMatterResults = () => {
   // 記事データを取得
   const postFiles = retrieveFiles(postsDirectory);
   const allFiles = postFiles;
-  const matterResults = allFiles.map((fullPath: any) => {
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents);
+  const matterResults = allFiles
+    .map((fullPath: any) => {
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const matterResult = matter(fileContents);
 
-    if (matterResult.data.Status === 'Draft' || 
-        matterResult.data.Status === 'Pending' || 
-        matterResult.data.Status === 'Rewriting') {
-      return null;
-    }
+      if (
+        matterResult.data.Status === "Draft" ||
+        matterResult.data.Status === "Pending" ||
+        matterResult.data.Status === "Rewriting"
+      ) {
+        return null;
+      }
 
-    return matterResult;
-  }).filter(result => result !== null); 
+      return matterResult;
+    })
+    .filter((result) => result !== null);
 
   return matterResults;
 };

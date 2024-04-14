@@ -1,8 +1,10 @@
+import { Box } from "@mui/material";
+
 import type { PostMeta } from "@/Type";
+import type { GetStaticProps } from "next";
+
 import Template from "@/component/template/homepage";
 // import SEO from "components/common/seo";
-import {Box } from '@mui/material'
-import type {  GetStaticProps } from "next";
 import getPost from "@/service/Project/accessToTopPro";
 
 type Props = {
@@ -20,11 +22,11 @@ const Page = ({ posts, totalPage }: Props) => {
   );
 };
 
-  /** ビルド時のみの静的ページ生成 */
-  export const getStaticProps: GetStaticProps = () => {
-    return {
-      props: getPost(),
-    };
+/** ビルド時のみの静的ページ生成 */
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: getPost()
   };
+};
 
 export default Page;

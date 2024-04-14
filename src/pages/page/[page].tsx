@@ -1,8 +1,11 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import { useRouter } from 'next/router';
+import React from "react";
+
+import Typography from "@mui/material/Typography";
+import { useRouter } from "next/router";
+
 import type { GetStaticProps, GetStaticPaths } from "next";
-import { getAllPaths, getPosts } from '@/service/Blog/accessToPage';
+
+import { getAllPaths, getPosts } from "@/service/Blog/accessToPage";
 
 const Page = () => {
   const router = useRouter();
@@ -15,16 +18,15 @@ const Page = () => {
   );
 };
 
-
 /** 動的なルーティング対象の一覧を定義 */
 export const getStaticPaths: GetStaticPaths = () => {
   const pages = getAllPaths();
 
   return {
     paths: pages.map((p) => ({
-      params: { page: p.toString() },
+      params: { page: p.toString() }
     })),
-    fallback: false,
+    fallback: false
   };
 };
 
@@ -37,10 +39,9 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
     props: {
       posts: posts.posts,
       totalPage: posts.totalPage,
-      current: page,
-    },
+      current: page
+    }
   };
 };
-
 
 export default Page;
