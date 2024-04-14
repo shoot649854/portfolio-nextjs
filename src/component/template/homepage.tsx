@@ -1,10 +1,7 @@
 import { Box } from "@mui/material";
-
 import AboutMe from "@/pages/AboutMe";
-
 import CarouselComponent from "../post/Carousel";
 import TagSearch from "../post/TagSearch";
-
 import type { PostMeta } from "@/Type";
 
 // import Pagination from "components/common/pagination";
@@ -26,7 +23,7 @@ const Template = ({ posts, total, current }: Props) => {
       <CarouselComponent posts={top5Posts} total={total} current={current} />
       {/* <AWSIconCarousel /> */}
       <AboutMe />
-      <TagSearch posts={posts}/>
+      <TagSearch posts={posts} />
     </Box>
   );
 };

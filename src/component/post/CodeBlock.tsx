@@ -2,12 +2,11 @@
 
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
-
 import { CodeProps } from "react-markdown/lib/ast-to-react";
-
 import style from "@/styles/codeblock.module.scss";
 
-const CodeBlock = ({ node, className, children }: CodeProps) => {
+const CodeBlock = ({ className, children }: CodeProps) => {
+  //node,
   // カスタム値の判定材料を抽出
   const prefix = "language-";
   const classes = className
@@ -15,7 +14,6 @@ const CodeBlock = ({ node, className, children }: CodeProps) => {
     .find((c: any) => c.startsWith(prefix))
     ?.replace(prefix, "");
   const params = classes ? classes.split(":") : [];
-  console.log(node);
 
   if (params.length > 0 && params[0] === "twitter") {
     // Twitter埋め込み

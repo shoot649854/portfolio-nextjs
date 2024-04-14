@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-
 import { Box, Typography } from "@mui/material";
-
 import resumeData from "@/../../public/resume.json";
-
 import AboutMe from "./AboutMe";
-
 import type { NextPage } from "next";
-
 
 interface TimelineItemProps {
   title: string;

@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-
 import GalleryCard from "../Gallery/GalleryCard";
-
 import type { PostMeta } from "@/Type";
 
 type Props = {

@@ -1,13 +1,10 @@
 import { Box } from "@mui/material";
-
 import {
   useIsNarrowScreen,
   useIsExtraSmallScreen,
   useIsSmallScreen
 } from "../../constant/MediaQuery";
-
 import type { PostData } from "@/Type";
-
 import Body from "@/component/post/Body";
 import Header from "@/component/post/Header";
 

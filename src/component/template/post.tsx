@@ -1,13 +1,10 @@
 import { Box } from "@mui/material";
-
 import {
   useIsNarrowScreen,
   useIsExtraSmallScreen,
   useIsSmallScreen
 } from "../../constant/MediaQuery";
-
 import type { PostData } from "@/Type";
-
 import ArticleDetail from "@/component/GlobalLayout/Layout";
 type Props = {
   post: PostData;

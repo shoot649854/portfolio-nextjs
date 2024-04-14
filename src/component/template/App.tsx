@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
 import { Box } from "@mui/system";
-
 import type { PostMeta } from "@/Type";
 
 type Props = {

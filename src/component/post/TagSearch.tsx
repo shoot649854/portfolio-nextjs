@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-
 import { Typography, Box } from "@mui/material";
-
 import ColoredChips from "./ColoredChips";
 import ResultPost from "./ResultPost";
 import { useIsSmallScreen } from "../../constant/MediaQuery";
-
 import type { PostMeta } from "@/Type";
 
 type Props = {

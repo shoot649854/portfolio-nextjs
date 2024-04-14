@@ -1,15 +1,12 @@
 import "highlight.js/styles/github-dark.css";
 
 import ReactMarkdown from "react-markdown";
-
 import { Box } from "@mui/material";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
-
 import CodeBlock from "./CodeBlock";
-
 import CustomLink from "@/component/Common/CustomLink";
 import Image from "@/component/post/Image";
 import styles from "@/styles/article.module.scss";
