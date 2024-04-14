@@ -29,6 +29,7 @@ class MarkdownGenerator:
             yaml_str = yaml_bytes.decode('utf-8')
             yaml_str = yaml_str.replace('    editor_social:', 'editor_social:')
             yaml_str = yaml_str.replace('   -', '-')
+            yaml_str = yaml_str.replace('@', '-')
             yaml_dict = yaml.safe_load(yaml_str)
             return yaml_dict
         
@@ -57,7 +58,7 @@ class MarkdownGenerator:
         print("Markdownファイルの生成が完了しました。")
     
     def update_front_matter(self, data):
-        update = "\n".join([f"{key}: {value}" for key, value in data.items() if key != 'editor_social'])
+        # update = "\n".join([f"{key}: {value}" for key, value in data.items() if key != 'editor_social'])
         update = ""
         update += "Status: " + data['Status']  + " # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'" + "\n"
         update += "docType: " + data['docType'] + " # 'Project', 'Article'" +"\n"
@@ -70,19 +71,25 @@ class MarkdownGenerator:
         update += "image: " + data['image'] + "\n"
         update += "category: " + data['category'] + "\n"
         update += "tags: [" + ", ".join(data['tags']) + "]\n"
-        update += "relatedDoc1: " + str(data['relatedDoc1']) + "\n"
-        update += "relatedDoc2: " + str(data['relatedDoc2']) + "\n"
-        update += "relatedDoc3: " + str(data['relatedDoc3']) + "\n"
-        update += "relatedDoc4: " + str(data['relatedDoc4']) + "\n"
-        update += "relatedDoc5: " + str(data['relatedDoc5']) + "\n"
-        update += "editor_img: " + str(data['editor_img']) + "\n"
-        update += "editor_bio: " + str(data['editor_bio']) + "\n"
+        
+        update += "relatedDoc1: " + str("") + "\n"
+        update += "relatedDoc2: " + str("") + "\n"
+        update += "relatedDoc3: " + str("") + "\n"
+        update += "relatedDoc4: " + str("") + "\n"
+        update += "relatedDoc5: " + str("") + "\n"
+        
+        social = {'LinkedIn':'https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/', 
+                  'Github':'https://github.com/shoot649854/', 
+                  'Portfolio':'https://portfolio-shoto.vercel.app/'}
+        editor_bio = "Computer Science @ University of California Santa Cruz | Intern @ LiNK"
+        update += "editor_img: " + "https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp" + "\n"
+        update += "editor_bio: " + str(editor_bio) + "\n"
         update += "editor_name: " + str(data['editor_name']) + "\n"
         update += "editor_social:\n"
-        for item in data['editor_social']:
-            update += "    -\n"
-            for key, value in item.items():
-                update += f"        {key}: {value}\n"
+        for key, value in social.items():
+            update += "  -\n"
+            update += f"    icon: fab fa-{key.lower()}\n"
+            update += f"    url: {value}\n"
 
         with open(self.md_file, 'r', encoding='utf-8', errors='replace') as f:
             content = f.read()
@@ -91,10 +98,9 @@ class MarkdownGenerator:
         front_matter_end = content.find('---', front_matter_start + 3) + 3
         updated_front_matter = '---\n' + update + '---\n'
         updated_content = content[:front_matter_start] + updated_front_matter + content[front_matter_end:]
-        # print(updated_front_matter)
+        print(updated_front_matter)
         return updated_content
     
-        # Write the updated content back to the file
     def write_file(self, updated_content):
         with open(self.md_file, 'w', encoding='utf-8', errors='replace') as f:
             f.write(updated_content)

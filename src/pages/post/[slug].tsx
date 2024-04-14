@@ -1,8 +1,7 @@
-import type { PostData } from "@/Type";
 import type { GetStaticPaths, GetStaticProps } from "next";
-
-import Template from "@/component/template/post";
+import type { PostData } from "@/Type";
 import { getPost, getAllPostSlugs } from "@/service/All/accessToPost";
+import Template from "@/component/template/post";
 // import SEO from "components/common/seo";
 
 type Props = {
@@ -24,9 +23,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostSlugs();
   return {
     paths: paths.map((path) => ({
-      params: { slug: path }
+      params: { slug: path },
     })),
-    fallback: false
+    fallback: false,
   };
 };
 
