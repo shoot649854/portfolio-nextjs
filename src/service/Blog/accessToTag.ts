@@ -1,6 +1,5 @@
 import { PER_PAGE } from "@/constant/setting";
 import { getSortedPostsMeta } from "@/repositories/post";
-import { getSortedPostsMetaProject } from "@/repositories/project";
 
 /** タグ一覧ページ向けの記事一覧とページ数を取得 */
 export const getPosts = (tag: string, page: number) => {
@@ -8,14 +7,11 @@ export const getPosts = (tag: string, page: number) => {
   const allPosts = getSortedPostsMeta().filter((meta) =>
     meta.tags.map((tag) => tag.toLowerCase()).includes(tag)
   );
-  const currentPagePosts = allPosts.slice(
-    (page - 1) * PER_PAGE,
-    page * PER_PAGE
-  );
+  const currentPagePosts = allPosts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return {
     posts: currentPagePosts,
-    totalPage: allPosts.length,
+    totalPage: allPosts.length
   };
 };
 

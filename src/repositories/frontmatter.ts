@@ -1,7 +1,10 @@
-import type { PostMeta } from "@/Type";
 import fs from "fs";
 import path from "path";
+
 import matter from "gray-matter";
+
+import type { PostMeta } from "@/Type";
+
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
@@ -12,19 +15,21 @@ export const getAllMatterResults = () => {
   // 記事データを取得
   const files = retrieveFiles(postsDirectory);
   const filteredFiles = files.filter((filePath) => !filePath.includes("/project/"));
-  const matterResults = filteredFiles.map((fullPath: any) => {
-    // Markdownファイルを文字列として取得
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+  const matterResults = filteredFiles
+    .map((fullPath: any) => {
+      // Markdownファイルを文字列として取得
+      const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // metaデータをパース
-    const matterResult = matter(fileContents);
-    
-    if(matterResult.data.Status === 'Pending') {
-      return null;
-    } 
-    
-    return matterResult;
-  });
+      // metaデータをパース
+      const matterResult = matter(fileContents);
+
+      if (matterResult.data.Status !== "Published" && matterResult.data.docType === "Article") {
+        return matterResult;
+      } else {
+        return null;
+      }
+    })
+    .filter((result) => result !== null);
 
   return matterResults;
 };

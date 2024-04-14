@@ -30,13 +30,7 @@ const CustomLink = ({ href = "/", children = "", className = "" }: Props) => {
   }
 
   return (
-    <a
-      className={classes}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      itemProp="url"
-    >
+    <a className={classes} href={href} target="_blank" rel="noopener noreferrer" itemProp="url">
       {children}
     </a>
   );

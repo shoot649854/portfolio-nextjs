@@ -5,7 +5,5 @@ export const retrieveFiles = (dir: string): string[] =>
   fs
     .readdirSync(dir, { withFileTypes: true })
     .flatMap((entry) =>
-      entry.isFile()
-        ? [`${dir}/${entry.name}`]
-        : retrieveFiles(`${dir}/${entry.name}`)
+      entry.isFile() ? [`${dir}/${entry.name}`] : retrieveFiles(`${dir}/${entry.name}`)
     );

@@ -1,33 +1,28 @@
-'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+
+import CloseIcon from "@mui/icons-material/Close";
+import BlogIcon from "@mui/icons-material/Description";
+import HomeIcon from "@mui/icons-material/Home";
+import MenuIcon from "@mui/icons-material/Menu";
+import PersonSearchIcon from "@mui/icons-material/PersonSearch";
+import SearchIcon from "@mui/icons-material/Search";
+import ProjectIcon from "@mui/icons-material/Work";
+import { Box } from "@mui/material";
 import Image from "next/image";
-import { 
-  Avatar,
-  Box,
-  Button,
-  IconButton,
-  Typography,
-  styled
-} from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
-import HomeIcon from '@mui/icons-material/Home';
-import BlogIcon from '@mui/icons-material/Description';
-import ProjectIcon from '@mui/icons-material/Work';
-import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { useIsSmallScreen } from '../../constant/MediaQuery';
-import profile from '@/../public/profile.jpeg';
-import { CustomButtonProps } from '@/constant/Interface';
-import { StyledIconButton, StyledButton, StyledAvatar } from '@/constant/Styled';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import CustomButton from '../Common/CustomButton';
+import { useRouter } from "next/navigation";
+
+import { useIsSmallScreen } from "../../constant/MediaQuery";
+import CustomButton from "../Common/CustomButton";
+
+import profile from "@/../public/profile.jpeg";
+import { StyledIconButton, StyledAvatar } from "@/constant/Styled";
 
 const navigationButtons = [
-  { icon: <HomeIcon />, text: 'Home', route: '/' },
-  { icon: <BlogIcon />, text: 'Article', route: '/post' },
-  { icon: <ProjectIcon />, text: 'Projects', route: '/projects' },
-  { icon: <PersonSearchIcon />, text: 'AboutMe', route: '/about' },
+  { icon: <HomeIcon />, text: "Home", route: "/" },
+  { icon: <BlogIcon />, text: "Article", route: "/post" },
+  { icon: <ProjectIcon />, text: "Projects", route: "/projects" },
+  { icon: <PersonSearchIcon />, text: "AboutMe", route: "/about" }
 ];
 
 interface NavigationButton {
@@ -50,9 +45,9 @@ function HamburgerMenu({ navigationButtons }: HamburgerMenuProps) {
   return (
     <Box
       sx={{
-        position: 'absolute',
+        position: "absolute",
         top: 0,
-        right: 8,
+        right: 8
       }}
     >
       <StyledIconButton onClick={handleMenuToggle}>
@@ -61,13 +56,13 @@ function HamburgerMenu({ navigationButtons }: HamburgerMenuProps) {
       {isOpen && (
         <Box
           sx={{
-            position: 'absolute',
-            top: '100%',
+            position: "absolute",
+            top: "100%",
             right: -5,
-            backgroundColor: '#000',
-            padding: '10px',
-            boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-            zIndex: 999,
+            backgroundColor: "#000",
+            padding: "10px",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+            zIndex: 999
           }}
         >
           {navigationButtons.map((button, index) => (
@@ -75,7 +70,7 @@ function HamburgerMenu({ navigationButtons }: HamburgerMenuProps) {
               key={index}
               icon={button.icon}
               text={button.text}
-              onClick={() => window.location.href = button.route}
+              onClick={() => (window.location.href = button.route)}
             />
           ))}
         </Box>
@@ -89,46 +84,52 @@ function Header() {
   const isSmallScreen = useIsSmallScreen();
 
   return (
-
-    <Box 
-      height='36px' 
+    <Box
+      height="36px"
       paddingY={3}
-      marginBottom='20px' 
-      alignItems={'center'}
-      sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000'}}>
-        {!isSmallScreen ? (
-          
-          <Box gap={isSmallScreen ? '0%' : '15%'} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <StyledIconButton>
-              <SearchIcon />
-            </StyledIconButton>
-            
-            <Box gap={isSmallScreen ? '0%' : '15%'}
+      marginBottom="20px"
+      alignItems={"center"}
+      sx={{ display: "flex", justifyContent: "center", backgroundColor: "#000000" }}
+    >
+      {!isSmallScreen ? (
+        <Box gap={isSmallScreen ? "0%" : "15%"} sx={{ display: "flex", justifyContent: "center" }}>
+          <StyledIconButton>
+            <SearchIcon />
+          </StyledIconButton>
+
+          <Box
+            gap={isSmallScreen ? "0%" : "15%"}
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
-            }}>
-              {navigationButtons.map((button, index) => (
-                <CustomButton
-                  key={index}
-                  icon={button.icon}
-                  text={button.text}
-                  onClick={() => router.push(button.route)}
-                />
-              ))}
-            </Box>
-    
+              display: "flex",
+              justifyContent: "center"
+            }}
+          >
+            {navigationButtons.map((button, index) => (
+              <CustomButton
+                key={index}
+                icon={button.icon}
+                text={button.text}
+                onClick={() => router.push(button.route)}
+              />
+            ))}
+          </Box>
+
           {!isSmallScreen && (
-            <Box marginTop={'1%'}>
-              <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}> 
-                <Image src={profile} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px"/>
+            <Box marginTop={"1%"}>
+              <StyledAvatar alt="Profile Photo" sx={{ width: 36, height: 36 }}>
+                <Image
+                  src={profile}
+                  alt="Profile Photo"
+                  fill
+                  sizes="(max-width: 600px) 36px, 72px"
+                />
               </StyledAvatar>
             </Box>
           )}
-      </Box>
-          ) : (
-          <HamburgerMenu navigationButtons={navigationButtons} />
-          )}
+        </Box>
+      ) : (
+        <HamburgerMenu navigationButtons={navigationButtons} />
+      )}
     </Box>
   );
 }

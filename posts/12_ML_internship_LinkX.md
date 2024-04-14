@@ -1,12 +1,12 @@
 ---
 Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Project' # 'Project', 'Article'
-id: '12'
-title: Machine Learning Internship at LinkX Japan 
+id: 12
+title: Machine Learning Internship at LinkX Japan
 description: Machine Learning Internship at LinkX Japan, working as Backend / Full Stack engineer. applying RAG system to improve LLM application.
-slug: project7
+slug: ML_internship_LinkX.md
 date: 2024-4-1
-author: Shoto
+author: Shoto Morisaki
 image: /project/7/writing.jpg
 category: Internship
 tags: [ Internship, LLM, Natural Language, RAG ]
@@ -15,10 +15,9 @@ relatedDoc2: ""
 relatedDoc3: ""
 relatedDoc4: ""
 relatedDoc5: ""
-
 editor_img: ''
 editor_bio: ''
-
+editor_name: ''
 editor_social:
     -
         icon: fab fa-facebook-f
@@ -29,6 +28,7 @@ editor_social:
     - 
         icon: fas fa-link
         url: 
+
 ---
 
 ## LinkX Japan 

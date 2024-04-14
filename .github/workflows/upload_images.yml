@@ -1,0 +1,38 @@
+name: 📷 Push Images to Separate Repository
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+
+jobs:
+  push-images:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract and Copy Images
+      run: |
+        mkdir tmp_images
+        grep -oP '!\[.*?\]\((.*?)\)' **/*.md | grep -oP '\((.*?)\)' | sed 's/[()]//g' | xargs -I {} cp {} tmp_images/
+
+    - name: Setup temporary repository for images
+      run: |
+        cd tmp_images
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Commit and Push Images
+      run: |
+        cd tmp_images
+        git add .
+        git commit -m "Push images from markdown files"
+        git remote add origin https://${ secrets.REPO_OWNER }:${ secrets.GITHUB_TOKEN }@github.com/${ secrets.REPO_OWNER }/${ secrets.REPO_NAME }.git
+        git push origin main --force
+      env:
+        GITHUB_TOKEN: ${ secrets.GITHUB_TOKEN }
+        REPO_OWNER: ${ secrets.REPO_OWNER }
+        REPO_NAME: ${ secrets.REPO_NAME }

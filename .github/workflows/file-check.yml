@@ -2,9 +2,8 @@ name: 📦 Publish site
 
 on:
  push:
-   branches-ignore:
-     - main
-     - development
+   branches:
+     - post
 
 jobs:
     publish:
@@ -21,21 +20,24 @@ jobs:
                 
             - id: files
               uses: jitterbit/get-changed-files@v1
-            - id: posts
-              name: Detecting posts from the changes
+            - id: publishable_posts
+              name: Check for publishable posts
               run: |
-                  i=0
-                  for changed_file in ${{ steps.files.outputs.added_modified }}; do
-                    if [[ "${changed_file}" == "posts"* ]];
-                    then
-                      echo "::set-output name=post${i}::${changed_file}"
-                      ((i=i+1))
+                publishable_posts=""
+                for changed_file in ${{ steps.files.outputs.added_modified }}; do
+                  if [[ "${changed_file}" == "posts"* ]]; then
+                    status=$(awk '/^Status:/ {print $2}' "${changed_file}")
+                    if [[ "${status}" == "Published" ]]; then
+                      publishable_posts="${publishable_posts} ${changed_file}"
                     fi
-                  done
-            - if: steps.posts.outputs.post0
+                  fi
+                done
+                echo "::set-output name=publishable_posts::${publishable_posts}"
+
+            - if: steps.posts.outputs.publishable_posts
               name: Publish to medium
               uses: infraway/post-medium-action@v1.6.0
               with:
                 access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-                markdown_file: ${{ steps.posts.outputs.post0 }}
+                markdown_file: ${{ steps.posts.outputs.publishable_posts }}
                 base_url: https://medium.com/@shoto-morisaki

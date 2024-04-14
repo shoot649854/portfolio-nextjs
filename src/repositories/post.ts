@@ -1,12 +1,11 @@
-import type { PostData } from "@/Type";
 import { getAllMatterResults, extractPostMeta } from "./frontmatter";
+
+import type { PostData } from "@/Type";
 
 /** 日付でソートした全記事データを取得 */
 export const getSortedPostsMeta = () => {
   const matterResults = getAllMatterResults();
-  const postMetaList = matterResults.map((matter: any) =>
-    extractPostMeta(matter.data)
-  );
+  const postMetaList = matterResults.map((matter: any) => extractPostMeta(matter.data));
   const sortedResults = postMetaList.sort((a: any, b: any) => {
     if (a.date < b.date) {
       return 1;
