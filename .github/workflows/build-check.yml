@@ -21,3 +21,6 @@ jobs:
 
      - name: app-build
        run: npm run build
+
+     - name: app-format
+       run: npm run format
