@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Box, Paper, Typography, Link } from "@mui/material";
-
 import { PostMeta } from "@/Type";
 
 type Props = {

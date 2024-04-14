@@ -1,8 +1,6 @@
 import React from "react";
-
 import { Box } from "@mui/material";
 import Image from "next/image";
-
 import profile from "@/../public/profile.jpeg";
 import { useIsSmallScreen } from "@/constant/MediaQuery";
 

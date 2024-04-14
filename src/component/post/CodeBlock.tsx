@@ -2,12 +2,11 @@
 
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
-
 import { CodeProps } from "react-markdown/lib/ast-to-react";
-
 import style from "@/styles/codeblock.module.scss";
 
-const CodeBlock = ({ className, children }: CodeProps) => { //node, 
+const CodeBlock = ({ className, children }: CodeProps) => {
+  //node,
   // カスタム値の判定材料を抽出
   const prefix = "language-";
   const classes = className

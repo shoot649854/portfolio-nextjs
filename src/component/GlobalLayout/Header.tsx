@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 import CloseIcon from "@mui/icons-material/Close";
 import BlogIcon from "@mui/icons-material/Description";
 import HomeIcon from "@mui/icons-material/Home";
@@ -11,10 +10,8 @@ import ProjectIcon from "@mui/icons-material/Work";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
 import { useIsSmallScreen } from "../../constant/MediaQuery";
 import CustomButton from "../Common/CustomButton";
-
 import profile from "@/../public/profile.jpeg";
 import { StyledIconButton, StyledAvatar } from "@/constant/Styled";
 

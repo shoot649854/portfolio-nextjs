@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
-
-import { Avatar, Box, Button, Paper, Typography, Link } from "@mui/material";
+import { Box, Button, Paper, Typography, Link } from "@mui/material";
 import { useIsSmallScreen } from "../../constant/MediaQuery";
-
 import { PostMeta } from "@/Type";
 type Props = {
   data: PostMeta;
@@ -14,7 +11,6 @@ const GalleryCard = ({ data }: Props) => {
 
   return (
     <Link href={`/post/${data.slug}`} color="inherit" style={{ textDecoration: "none" }}>
-
       <Paper
         sx={{
           height: isSmallScreen ? "auto" : "300px",
@@ -32,7 +28,7 @@ const GalleryCard = ({ data }: Props) => {
             boxShadow: "2xl"
           },
           "@media (min-width: 768px)": {
-            flexDirection: "row",
+            flexDirection: "row"
             // "&:nth-of-type(even)": {
             //   flexDirection: "row-reverse"
             // }
@@ -51,29 +47,34 @@ const GalleryCard = ({ data }: Props) => {
             }
           }}
         >
-          <Box display={"flex"} gap={"4px"} alignItems={"center"}> 
+          <Box display={"flex"} gap={"4px"} alignItems={"center"}>
             {/* <Avatar alt="Profile Photo" sx={{ width: 24, height: 24 }}>
               <Image src={data.editor_img} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px" />
             </Avatar> */}
           </Box>
-            <Box>
-              <Typography
-                variant="body2"
-                component="h3"
-                sx={{
-                  my: isSmallScreen ? 1 : 1,
-                  // fontSize: isSmallScreen ? "21px" : "inherit"
-                }}
-              >
-                {data.author}
-              </Typography>
-            </Box>
-            <Typography variant="body2">{data.date}</Typography>
-
+          <Box>
+            <Typography
+              variant="body2"
+              component="h3"
+              sx={{
+                my: isSmallScreen ? 1 : 1
+                // fontSize: isSmallScreen ? "21px" : "inherit"
+              }}
+            >
+              {data.author}
+            </Typography>
+          </Box>
+          <Typography variant="body2">{data.date}</Typography>
 
           <Typography
             variant="body2"
-            sx={{ mb: isSmallScreen ? 0.5 : 2, height: "auto", overflow: "hidden", fontSize: isSmallScreen ? "16px" : "20px", fontWeight: "bold" }}
+            sx={{
+              mb: isSmallScreen ? 0.5 : 2,
+              height: "auto",
+              overflow: "hidden",
+              fontSize: isSmallScreen ? "16px" : "20px",
+              fontWeight: "bold"
+            }}
           >
             {data.title}
           </Typography>
@@ -81,7 +82,11 @@ const GalleryCard = ({ data }: Props) => {
           <Box sx={{ display: "flex", alignItems: "center", flexWrap: "nowrap" }}>
             {data.tags.map((tag: string, index: number) => (
               <React.Fragment key={index}>
-                <Link href={`/post/${data.slug}`} color="inherit" style={{ textDecoration: "none" }}>
+                <Link
+                  href={`/post/${data.slug}`}
+                  color="inherit"
+                  style={{ textDecoration: "none" }}
+                >
                   <Button
                     variant="outlined"
                     sx={{
@@ -90,7 +95,7 @@ const GalleryCard = ({ data }: Props) => {
                       marginLeft: index > 0 ? "8px" : "0",
                       textDecoration: "none",
                       textTransform: "none",
-                      backgroundColor: "#494b4b",
+                      backgroundColor: "#494b4b"
                     }}
                   >
                     {tag}
@@ -99,21 +104,20 @@ const GalleryCard = ({ data }: Props) => {
               </React.Fragment>
             ))}
           </Box>
-          
-          </Box>
-          <Box
-            sx={{
-              height: isSmallScreen ? "auto" : "100%",
-              width: isSmallScreen ? "100%" : "55%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              overflow: "hidden",
-              flexGrow: 0,
-            }}
-          >
-            <img src={data.coverImage} alt={data.title} />
-          </Box>
+        </Box>
+        <Box
+          sx={{
+            height: isSmallScreen ? "auto" : "100%",
+            width: isSmallScreen ? "100%" : "55%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+            flexGrow: 0
+          }}
+        >
+          <img src={data.coverImage} alt={data.title} />
+        </Box>
       </Paper>
     </Link>
   );

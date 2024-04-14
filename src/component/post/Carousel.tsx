@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Carousel from "react-material-ui-carousel";
-
 import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import { Typography, Box, Link, Grid } from "@mui/material";
-
-import { useIsSmallScreen, useIsExtraSmallScreen, useIsNarrowScreen } from "../../constant/MediaQuery";
-
+import {
+  useIsSmallScreen,
+  useIsExtraSmallScreen,
+  useIsNarrowScreen
+} from "../../constant/MediaQuery";
 import type { PostMeta } from "@/Type";
 
 // const lColor = "black";
@@ -34,13 +35,13 @@ function CarouselComponent({ posts, total }: Props) {
   if (currentIndex >= total) setCurrentIndex(total - 1);
 
   const calculateHeight = () => {
-    let height = 900; 
+    let height = 900;
     if (ExtraSmallScreen) {
-      height = 400; 
+      height = 400;
     } else if (isSmallScreen) {
-      height = 500; 
+      height = 500;
     } else if (NarrowScreen) {
-      height = 300; 
+      height = 300;
     }
     return height;
   };
@@ -66,7 +67,7 @@ function CarouselComponent({ posts, total }: Props) {
       }}
     >
       <Carousel
-        NextIcon={<ArrowForwardIosSharpIcon />} 
+        NextIcon={<ArrowForwardIosSharpIcon />}
         PrevIcon={<ArrowBackIosSharpIcon />} //矢印アイコンを別のアイコンに変更
         autoPlay={isSmallScreen} //自動でCarouselを動かすかどうか(true or false)
         //stopAutoPlayOnHover = {true} Carouselの上にマウスを置いている間、自動スクロールを継続するかどうか
@@ -74,7 +75,7 @@ function CarouselComponent({ posts, total }: Props) {
         //animation = {fade} (fade or slide) Carouselのアニメーションの種類を変更
         //duration = {500} アニメーションの長さを定義
         swipe={isSmallScreen} // スワイプで動かせるかどうか
-        indicators = {false} // インジケーター(下の丸いアイコン)が必要かどうか
+        indicators={false} // インジケーター(下の丸いアイコン)が必要かどうか
         navButtonsAlwaysVisible={!isSmallScreen} //常に矢印アイコンを表示するかどうか
         //navButtonsAlwaysInvisible = {true} //常に矢印アイコンを非表示にするかどうか
         //cycleNavigation = {true} //最後のスライドから「次へ」の矢印アイコンを押した時に最初にスライドに動かせるようにするかどうか
@@ -122,7 +123,14 @@ function CarouselComponent({ posts, total }: Props) {
               style={{ textDecoration: "none" }}
               key={post.slug}
             >
-              <Box sx={{ height: `${calculateHeight()}px`,  width: "100%", backgroundColor: bgColor, position: "relative" }}>
+              <Box
+                sx={{
+                  height: `${calculateHeight()}px`,
+                  width: "100%",
+                  backgroundColor: bgColor,
+                  position: "relative"
+                }}
+              >
                 <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start">
                   <Box sx={{ height: "100%", width: "100%" }}>
                     <Box
@@ -140,25 +148,30 @@ function CarouselComponent({ posts, total }: Props) {
                         alt="Carousel Image"
                       />
                     </Box>
-
                   </Box>
                   <Box width="65%" sx={{ position: "absolute", bottom: 0, left: 0 }}>
                     <Typography
                       sx={{
                         fontWeight: "medium",
-                        fontSize: ExtraSmallScreen ? "16px" : (isSmallScreen ? "20px" : (NarrowScreen ? "16px" : "36px")),
+                        fontSize: ExtraSmallScreen
+                          ? "16px"
+                          : isSmallScreen
+                            ? "20px"
+                            : NarrowScreen
+                              ? "16px"
+                              : "36px",
                         padding: "10px",
                         backgroundColor: "white",
                         opacity: currentIndex === index ? 1 : 0,
                         animation: `${currentIndex === index ? "fade-in-left" : "fade-out"} 0.5s ease-in-out forwards`,
                         "@keyframes fade-in-left": {
                           from: { opacity: 0, transform: "translateX(-50px)" },
-                          to: { opacity: 1, transform: "translateX(0)" },
+                          to: { opacity: 1, transform: "translateX(0)" }
                         },
                         "@keyframes fade-out": {
                           from: { opacity: 1 }, // Animation starts from opacity 1
-                          to: { opacity: 0 }, // Animation ends at opacity 0
-                        },
+                          to: { opacity: 0 } // Animation ends at opacity 0
+                        }
                       }}
                     >
                       {post.title}

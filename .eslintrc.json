@@ -27,7 +27,7 @@
           "index" // 同階層のファイル
         ],
         // グループごとに改行を入れる
-        "newlines-between": "always", // "never" を指定すると改行なし
+        "newlines-between": "never", // "never" を指定すると改行なし
         // FIXME: ちょっとよく分かってない
         // This defines import types that are not handled by configured pathGroups. This is mostly needed when you want to handle path groups that look like external imports.
         "pathGroupsExcludedImportTypes": ["builtin"],
