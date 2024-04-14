@@ -16,8 +16,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "removeComments": true,
-    "noUnusedLocals": true, //Personal Use
-    "noUnusedParameters": true, //Personal Use
+    // "noUnusedLocals": true, //Personal Use
+    // "noUnusedParameters": true, //Personal Use
     "incremental": true,
     // "baseUrl": "./src",
     "plugins": [
@@ -34,7 +34,8 @@
         "../public/*/"
       ]
     },
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
   "include": [
     "next-env.d.ts",
