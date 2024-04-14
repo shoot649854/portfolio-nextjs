@@ -1,5 +1,5 @@
 ---
-Status: 'Draft' # 'Draft', 'Pending', 'Published', 'Rewriting'
+Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
 docType: 'Article' # 'Project', 'Article'
 id: '16'
 title: Hackathon / Startup 101

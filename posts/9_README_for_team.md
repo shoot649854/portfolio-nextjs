@@ -7,7 +7,7 @@ description: When a new member joins a project, writing a README with an overvie
 slug: README_for_team.md
 date: '2024-02-24'
 author: Shoto Morisaki
-coverImage: /post/5/sample5.jpg
+image: /post/5/sample5.jpg
 category: Blog
 tags: [ Coding, README ]
 relatedDoc1: ""
