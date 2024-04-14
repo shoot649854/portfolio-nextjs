@@ -1,35 +1,38 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Article' # 'Project', 'Article'
+Status: Draft # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Article # 'Project', 'Article'
 id: 8
 title: Commonly Used React HooksGithub accounts
 description: List of commonly used React hooks with brief explanations.
-slug: React_Hooks.md
+slug: React_Hooks
 date: 2024-02-11
 author: Shoto Morisaki
 image: sample/opened-laptop.jpg
 category: Coding
 tags: [Git]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+relatedDoc1: None
+relatedDoc2: None
+relatedDoc3: None
+relatedDoc4: None
+relatedDoc5: None
+editor_img: None
+editor_bio: None
+editor_name: Shoto Morisaki
 editor_social:
     -
         icon: fab fa-facebook-f
-        url: 
+        url: None
     -
         icon: fa-brands fa-x-twitter
-        url: 
-    - 
+        url: None
+    -
         icon: fas fa-link
-        url: 
-
+        url: None
 ---
+
+
+
+
 
 # Commonly Used React Hooks
 

@@ -1,2 +1,2 @@
 /** list articles per page */
-export const PER_PAGE: number = 6;
+export const PER_PAGE: number = 10;
