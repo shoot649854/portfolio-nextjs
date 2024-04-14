@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import SearchIcon from "@mui/icons-material/Search";
 import ProjectIcon from "@mui/icons-material/Work";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
