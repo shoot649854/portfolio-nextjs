@@ -70,14 +70,16 @@ def commit_and_push(image_path, repo_path):
         subprocess.run(['git', 'clone', 'git@github.com.main:shoot649854/IMG_DB.git'])
         os.chdir(repo_path)
     
-    image_parts = image_path[0].split("/")
+    webp_path = convert_to_webp(image_path)
+    
+    image_parts = webp_path.split("/")
     directory_parts = image_parts[-3:-1]
     filename = image_parts[-1]
     destination_directory = os.path.join(PARENT_DIR, repo_path, *directory_parts, "")
 
     os.makedirs(destination_directory, exist_ok=True)
     destination_path = os.path.join(PARENT_DIR, repo_path, *image_parts[-3:])
-    shutil.copy(image_path[0], destination_path)
+    shutil.copy(webp_path, destination_path)
     
     relative_img_path = "/".join(image_parts[-3:])
 
