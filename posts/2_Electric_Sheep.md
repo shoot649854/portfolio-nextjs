@@ -46,7 +46,7 @@ editor_social:
 
 This article summarizes the project conducted in Nagoya, Japan, in the summer of 2023 jointly with Metele. In this article, along with my subjective views, I summarize how our team narrowed down ideas and worked on creating a mobile application over three days.
 
-![alt](/project/2/projectNagoya3.png)
+![alt](https://raw.githubusercontent.com/shoot649854/IMG_DB/project/2/projectNagoya3.png)
 
 ---
 
