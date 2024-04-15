@@ -59,6 +59,11 @@ class MarkdownGenerator:
     
     def update_front_matter(self, data):
         # update = "\n".join([f"{key}: {value}" for key, value in data.items() if key != 'editor_social'])
+        with open(self.md_file, 'r', encoding='utf-8', errors='replace') as f:
+            content = f.read()
+        front_matter_start = content.find('---')
+        front_matter_end = content.find('---', front_matter_start)
+
         update = ""
         update += "Status: " + data['Status']  + " # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'" + "\n"
         update += "docType: " + data['docType'] + " # 'Project', 'Article'" +"\n"
@@ -89,16 +94,11 @@ class MarkdownGenerator:
         for key, value in social.items():
             update += "  -\n"
             update += f"    icon: fab fa-{key.lower()}\n"
-            update += f"    url: {value}\n"
+            update += f"    url: {value}\n" 
 
-        with open(self.md_file, 'r', encoding='utf-8', errors='replace') as f:
-            content = f.read()
-
-        front_matter_start = content.find('---')
-        front_matter_end = content.find('---', front_matter_start + 3) + 3
         updated_front_matter = '---\n' + update + '---\n'
         updated_content = content[:front_matter_start] + updated_front_matter + content[front_matter_end:]
-        print(updated_front_matter)
+        print(content[front_matter_end:])
         return updated_content
     
     def write_file(self, updated_content):
@@ -134,7 +134,7 @@ def main():
             targte_md_item['slug'] = correct_format['slug']
             targte_md_item['editor_name'] = 'Shoto Morisaki'
             updated_content = Generator.update_front_matter(targte_md_item)
-            Generator.write_file(updated_content)
+            # Generator.write_file(updated_content)
 
             print(f"Updated: '{markdown_path}'")
         all_data.append(targte_md_item)
