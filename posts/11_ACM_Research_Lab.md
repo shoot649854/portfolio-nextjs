@@ -31,14 +31,6 @@ editor_social:
 ---
 
 
-
-
-
-
-
-
-
-
 ## ACM Research Lab
 ### What is [ACM Research Lab](https://ucscacm.vercel.app/) 
 > We are a student run organization that strives to create a supportive and inclusive community for people of all backgrounds and skill levels who are passionate about computer science to learn and network.
@@ -47,7 +39,7 @@ editor_social:
 
 The motivation behind this project is to explore and implement the REDCODER model for specific tasks. REDCODER is a code generation model that likely aims to improve code-related tasks. This project revolves around implementing and understanding the REDCODER model, which is a code generation model. The team aims to evaluate the effectiveness of REDCODER for specific tasks by comparing its performance under different scenarios: converting code directly to a latent space versus converting it first to English and then to a latent space. Additionally, tasks include running the REDCODER codebase, understanding the associated paper, and finding a code-to-English translation model. The ultimate goal is to gain insights into the capabilities and limitations of REDCODER and potentially enhance code-related tasks through its utilization.
 
-<!-- ![alt](/project/6/meeting.png) -->
+![alt](/project/6/meeting.png)
  
 ## Tasks
 

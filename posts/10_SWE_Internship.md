@@ -9,7 +9,7 @@ date: 2024-2-27
 author: Shoto Morisaki
 image: project/5/running.jpg
 category: Project
-tags: [AWS, Docker, Python Flask, Material-UI, ApexCharts, TypeScript, React]
+tags: [AWS, Docker, Python, Flask, MUI, TypeScript, React]
 relatedDoc1: 
 relatedDoc2: 
 relatedDoc3: 
