@@ -1,35 +1,42 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Project' # 'Project', 'Article'
+Status: Published # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Project # 'Project', 'Article'
 id: 13
 title: LLM Law Hackathon Impressions Exploring New Frontiers in Legal Tech
 description: Recently, I had the opportunity to participate in the LLM Law Hackathon, an event that brought together legal minds, tech enthusiasts, and innovators to collaborate on creating solutions at the intersection of law and technology. As a participant, I was not only exposed to cutting-edge tools and technologies but also immersed in a vibrant community of like-minded individuals. Here are some of my key impressions from the event.
-slug: LLm_Law_Hackathon_Stanford.md
+slug: LLm_Law_Hackathon_Stanford
 date: 2024-4-8
 author: Shoto Morisaki
 image: /project/8/opening.png
 category: Hackathon
-tags: [ Hackathon, LLM, Law, RAG ]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+tags: [Hackathon, LLM, Law, RAG]
+relatedDoc1: 
+relatedDoc2: 
+relatedDoc3: 
+relatedDoc4: 
+relatedDoc5: 
+editor_img: https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp
+editor_bio: Computer Science @ University of California Santa Cruz | Intern @ LiNK
+editor_name: Shoto Morisaki
 editor_social:
-    -
-        icon: fab fa-facebook-f
-        url: 
-    -
-        icon: fa-brands fa-x-twitter
-        url: 
-    - 
-        icon: fas fa-link
-        url: 
-
+  -
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/
+  -
+    icon: fab fa-github
+    url: https://github.com/shoot649854/
+  -
+    icon: fab fa-portfolio
+    url: https://portfolio-shoto.vercel.app/
 ---
+
+
+
+
+
+
+
+
 
 # LLM Law Hackathon Impressions Exploring New Frontiers in Legal Tech
 Recently, I had the opportunity to participate in the LLM Law Hackathon, an event that brought together legal minds, tech enthusiasts, and innovators to collaborate on creating solutions at the intersection of law and technology. As a participant, I was not only exposed to cutting-edge tools and technologies but also immersed in a vibrant community of like-minded individuals. Here are some of my key impressions from the event. 
@@ -43,7 +50,7 @@ One of the most exciting aspects of the hackathon was the opportunity to experim
 
 [Svelte](https://svelte.dev/), a relatively recent entrant into the front-end framework landscape, has been gaining attention and traction, including a feature in [The State of JavaScript 2019 report](https://2019.stateofjs.com/). As a developer exploring the evolving ecosystem of web development tools, I found myself drawn to Svelte for several compelling reasons.
 
-```Svelte
+```javascript
 <script>
 	import '../app.pcss';
 	import './styles.css';
@@ -90,9 +97,30 @@ One significant realization during the hackathon was the diminishing novelty of 
 
 This serves as a reminder that the RAG methodology is not simply about introducing new concepts, but rather about applying existing concepts in a novel and impactful way. It highlights the importance of contextual relevance and data consistency when introducing a methodology such as RAG. The study was conducted to show that simply adopting a trendy approach without considering its applicability and implications can lead to inefficiencies and misalignment with project goals.
 
+![alt text](/project/8/arch.jpg)
+
 For example, an effective use of this approach would be to maintain a database of more than 1,000,000 messages, or a database limited to only the most relevant cases to date. This would be a very good use if it can be demonstrated that the use of this approach has improved performance and institutional efficiency.
 
 ## Lack of Focus on LLM Aspect
 One of the most glaring shortcomings of our team's approach was the insufficient emphasis on the intersection of machine learning and law (LLM). Despite the overarching theme of the hackathon, our efforts primarily revolved around front-end development and design, neglecting the core domain of LLM. In hindsight, this oversight is particularly perplexing, considering the wealth of resources and support provided by sponsors specializing in machine learning tools. It underscores the importance of aligning project objectives with the overarching theme of the event and capitalizing on available resources to maximize impact. By not delving deeper into the LLM aspect, we missed out on opportunities for innovation and collaboration within the intended domain.
 
 ![Chat-UI](/project/8/chat-UI.png)
+
+# Thank you Teammates!
+I have collaborated with my amazing team from: 
+
+✨ Yingyun (Aurora) Zhang: PM/Designer 
+🧠 Supriya Pillai: AI Engineer, our hackathon and LLM ninja ✨
+🦉 Shoto Morisaki: Computer Science @ University of California Santa Cruz Love your energy⭐
+✍ Meera Vinod: ML Product Manager Evident. Thank you for your leadership! 🌟
+
+Feel free to visit our platforms and github for more information! 
+
+```card
+https://docs.google.com/presentation/d/12h3HRT68ZLJxArxSrAuD8EK41C4i-3b2/edit?usp=sharing&ouid=116945634333043155985&rtpof=true&sd=true
+```
+
+```card
+https://github.com/shoot649854/llm-law-stanford
+```
+

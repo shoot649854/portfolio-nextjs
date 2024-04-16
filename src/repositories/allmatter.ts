@@ -1,10 +1,7 @@
 import fs from "fs";
 import path from "path";
-
 import matter from "gray-matter";
-
 import type { PostMeta } from "@/Type";
-
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */

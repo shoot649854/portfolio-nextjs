@@ -1,35 +1,35 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Project' # 'Project', 'Article'
+Status: Published # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Project # 'Project', 'Article'
 id: 11
 title: ACM (Association for Computing Machinery) Research Lab
 description: This project revolves around implementing and understanding the REDCODER model, which is a code generation model. The team aims to evaluate the effectiveness of REDCODER for specific tasks by comparing its performance under different scenarios
-slug: ACM_Research_Lab.md
+slug: ACM_Research_Lab
 date: 2024-4-1
 author: Shoto Morisaki
 image: project/6/ACM_logo.png
 category: Research
-tags: [ LLM, Natural Language, LangChain, RAG ]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+tags: [LLM, Natural Language, LangChain, RAG]
+relatedDoc1: 
+relatedDoc2: 
+relatedDoc3: 
+relatedDoc4: 
+relatedDoc5: 
+editor_img: https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp
+editor_bio: Computer Science @ University of California Santa Cruz | Intern @ LiNK
+editor_name: Shoto Morisaki
 editor_social:
-    -
-        icon: fab fa-facebook-f
-        url: 
-    -
-        icon: fa-brands fa-x-twitter
-        url: 
-    - 
-        icon: fas fa-link
-        url: 
-
+  -
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/
+  -
+    icon: fab fa-github
+    url: https://github.com/shoot649854/
+  -
+    icon: fab fa-portfolio
+    url: https://portfolio-shoto.vercel.app/
 ---
+
 
 ## ACM Research Lab
 ### What is [ACM Research Lab](https://ucscacm.vercel.app/) 
@@ -39,7 +39,7 @@ editor_social:
 
 The motivation behind this project is to explore and implement the REDCODER model for specific tasks. REDCODER is a code generation model that likely aims to improve code-related tasks. This project revolves around implementing and understanding the REDCODER model, which is a code generation model. The team aims to evaluate the effectiveness of REDCODER for specific tasks by comparing its performance under different scenarios: converting code directly to a latent space versus converting it first to English and then to a latent space. Additionally, tasks include running the REDCODER codebase, understanding the associated paper, and finding a code-to-English translation model. The ultimate goal is to gain insights into the capabilities and limitations of REDCODER and potentially enhance code-related tasks through its utilization.
 
-<!-- ![alt](/project/6/meeting.png) -->
+![alt](/project/6/meeting.png)
  
 ## Tasks
 

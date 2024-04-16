@@ -1,8 +1,6 @@
 import { Box } from "@mui/material";
-
 import type { PostMeta } from "@/Type";
 import type { GetStaticProps } from "next";
-
 import Template from "@/component/template/homepage";
 // import SEO from "components/common/seo";
 import getPost from "@/service/Project/accessToTopPro";

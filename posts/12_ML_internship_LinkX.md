@@ -1,35 +1,43 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Project' # 'Project', 'Article'
+Status: Published # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Project # 'Project', 'Article'
 id: 12
 title: Machine Learning Internship at LinkX Japan
 description: Machine Learning Internship at LinkX Japan, working as Backend / Full Stack engineer. applying RAG system to improve LLM application.
-slug: ML_internship_LinkX.md
+slug: ML_internship_LinkX
 date: 2024-4-1
 author: Shoto Morisaki
 image: /project/7/writing.jpg
 category: Internship
-tags: [ Internship, LLM, Natural Language, RAG ]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+tags: [Internship, LLM, Natural Language, RAG]
+relatedDoc1: 
+relatedDoc2: 
+relatedDoc3: 
+relatedDoc4: 
+relatedDoc5: 
+editor_img: https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp
+editor_bio: Computer Science @ University of California Santa Cruz | Intern @ LiNK
+editor_name: Shoto Morisaki
 editor_social:
-    -
-        icon: fab fa-facebook-f
-        url: 
-    -
-        icon: fa-brands fa-x-twitter
-        url: 
-    - 
-        icon: fas fa-link
-        url: 
-
+  -
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/
+  -
+    icon: fab fa-github
+    url: https://github.com/shoot649854/
+  -
+    icon: fab fa-portfolio
+    url: https://portfolio-shoto.vercel.app/
 ---
+
+
+
+
+
+
+
+
+
 
 ## LinkX Japan 
 ### What is [LinkX Japan](https://corp.linx.jp/en) 

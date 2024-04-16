@@ -1,8 +1,6 @@
 import "tailwindcss/tailwind.css";
 import { Box } from "@mui/material";
-
 import type { AppProps } from "next/app";
-
 import Footer from "@/component/GlobalLayout/Footer";
 import Header from "@/component/GlobalLayout/Header";
 import "../styles/globals.css";

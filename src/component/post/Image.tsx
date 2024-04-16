@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Zoom from "react-medium-image-zoom";
-
 import { Box, Typography } from "@mui/material";
 import "react-medium-image-zoom/dist/styles.css";
 

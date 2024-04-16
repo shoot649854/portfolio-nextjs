@@ -1,9 +1,6 @@
 import React from "react";
-
 import { Typography } from "@mui/material";
-
 import { useIsSmallScreen } from "../../constant/MediaQuery";
-
 import { CustomButtonProps } from "@/constant/Interface";
 import { StyledButton } from "@/constant/Styled";
 

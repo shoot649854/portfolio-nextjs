@@ -1,35 +1,43 @@
 ---
-Status: 'Pending' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Article' # 'Project', 'Article'
+Status: Pending # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Article # 'Project', 'Article'
 id: 0
 title: What is Portflorio?
 description: Portflorio is a blog template built for Next.js. This is a free template that uses TypeScript and article management using Markdown, while maintaining the speed-up features that are the hallmark of Next.js.
-slug: sample.md
+slug: sample
 date: 2023-12-31
 author: Shoto Morisaki
 image: sample/sample1.jpg
 category: Other
 tags: [Sample Markdown]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+relatedDoc1: 
+relatedDoc2: 
+relatedDoc3: 
+relatedDoc4: 
+relatedDoc5: 
+editor_img: https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp
+editor_bio: Computer Science @ University of California Santa Cruz | Intern @ LiNK
+editor_name: Shoto Morisaki
 editor_social:
-    -
-        icon: fab fa-facebook-f
-        url: 
-    -
-        icon: fa-brands fa-x-twitter
-        url: 
-    - 
-        icon: fas fa-link
-        url: 
-
+  -
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/
+  -
+    icon: fab fa-github
+    url: https://github.com/shoot649854/
+  -
+    icon: fab fa-portfolio
+    url: https://portfolio-shoto.vercel.app/
 ---
+
+
+
+
+
+
+
+
+
 
 # What is Portflorio?
 

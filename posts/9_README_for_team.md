@@ -1,35 +1,43 @@
 ---
-Status: 'Published' # 'Draft', 'Pending', 'Published', 'Rewriting'
-docType: 'Article' # 'Project', 'Article'
+Status: Published # 'Draft', 'Pending', 'Published-Portfolio', 'Published-Medium', 'Rewriting'
+docType: Article # 'Project', 'Article'
 id: 9
 title: Writing README for team project 101
 description: When a new member joins a project, writing a README with an overview of the project and links to necessary documents will make it easier to understand the project and reduce unnecessary communication costs.
-slug: README_for_team.md
-date: '2024-02-24'
+slug: README_for_team
+date: 2024-02-24
 author: Shoto Morisaki
-coverImage: /post/5/sample5.jpg
+image: /post/5/sample5.jpg
 category: Blog
-tags: [ Coding, README ]
-relatedDoc1: ""
-relatedDoc2: ""
-relatedDoc3: ""
-relatedDoc4: ""
-relatedDoc5: ""
-editor_img: ''
-editor_bio: ''
-editor_name: ''
+tags: [Coding, README]
+relatedDoc1: 
+relatedDoc2: 
+relatedDoc3: 
+relatedDoc4: 
+relatedDoc5: 
+editor_img: https://raw.githubusercontent.com/shoot649854/IMG_DB/main/profile.webp
+editor_bio: Computer Science @ University of California Santa Cruz | Intern @ LiNK
+editor_name: Shoto Morisaki
 editor_social:
-    -
-        icon: fab fa-facebook-f
-        url: 
-    -
-        icon: fa-brands fa-x-twitter
-        url: 
-    - 
-        icon: fas fa-link
-        url: 
-
+  -
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/shoto-morisaki-93b0a71bb/
+  -
+    icon: fab fa-github
+    url: https://github.com/shoot649854/
+  -
+    icon: fab fa-portfolio
+    url: https://portfolio-shoto.vercel.app/
 ---
+
+
+
+
+
+
+
+
+
 
 # 🚀 What is README.md? 
 README is the application's

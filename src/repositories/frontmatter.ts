@@ -1,10 +1,7 @@
 import fs from "fs";
 import path from "path";
-
 import matter from "gray-matter";
-
 import type { PostMeta } from "@/Type";
-
 import { retrieveFiles } from "@/utils/filepath";
 
 /** 記事データ格納パス */
@@ -23,7 +20,7 @@ export const getAllMatterResults = () => {
       // metaデータをパース
       const matterResult = matter(fileContents);
 
-      if (matterResult.data.Status !== "Published" && matterResult.data.docType === "Article") {
+      if (matterResult.data.Status === "Published" && matterResult.data.docType === "Article") {
         return matterResult;
       } else {
         return null;
