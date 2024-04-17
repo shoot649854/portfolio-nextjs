@@ -50,7 +50,7 @@ As I mentioned above in my LinkedIn post, there are many changes in technology a
 > Communicating effectively means separating facts from feelings. Clarity in articulating tasks and research ensures smoother collaboration and understanding among team members.
 
 This is the lesson I learned when I was at a meeting and was asked about the API specs. I believe that a meeting in which I don't speak up is meaningless, so I always try to be prepared and say something at the meeting, but sometimes when I get nervous in a room full of other engineers and my boss, I don't always say the right information. It is still very effective to say that you don't understand something even when you are in the middle of speaking, and to look it up at that moment and say the correct information.
-![alt](/post/4/meeting.jpg)
+![alt](/post/4/meeting.jpg "Image from unspulast")
 
 ---
 
