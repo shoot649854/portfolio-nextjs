@@ -39,6 +39,8 @@ editor_social:
 
 
 
+
+
 # 🚀 Introduction 
 Wrapping up 8 months of internship at start up software engineering company as a Software Engineer has been an enriching journey. Here's a summary of key takeaways:
 
