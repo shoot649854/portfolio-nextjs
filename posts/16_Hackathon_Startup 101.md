@@ -5,7 +5,7 @@ id: 16
 title: Hackathon / Startup 101
 description: If you are just starting a project or an enterprise, this article is for you. In this article, we will discuss what to do and what not to do for those of you who have an idea.
 slug: Hackathon_Startup 101
-date: 2024-04-10
+date: 2024-4-10
 author: Shoto Morisaki
 image: sample/sample7.jpg
 category: Article

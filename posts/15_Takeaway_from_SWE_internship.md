@@ -5,7 +5,7 @@ id: 15
 title: Takeaway of 8 months Internship as Software Engineer
 description: Wrapping up 8 months of internship at start up software engineering company as a Software Engineer has been an enriching journey. Here's a summary of key takeaways
 slug: Takeaway_from_SWE_internship
-date: 2024-02-20
+date: 2024-2-20
 author: Shoto Morisaki
 image: sample/sample7.jpg
 category: Blog

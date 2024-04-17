@@ -5,7 +5,7 @@ id: 17
 title: The Human Factors of Formal Methods
 description: As formal methods improve in expressiveness and power, they create new opportunities for non-expert adoption. In principle, formal tools are now powerful enough to enable developers to scalably validate realistic systems artifacts without extensive formal training.
 slug: Human_Factors_Formal_Methods
-date: 2024-04-17
+date: 2024-4-17
 author: Shoto Morisaki
 image: project/talk_1.png
 category: Article
@@ -97,3 +97,17 @@ One notable challenge lies in the transformation between LTL and natural languag
 The key takeaway from this observation is the critical importance of rigorous verification in system design. As systems grow increasingly complex, ensuring their correctness and reliability becomes paramount. This necessitates the development of validated tools accessible to all stakeholders, facilitating seamless collaboration and verification processes.
 
 # Conclusion and thought
+
+Exploring the compiler side of coding offers a fascinating lens through which to examine abstract concepts from the perspective of cognitive science. Often, our understanding of fundamental concepts can be skewed by rigid interpretations ingrained in our educational frameworks. For instance, the notion of an acute triangle may seem straightforward, yet a simple rotation can confound our perception, revealing the limitations of our learned abstractions.
+
+![diagram](/project/diagram.jpeg)
+
+In a thought-provoking talk, Shriram Krishnamurthi, a distinguished professor at Brown University, highlights the peril of relying solely on concrete examples when explaining abstract concepts. The disconnect between abstraction and reality can lead to misconceptions and faulty generalizations. To mitigate this risk, Krishnamurthi advocates for a dynamic interplay between concrete examples and abstract principles—a process of constant iteration and refinement that fosters deeper understanding and guards against erroneous abstractions.
+
+This iterative approach holds relevance not only in the realm of education but also in various fields, including software development. Rust, heralded for its emphasis on memory safety and avoidance of undefined behavior, exemplifies the benefits of this iterative mindset. [The Rust Programming Language initiative at Brown University](https://rust-book.cs.brown.edu/), spearheaded by Krishnamurthi, serves as a testament to the practical application of these principles in software engineering education.
+
+```card
+https://rust-book.cs.brown.edu/
+```
+
+For those venturing into Rust programming, Krishnamurthi recommends starting with the ownership page, a cornerstone of Rust's unique memory management system. By delving into compiler construction, one gains insights into not only the technical intricacies of coding but also the broader goal of facilitating learning and comprehension—an aspiration that resonates across disciplines and educational endeavors.
