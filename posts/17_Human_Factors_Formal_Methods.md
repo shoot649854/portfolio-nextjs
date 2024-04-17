@@ -37,11 +37,8 @@ This talk presents some of our efforts to address this paucity. We apply ideas f
 
 ![alt text](/project/talk_1.png)
 
-# Things to cover
-1. What to compute
-2. How to show
-3. What to show
-4. How to describe system
+
+Shriram is the Vice President for Programming Languages at Brown University in Providence, RI, USA. He’s not, really, but that’s what it says on his business card. At heart, he's a person of ill-repute: a Schemer, Racketeer, and Pyreteer. He believes tropical fruit are superior to all other kinds. He is terrified of success, because he may be forced to buy a suit. On a more serious note, he's a professor at Brown who has created several influential systems (such as DrRacket, Margrave, Flapjax, and Lambda-JS) and written multiple widely-used books. He has won SIGPLAN's Robin Milner Young Researcher Award, SIGPLAN's Software Award (jointly), SIGSOFT's Influential Educator Award, SIGPLAN's Distinguished Educator Award (jointly), and other recognitions.
 
 # What to compute
 
@@ -51,7 +48,9 @@ The central focus of computation often revolves around deriving principle model 
 
 In one such instance, a diagram illustrating loops, non-binary searches, and prompting questions appeared mathematically sound and well-defined. Yet, despite its clarity to some, it proved perplexing and off-putting to many users. This discrepancy between mathematical elegance and user comprehension underscores a crucial point: the beauty of mathematics does not inherently translate to accessibility or utility for all users.
 
-The key takeaway from this observation is the importance of bridging the gap between mathematical sophistication and user-friendly design. While mathematical rigor is essential for robust computation, effective communication requires consideration of diverse user perspectives and levels of understanding. Simply put, a visually appealing or theoretically elegant model may not serve its purpose if it fails to resonate with its intended audience.
+![alttext](/project/talk_3.png)
+
+The key takeaway from this observation is **the importance of bridging the gap between mathematical sophistication and user-friendly design. While mathematical rigor is essential for robust computation, effective communication requires consideration of diverse user perspectives and levels of understanding**. Simply put, a visually appealing or theoretically elegant model may not serve its purpose if it fails to resonate with its intended audience.
 
 # How to show
 
@@ -59,7 +58,7 @@ The ultimate aim of computation extends beyond mere processing of data; it encom
 
 An illustrative example lies in applying cognitive principles to the output of model findings, particularly highlighting the positive value of negative information. Contrary to conventional wisdom, providing negative information can enhance learning—a phenomenon rooted in the principle of contrasting cases. By juxtaposing contrasting scenarios, users gain deeper insights and a more nuanced understanding of the subject matter.
 
-The key takeaway from this approach is the recognition that as computer scientists, we possess insights into cognitive effects that can significantly enhance the effectiveness of computational output. By integrating principles from cognitive sciences into our computational models and presentations, we can create more impactful and user-friendly systems that resonate with users on a deeper level.
+The key takeaway from this approach is **the recognition that as computer scientists, we possess insights into cognitive effects that can significantly enhance the effectiveness of computational output**. By integrating principles from cognitive sciences into our computational models and presentations, we can create more impactful and user-friendly systems that resonate with users on a deeper level.
 
 # What to show
 
@@ -74,7 +73,7 @@ Innovative approaches, such as color-text tests, draw inspiration from psycholog
 ![Image by Gili Malinsky on Business Insider](https://i.insider.com/5d38a8fc2516e97a8f23a3ab?width=1200&format=jpeg "Image by Gili Malinsky on Business Insider")
 
 ## River-Crossing Puzzles (spatial and temporal)
-Consider the example of River-Crossing Puzzles, which blend spatial and temporal elements to challenge problem-solving skills. In these puzzles, maneuvering pieces across a river involves understanding both spatial orientation (left, right) and temporal sequencing (before, after).
+Consider the example of [River-Crossing Puzzles](https://en.wikipedia.org/wiki/River_crossing_puzzle), which blend spatial and temporal elements to challenge problem-solving skills. In these puzzles, maneuvering pieces across a river involves understanding both spatial orientation (left, right) and temporal sequencing (before, after).
 
 This interplay of spatial and temporal relations not only imbues meaning into the puzzle but also underscores the importance of metaphorical constructs in domain-specific contexts. Rust, a programming language known for its emphasis on memory safety and performance, leverages these spatial and temporal relationships to offer robust solutions, exemplifying the practical utility of such conceptual frameworks in computational domains.
 
@@ -82,7 +81,12 @@ This interplay of spatial and temporal relations not only imbues meaning into th
 
 # How to describe the system
 
-Describing the intricacies of a system involves navigating through various formalisms and languages, such as Linear Temporal Logic (LTL), which provides a framework for reasoning about temporal properties in computational systems. Common operators in LTL include "always," "until," and "next stage," each serving to express temporal relationships and constraints within the system.
+Describing the intricacies of a system involves navigating through various formalisms and languages, such as [Linear Temporal Logic](https://en.wikipedia.org/wiki/Linear_temporal_logic) (LTL), which provides a framework for reasoning about temporal properties in computational systems. Common operators in LTL include the following, each serving to express temporal relationships and constraints within the system.
+
+- always 
+- eventually
+- until
+- next stage...
 
 A seminal paper titled ["Branching vs Linear Time"](https://www.cs.rice.edu/~vardi/papers/etaps01-ver13.pdf) by Vardi et al. sheds light on the distinctions between branching and linear time logics, offering insights into their respective strengths and weaknesses in modeling and verification contexts.
 
@@ -94,7 +98,7 @@ One notable challenge lies in the transformation between LTL and natural languag
 
 ![alt text](/project/talk_2.png) 
 
-The key takeaway from this observation is the critical importance of rigorous verification in system design. As systems grow increasingly complex, ensuring their correctness and reliability becomes paramount. This necessitates the development of validated tools accessible to all stakeholders, facilitating seamless collaboration and verification processes.
+The key takeaway from this observation is **the critical importance of rigorous verification in system design. As systems grow increasingly complex, ensuring their correctness and reliability becomes paramount**. This necessitates the development of validated tools accessible to all stakeholders, facilitating seamless collaboration and verification processes.
 
 # Conclusion and thought
 
