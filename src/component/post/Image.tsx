@@ -17,11 +17,16 @@ const ImageComponent = ({ title, src = "", alt = "" }: Props) => {
 
   return (
     mounted && (
-      <Box className="my-8" sx={{ position: "relative" }}>
-        <Typography>{title}</Typography>
+      <Box className="my-8" alignContent="center" 
+          sx={{ 
+            position: "relative",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
         <Zoom zoomMargin={100}>
           <img src={src} alt={alt} style={{ width: "100%", height: "auto" }} />
         </Zoom>
+        <Typography align="center" color={"gray"}>{title}</Typography>
       </Box>
     )
   );
