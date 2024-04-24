@@ -30,4 +30,16 @@ editor_social:
     url: https://portfolio-shoto.vercel.app/
 ---
 
+# Let's look at the reality ...
+Society has negtive consequence due to all the tech we have invented. 
+Book wants to offer problematic idea to harness benefit and mitigate the harm.
+
+## Value of efficiency
+Efficiency is not valid
+
+## 3 problems in optimization
+1) Problem in bad objectives
+2) Problem in finding measurable proxies for good goals
+3) Problem in multiple valuable goals 
+
 
