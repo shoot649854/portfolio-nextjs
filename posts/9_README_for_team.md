@@ -5,7 +5,7 @@ id: 9
 title: Writing README for team project 101
 description: When a new member joins a project, writing a README with an overview of the project and links to necessary documents will make it easier to understand the project and reduce unnecessary communication costs.
 slug: README_for_team
-date: 2024-02-24
+date: 2024-2-24
 author: Shoto Morisaki
 image: /post/5/sample5.jpg
 category: Blog

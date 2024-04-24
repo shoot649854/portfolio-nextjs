@@ -5,7 +5,7 @@ id: 8
 title: Commonly Used React HooksGithub accounts
 description: List of commonly used React hooks with brief explanations.
 slug: React_Hooks
-date: 2024-02-11
+date: 2024-2-11
 author: Shoto Morisaki
 image: sample/opened-laptop.jpg
 category: Coding

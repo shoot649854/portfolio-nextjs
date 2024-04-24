@@ -5,7 +5,7 @@ id: 5
 title: Definition of RAG
 description: Exploring the RAG Paradigm in LLMs. Technically, RAG uses a variety of innovative approaches that address important questions such as “what to search for,” “when to search for,” and “how to use the information obtained.” It has been strengthened.
 slug: Definition_of_RAG
-date: 2024-02-3
+date: 2024-2-3
 author: Shoto Morisaki
 image: sample/sample3.jpg
 category: Research
