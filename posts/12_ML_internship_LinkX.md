@@ -39,6 +39,8 @@ editor_social:
 
 
 
+
+
 ## LinkX Japan 
 ### What is [LinkX Japan](https://corp.linx.jp/en) 
 > LINX is an expert and industry-leader in the distribution of the world’s most advanced machine vision and automation products into the Japanese market.

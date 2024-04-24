@@ -38,6 +38,8 @@ editor_social:
 
 
 
+
+
 # Definition of RAG
 Technically, RAG uses a variety of innovative approaches that address important questions such as “what to search for,” “when to search for,” and “how to use the information obtained.” It has been strengthened.
 
