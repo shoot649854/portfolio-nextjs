@@ -7,7 +7,7 @@ description:
 slug: After_X_Developer_Project
 date: 2024-4-29
 author: Shoto Morisaki
-image: project/entrance.jpg
+image: /NotFound.jpg
 category: Project
 tags: [Twitter, Search Engine, ]
 relatedDoc1: 
