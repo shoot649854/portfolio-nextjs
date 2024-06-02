@@ -1,10 +1,7 @@
 import React from "react";
 import { Box, Button, Paper, Typography, Link } from "@mui/material";
 import { useIsSmallScreen } from "../../constant/MediaQuery";
-import { PostMeta } from "@/Type";
-type Props = {
-  data: PostMeta;
-};
+import { Props } from "@/Type";
 
 const GalleryCard = ({ data }: Props) => {
   const isSmallScreen = useIsSmallScreen();

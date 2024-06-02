@@ -1,10 +1,6 @@
 import React from "react";
 import { Box, Paper, Typography, Link } from "@mui/material";
-import { PostMeta } from "@/Type";
-
-type Props = {
-  data: PostMeta;
-};
+import { Props } from "@/Type";
 
 const AppCard = ({ data }: Props) => {
   return (

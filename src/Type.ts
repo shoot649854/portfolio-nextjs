@@ -87,3 +87,7 @@ export interface Article {
   tags: string[];
   article: ArticleSection[];
 }
+
+export type Props = {
+  data: PostMeta;
+};

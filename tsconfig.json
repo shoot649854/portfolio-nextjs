@@ -16,8 +16,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "removeComments": true,
-    "noUnusedLocals": true, //Personal Use
-    "noUnusedParameters": true, //Personal Use
+    // "noUnusedLocals": true, //Personal Use
+    // "noUnusedParameters": true, //Personal Use
     "incremental": true,
     // "baseUrl": "./src",
     "plugins": [
