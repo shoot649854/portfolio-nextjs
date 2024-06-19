@@ -12,6 +12,7 @@ import {
 } from "../../constant/MediaQuery";
 import type { PostData } from "@/Type";
 import ArticleDetail from "@/component/GlobalLayout/Layout";
+import IndexBar from "../Article/IndexBar";
 
 type Props = {
   post: PostData;
@@ -44,6 +45,7 @@ const Post = ({ post }: Props) => {
   return (
     <Box margin={getMargin()} display="flex" flexDirection="row" alignItems="center">
       <ArticleDetail data={post} />
+      <IndexBar data={post} />
     </Box>
   );
 };
