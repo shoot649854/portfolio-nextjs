@@ -1,7 +1,7 @@
-import type { PostMeta } from "@/Type";
-import type { GetStaticProps } from "next";
-import Template from "@/component/template/gallery";
-import getPost from "@/service/Project/accessToTopPro";
+import type { PostMeta } from '@/Type';
+import type { GetStaticProps } from 'next';
+import Template from '@/component/template/gallery';
+import getPost from '@/service/Project/accessToTopPro';
 
 type Props = {
   posts: PostMeta[];
@@ -15,7 +15,7 @@ const post = ({ posts }: Props) => {
 /** ビルド時のみの静的ページ生成 */
 export const getStaticProps: GetStaticProps = () => {
   return {
-    props: getPost()
+    props: getPost(),
   };
 };
 export default post;

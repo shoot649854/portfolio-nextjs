@@ -2,7 +2,7 @@ name: ✔︎ Markdown File Structure Check
 
 on:
   push:
-    branch:
+    branches:
       - main
 
 jobs:

@@ -1,11 +1,5 @@
-import { Chip } from "@mui/material";
-
-interface Props {
-  keywords: string[]; // Include the 'keywords' property here
-  setSelectedWord: (word: string) => void;
-}
-
-type CustomColor = "primary" | "secondary" | "error" | "warning" | "info" | "success";
+import { Chip, Box } from "@mui/material";
+import { CustomColor, ChipProps } from "./types";
 
 function getRandomColor(): CustomColor {
   const colors: CustomColor[] = ["primary", "secondary", "error", "warning", "info", "success"];
@@ -13,29 +7,28 @@ function getRandomColor(): CustomColor {
   return colors[randomIndex];
 }
 
-function ColoredChips({ keywords, setSelectedWord }: Props): JSX.Element[] {
-  // Filter out duplicate keywords
+function ColoredChips({ keywords, setSelectedWord }: ChipProps): JSX.Element {
   const uniqueKeywords = Array.from(new Set(keywords));
 
-  const coloredChips: JSX.Element[] = [];
-
-  uniqueKeywords.forEach((keyword: string) => {
-    const color = getRandomColor();
-    coloredChips.push(
-      <Chip
-        key={keyword}
-        label={keyword}
-        variant="outlined"
-        color={color}
-        onClick={() => {
-          setSelectedWord(keyword);
-        }}
-        clickable
-      />
-    );
-  });
-
-  return coloredChips;
+  return (
+    <Box>
+      {uniqueKeywords.map((keyword: string) => {
+        const color = getRandomColor();
+        return (
+          <Chip
+            key={keyword}
+            label={keyword}
+            variant="outlined"
+            color={color}
+            onClick={() => {
+              setSelectedWord(keyword);
+            }}
+            clickable
+          />
+        );
+      })}
+    </Box>
+  );
 }
 
 export default ColoredChips;
