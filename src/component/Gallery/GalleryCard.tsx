@@ -1,16 +1,14 @@
 import React from "react";
 import { Box, Button, Paper, Typography, Link } from "@mui/material";
 import { useIsSmallScreen } from "../../constant/MediaQuery";
-import { PostMeta } from "@/Type";
-type Props = {
-  data: PostMeta;
-};
+import Image from "next/image";
+import { GalleryType } from "./GalleryType";
 
-const GalleryCard = ({ data }: Props) => {
+const GalleryCard = ({ post }: GalleryType) => {
   const isSmallScreen = useIsSmallScreen();
 
   return (
-    <Link href={`/post/${data.slug}`} color="inherit" style={{ textDecoration: "none" }}>
+    <Link href={`/post/${post.slug}`} color="inherit" style={{ textDecoration: "none" }}>
       <Paper
         sx={{
           height: isSmallScreen ? "auto" : "300px",
@@ -29,9 +27,6 @@ const GalleryCard = ({ data }: Props) => {
           },
           "@media (min-width: 768px)": {
             flexDirection: "row"
-            // "&:nth-of-type(even)": {
-            //   flexDirection: "row-reverse"
-            // }
           }
         }}
       >
@@ -47,24 +42,19 @@ const GalleryCard = ({ data }: Props) => {
             }
           }}
         >
-          <Box display={"flex"} gap={"4px"} alignItems={"center"}>
-            {/* <Avatar alt="Profile Photo" sx={{ width: 24, height: 24 }}>
-              <Image src={data.editor_img} alt="Profile Photo" fill sizes="(max-width: 600px) 36px, 72px" />
-            </Avatar> */}
-          </Box>
+          <Box display={"flex"} gap={"4px"} alignItems={"center"}></Box>
           <Box>
             <Typography
               variant="body2"
               component="h3"
               sx={{
                 my: isSmallScreen ? 1 : 1
-                // fontSize: isSmallScreen ? "21px" : "inherit"
               }}
             >
-              {data.author}
+              {post.author}
             </Typography>
           </Box>
-          <Typography variant="body2">{data.date}</Typography>
+          <Typography variant="body2">{post.date}</Typography>
 
           <Typography
             variant="body2"
@@ -76,14 +66,14 @@ const GalleryCard = ({ data }: Props) => {
               fontWeight: "bold"
             }}
           >
-            {data.title}
+            {post.title}
           </Typography>
 
           <Box sx={{ display: "flex", alignItems: "center", flexWrap: "nowrap" }}>
-            {data.tags.map((tag: string, index: number) => (
+            {post.tags.map((tag: string, index: number) => (
               <React.Fragment key={index}>
                 <Link
-                  href={`/post/${data.slug}`}
+                  href={`/post/${post.slug}`}
                   color="inherit"
                   style={{ textDecoration: "none" }}
                 >
@@ -116,7 +106,7 @@ const GalleryCard = ({ data }: Props) => {
             flexGrow: 0
           }}
         >
-          <img src={data.coverImage} alt={data.title} />
+          <Image src={post.coverImage} alt={post.title} />
         </Box>
       </Paper>
     </Link>

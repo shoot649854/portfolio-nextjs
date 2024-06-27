@@ -1,6 +1,6 @@
 import type { PostMeta } from "@/Type";
 import type { GetStaticProps } from "next";
-import Template from "@/component/template/gallery";
+import Template from "@/component/template/Gallery";
 import getPost from "@/service/Project/accessToTopPro";
 
 type Props = {

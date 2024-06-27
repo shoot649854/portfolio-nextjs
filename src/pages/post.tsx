@@ -1,7 +1,7 @@
-import type { PostMeta } from "@/Type";
-import type { GetStaticProps } from "next";
-import Template from "@/component/template/gallery";
-import getPost from "@/service/Blog/accessToTop";
+import type { PostMeta } from '@/Type';
+import type { GetStaticProps } from 'next';
+import Gallery from '@/component/template/Gallery';
+import getPost from '@/service/Blog/accessToTop';
 
 type Props = {
   posts: PostMeta[];
@@ -9,13 +9,13 @@ type Props = {
 };
 
 const post = ({ posts }: Props) => {
-  return <Template posts={posts} />;
+  return <Gallery posts={posts} />;
 };
 
 /** ビルド時のみの静的ページ生成 */
 export const getStaticProps: GetStaticProps = () => {
   return {
-    props: getPost()
+    props: getPost(),
   };
 };
 export default post;

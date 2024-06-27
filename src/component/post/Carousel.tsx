@@ -1,21 +1,22 @@
-import { useState } from "react";
-import Carousel from "react-material-ui-carousel";
-import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import { Typography, Box, Link, Grid } from "@mui/material";
+import { useState } from 'react';
+import Image from 'next/image';
+import Carousel from 'react-material-ui-carousel';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import { Typography, Box, Link, Grid } from '@mui/material';
 import {
   useIsSmallScreen,
   useIsExtraSmallScreen,
-  useIsNarrowScreen
-} from "../../constant/MediaQuery";
-import type { PostMeta } from "@/Type";
+  useIsNarrowScreen,
+} from '../../constant/MediaQuery';
+import type { PostMeta } from '@/Type';
 
 // const lColor = "black";
-const bgColor = "white";
-const ArrowColor = "blue";
-const ArrowColor_bg = "white";
-const Icon = "lightskyblue";
-const ActiveIcon = "midnightblue";
+const bgColor = 'white';
+const ArrowColor = 'blue';
+const ArrowColor_bg = 'white';
+const Icon = 'lightskyblue';
+const ActiveIcon = 'midnightblue';
 // const fontBackgroundColor = "rgb(252, 252, 252)";
 
 type Props = {
@@ -61,9 +62,9 @@ function CarouselComponent({ posts, total }: Props) {
       marginBottom={5}
       sx={{
         height: `${calculateHeight()}px`,
-        width: isSmallScreen ? "95%" : "75%",
-        justifyContent: "center",
-        alignItems: "center"
+        width: isSmallScreen ? '95%' : '75%',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <Carousel
@@ -83,35 +84,35 @@ function CarouselComponent({ posts, total }: Props) {
 
         indicatorContainerProps={{
           style: {
-            margin: "0px 0px 0px 0px"
-          }
+            margin: '0px 0px 0px 0px',
+          },
         }}
         indicatorIconButtonProps={{
           //アクティブでない下の丸いアイコンの設定
           style: {
-            padding: "10px", //位置調整
-            color: Icon
-          }
+            padding: '10px', //位置調整
+            color: Icon,
+          },
         }}
         activeIndicatorIconButtonProps={{
           //アクティブな下の丸いアイコンの設定
           style: {
-            color: ActiveIcon
-          }
+            color: ActiveIcon,
+          },
         }}
         navButtonsWrapperProps={{
           //矢印ボタン周りの設定
           style: {
-            margin: "-20px 0% 0px" //位置調整
-          }
+            margin: '-20px 0% 0px', //位置調整
+          },
         }}
         navButtonsProps={{
           //矢印ボタンの設定
           style: {
             color: ArrowColor, //矢印の色
             backgroundColor: ArrowColor_bg, //矢印の背景の色
-            borderRadius: 0 //0にすると四角になる．
-          }
+            borderRadius: 0, //0にすると四角になる．
+          },
         }}
         onChange={handleIndexChange}
       >
@@ -120,58 +121,58 @@ function CarouselComponent({ posts, total }: Props) {
             <Link
               href={`/post/${post.slug}`}
               color="inherit"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: 'none' }}
               key={post.slug}
             >
               <Box
                 sx={{
                   height: `${calculateHeight()}px`,
-                  width: "100%",
+                  width: '100%',
                   backgroundColor: bgColor,
-                  position: "relative"
+                  position: 'relative',
                 }}
               >
                 <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start">
-                  <Box sx={{ height: "100%", width: "100%" }}>
+                  <Box sx={{ height: '100%', width: '100%' }}>
                     <Box
                       sx={{
                         height: `${calculateHeight()}px`,
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        overflow: "hidden"
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        overflow: 'hidden',
                       }}
                     >
-                      <img
-                        style={{ width: "100%", objectFit: "cover" }}
+                      <Image
+                        style={{ width: '100%', objectFit: 'cover' }}
                         src={post.coverImage}
                         alt="Carousel Image"
                       />
                     </Box>
                   </Box>
-                  <Box width="65%" sx={{ position: "absolute", bottom: 0, left: 0 }}>
+                  <Box width="65%" sx={{ position: 'absolute', bottom: 0, left: 0 }}>
                     <Typography
                       sx={{
-                        fontWeight: "medium",
+                        fontWeight: 'medium',
                         fontSize: ExtraSmallScreen
-                          ? "16px"
+                          ? '16px'
                           : isSmallScreen
-                            ? "20px"
+                            ? '20px'
                             : NarrowScreen
-                              ? "16px"
-                              : "36px",
-                        padding: "10px",
-                        backgroundColor: "white",
+                              ? '16px'
+                              : '36px',
+                        padding: '10px',
+                        backgroundColor: 'white',
                         opacity: currentIndex === index ? 1 : 0,
-                        animation: `${currentIndex === index ? "fade-in-left" : "fade-out"} 0.5s ease-in-out forwards`,
-                        "@keyframes fade-in-left": {
-                          from: { opacity: 0, transform: "translateX(-50px)" },
-                          to: { opacity: 1, transform: "translateX(0)" }
+                        animation: `${currentIndex === index ? 'fade-in-left' : 'fade-out'} 0.5s ease-in-out forwards`,
+                        '@keyframes fade-in-left': {
+                          from: { opacity: 0, transform: 'translateX(-50px)' },
+                          to: { opacity: 1, transform: 'translateX(0)' },
                         },
-                        "@keyframes fade-out": {
+                        '@keyframes fade-out': {
                           from: { opacity: 1 }, // Animation starts from opacity 1
-                          to: { opacity: 0 } // Animation ends at opacity 0
-                        }
+                          to: { opacity: 0 }, // Animation ends at opacity 0
+                        },
                       }}
                     >
                       {post.title}

@@ -1,25 +1,23 @@
-import { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import GalleryCard from "../Gallery/GalleryCard";
-import type { PostMeta } from "@/Type";
+import { useState, useEffect } from 'react';
+import { Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import GalleryCard from '../Gallery/GalleryCard';
+import { GalleriesType } from '../Gallery/GalleryType';
 
-type Props = {
-  posts: PostMeta[];
-};
-
-const gallery = ({ posts }: Props) => {
+const Gallery = ({ posts }: GalleriesType) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  if (!mounted) return null;
+
   return (
     mounted && (
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Typography>
           {posts.map((post) => (
-            <GalleryCard data={post}></GalleryCard>
+            <GalleryCard post={post}></GalleryCard>
           ))}
         </Typography>
       </Box>
@@ -27,4 +25,4 @@ const gallery = ({ posts }: Props) => {
   );
 };
 
-export default gallery;
+export default Gallery;
